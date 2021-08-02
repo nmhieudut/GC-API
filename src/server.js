@@ -1,21 +1,21 @@
 // const config = require("config");
-const morgan = require("morgan");
-const helmet = require("helmet");
-const express = require("express");
+import morgan from "morgan";
+import helmet from "helmet";
+import express from "express";
 const app = express();
 
-const logger = require("./src/middlewares/logger");
-const cors = require("./src/middlewares/cors");
+import logger from "./middlewares/logger";
+import cors from "./middlewares/cors";
 
-require("./src/config/db");
+import "./config/db";
 require("dotenv").config();
 
 // Routes
-const auth = require("./src/routes/auth");
-const posts = require("./src/routes/posts");
+import auth from "./routes/auth";
+import posts from "./routes/posts";
 
 // Error handler
-const { errorHandler } = require("./src/middlewares/errors/errorHandler");
+import { errorHandler } from "./middlewares/errors/errorHandler";
 
 // JSON parser
 app.use(express.json());

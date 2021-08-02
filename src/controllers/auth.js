@@ -1,9 +1,8 @@
-const User = require("../models/User");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
+import User from "../models/User";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
 const register = async (req, res, next) => {
   try {
-    // console.log("-------", req.body);
     const user = await User.create(req.body);
     const token = jwt.sign({ userId: user._id }, process.env.APP_SECRET);
     res.status(200).json({
@@ -11,7 +10,6 @@ const register = async (req, res, next) => {
       data: { token, displayName: user.displayName }
     });
   } catch (e) {
-    console.log("-------", e);
     next(e);
   }
 };
@@ -43,4 +41,4 @@ const login = async (req, res, next) => {
   }
 };
 
-module.exports = { register, login };
+export { login, register };

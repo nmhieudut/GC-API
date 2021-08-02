@@ -1,4 +1,4 @@
-exports.errorHandler = (err, req, res, next) => {
+const errorHandler = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   // Duplicated err
   console.log(err);
@@ -27,3 +27,5 @@ exports.errorHandler = (err, req, res, next) => {
     message: err.message
   });
 };
+
+export { errorHandler };

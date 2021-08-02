@@ -1,6 +1,6 @@
-const Post = require("../models/Post");
+import Post from "../models/Post";
 
-exports.getAll = async function (req, res, next) {
+async function getAll(req, res, next) {
   try {
     const posts = await Post.find({})
       .populate("author", "displayName")
@@ -13,8 +13,9 @@ exports.getAll = async function (req, res, next) {
   } catch (e) {
     next(e);
   }
-};
-exports.createOne = async function (req, res, next) {
+}
+
+async function createOne(req, res, next) {
   try {
     const { userId } = req.user;
     const post = await Post.create({ ...req.body, author: userId });
@@ -25,8 +26,9 @@ exports.createOne = async function (req, res, next) {
   } catch (e) {
     next(e);
   }
-};
-exports.updateOne = async function (req, res, next) {
+}
+
+async function updateOne(req, res, next) {
   try {
     const { postId } = req.params;
     const posts = await Post.findByIdAndUpdate(
@@ -41,8 +43,9 @@ exports.updateOne = async function (req, res, next) {
   } catch (e) {
     next(e);
   }
-};
-exports.deleteOne = async function (req, res, next) {
+}
+
+async function deleteOne(req, res, next) {
   try {
     const { postId } = req.params;
     await Post.findByIdAndDelete(postId);
@@ -53,4 +56,6 @@ exports.deleteOne = async function (req, res, next) {
   } catch (e) {
     next(e);
   }
-};
+}
+
+export { getAll, createOne, updateOne, deleteOne };

@@ -2,14 +2,18 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "./src/server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "build" : "babel ./src/server.js --out-dir dist",
+    "dev": "nodemon --exec babel-node ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.14.9",
     "bcrypt": "^5.0.1",
     "body-parse": "^0.1.0",
     "chalk": "^4.1.1",

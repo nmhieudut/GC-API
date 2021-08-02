@@ -1,4 +1,4 @@
-const chalk = require("chalk");
+import chalk from "chalk";
 
 const logger = (req, res, next) => {
   let current_datetime = new Date();
@@ -37,4 +37,4 @@ const logger = (req, res, next) => {
   next();
 };
 
-module.exports = logger;
+export default logger;

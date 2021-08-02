@@ -1,6 +1,6 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
-exports.verifyToken = (req, res, next) => {
+const verifyToken = (req, res, next) => {
   const Authorization = req.header("authorization");
   if (!Authorization) {
     const err = new Error("Unauthorized user!");
@@ -15,3 +15,5 @@ exports.verifyToken = (req, res, next) => {
   req.user = { userId };
   next();
 };
+
+export { verifyToken };

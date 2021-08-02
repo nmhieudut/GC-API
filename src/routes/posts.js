@@ -1,17 +1,14 @@
-const express = require("express");
-const { verifyToken } = require("../middlewares/verifyToken");
-const PostController = require("../controllers/posts");
+import express from "express";
+import { verifyToken } from "../middlewares/verifyToken";
+import { getAll, createOne, updateOne, deleteOne } from "../controllers/posts";
 
 const router = express.Router();
 
-router
-  .route("/")
-  .get(PostController.getAll)
-  .post(verifyToken, PostController.createOne);
+router.route("/").get(getAll).post(verifyToken, createOne);
 
 router
   .route("/:postId")
-  .put(verifyToken, PostController.updateOne)
-  .delete(verifyToken, PostController.deleteOne);
+  .put(verifyToken, updateOne)
+  .delete(verifyToken, deleteOne);
 
-module.exports = router;
+export default router;
