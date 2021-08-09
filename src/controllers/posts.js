@@ -1,4 +1,4 @@
-import Post from "../models/Post";
+import { Post } from "../models/Post";
 
 async function getAll(req, res, next) {
   try {

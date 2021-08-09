@@ -1,10 +1,10 @@
 import morgan from "morgan";
 import helmet from "helmet";
 import express from "express";
+import cors from "cors";
 const app = express();
 
 import logger from "./middlewares/logger";
-import cors from "./middlewares/cors";
 
 import "./config/db";
 require("dotenv").config();
@@ -21,9 +21,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 
-// Logger middleware
+// Middleware
 app.use(logger);
-app.use(cors);
+app.use(cors());
 
 // Mounted the routes
 app.use("/api/v1/auth", auth);
