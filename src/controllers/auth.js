@@ -7,7 +7,7 @@ const register = async (req, res, next) => {
     const token = jwt.sign({ userId: user._id }, process.env.APP_SECRET);
     res.status(200).json({
       status: "sucess",
-      data: { token, displayName: user.displayName }
+      data: { token, displayname: user.displayname }
     });
   } catch (e) {
     next(e);
@@ -28,7 +28,7 @@ const login = async (req, res, next) => {
         status: "success",
         data: {
           token,
-          userName: user.displayName
+          userName: user.displayname
         }
       });
     } else {
@@ -46,7 +46,7 @@ const getCurrentUser = async (req, res, next) => {
     const data = { user: null };
     if (req.user) {
       const user = await User.findOne({ _id: req.user.userId });
-      data.user = { userName: user.displayName };
+      data.user = { userName: user.displayname };
     }
     res.status(200).json({
       status: "success",

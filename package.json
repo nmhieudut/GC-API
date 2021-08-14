@@ -4,9 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "babel ./src --out-dir dist",
-    "start": "node src/server.js",
-    "dev": "nodemon --exec babel-node src/server.js",
+    "build": "babel ./src --out-dir dist --copy-files",
+    "start": "node ./dist/server.js",
+    "dev": "nodemon --exec babel-node ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -23,7 +23,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.0.1",
     "mongoose": "^5.13.3",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "@babel/runtime": "^7.15.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.4",
@@ -35,7 +36,6 @@
     "@babel/plugin-transform-runtime": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "@babel/register": "^7.10.5",
-    "@babel/runtime": "^7.10.4",
     "babel-eslint": "^10.1.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "eslint": "^7.31.0",

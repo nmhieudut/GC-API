@@ -39,7 +39,7 @@ if (app.get("env") === "development") {
   app.use(morgan("tiny"));
   console.log("Development");
 }
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // Main app
 app.listen(PORT, () => {
