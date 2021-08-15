@@ -2,7 +2,10 @@ import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 const userSchema = new mongoose.Schema(
   {
-    displayname: {
+    avatar: {
+      type: String
+    },
+    displayName: {
       type: String,
       trim: true,
       required: [true, "Display name must be required"]

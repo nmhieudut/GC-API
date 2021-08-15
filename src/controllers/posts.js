@@ -3,7 +3,7 @@ import { Post } from "../models/Post";
 async function getAll(req, res, next) {
   try {
     const posts = await Post.find({})
-      .populate("author", "displayname")
+      .populate({ path: "author", select: "displayName avatar" })
       .select("content createdAt");
     res.status(200).json({
       status: "success",
