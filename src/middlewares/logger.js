@@ -15,7 +15,7 @@ const logger = (req, res, next) => {
     ":" +
     current_datetime.getSeconds();
   let method = req.method;
-  let url = process.env.HOST + process.env.PORT + req.url;
+  let url = req.url;
   switch (method) {
     case "GET":
       console.log("Request:", `${chalk.green(method)} ${url} `);

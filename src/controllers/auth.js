@@ -49,7 +49,7 @@ const getCurrentUser = async (req, res, next) => {
     const data = { user: null };
     if (req.user) {
       const user = await User.findOne({ _id: req.user.userId });
-      data.user = { userName: user.displayName };
+      data.user = { displayName: user.displayName, avatar: user.avatar };
     }
     res.status(200).json({
       status: "success",

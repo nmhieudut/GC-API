@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 
 const checkCurrentUser = (req, res, next) => {
-  const Authorization = req.header("authorization");
+  const Authorization = req.headers.authorization;
   if (!Authorization) {
     req.user = null;
     next();
@@ -9,9 +9,7 @@ const checkCurrentUser = (req, res, next) => {
     // Get token
     const token = Authorization.replace("Bearer ", "");
     try {
-      // Verify
       const { userId } = jwt.verify(token, process.env.APP_SECRET);
-      // Assign to req
       req.user = { userId };
       next();
     } catch {
@@ -19,8 +17,6 @@ const checkCurrentUser = (req, res, next) => {
       next();
     }
   }
-
-  next();
 };
 
 export { checkCurrentUser };

@@ -1,20 +1,17 @@
-import morgan from "morgan";
-import helmet from "helmet";
-import express from "express";
 import cors from "cors";
-const app = express();
-
-import logger from "./middlewares/logger";
-
+import express from "express";
+import helmet from "helmet";
+import morgan from "morgan";
 import "./config/db";
-require("dotenv").config();
-
+// Error handler
+import { errorHandler } from "./middlewares/errors/errorHandler";
+import logger from "./middlewares/logger";
 // Routes
 import auth from "./routes/auth";
 import posts from "./routes/posts";
+const app = express();
 
-// Error handler
-import { errorHandler } from "./middlewares/errors/errorHandler";
+require("dotenv").config();
 
 // JSON parser
 app.use(express.json());
@@ -24,7 +21,6 @@ app.use(helmet());
 // Middleware
 app.use(logger);
 app.use(cors());
-
 // Mounted the routes
 app.use("/api/v1/auth", auth);
 app.use("/api/v1/posts", posts);
