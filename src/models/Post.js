@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { userSchema } from "./User";
 
 const postSchema = new mongoose.Schema(
   {
@@ -10,6 +11,14 @@ const postSchema = new mongoose.Schema(
     author: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User"
+    },
+    likes: {
+      type: [userSchema],
+      default: []
+    },
+    comments: {
+      type: [String],
+      default: []
     }
   },
   { timestamps: true }

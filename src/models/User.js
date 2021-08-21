@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
-const userSchema = new mongoose.Schema(
+export const userSchema = new mongoose.Schema(
   {
     avatar: {
       type: String
