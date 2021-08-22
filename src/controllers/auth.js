@@ -9,7 +9,11 @@ const register = async (req, res, next) => {
       status: "sucess",
       data: {
         token,
-        user: { displayName: user.displayName, avatar: user.avatar }
+        user: {
+          id: user._id,
+          displayName: user.displayName,
+          avatar: user.avatar
+        }
       }
     });
   } catch (e) {
@@ -31,7 +35,11 @@ const login = async (req, res, next) => {
         status: "success",
         data: {
           token,
-          user: { displayName: user.displayName, avatar: user.avatar }
+          user: {
+            id: user._id,
+            displayName: user.displayName,
+            avatar: user.avatar
+          }
         }
       });
     } else {
@@ -49,7 +57,11 @@ const getCurrentUser = async (req, res, next) => {
     const data = { user: null };
     if (req.user) {
       const user = await User.findOne({ _id: req.user.userId });
-      data.user = { displayName: user.displayName, avatar: user.avatar };
+      data.user = {
+        id: user._id,
+        displayName: user.displayName,
+        avatar: user.avatar
+      };
     }
     res.status(200).json({
       status: "success",

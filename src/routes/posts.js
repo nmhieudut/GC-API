@@ -21,7 +21,7 @@ router
   .put(verifyToken, updateOne)
   .delete(verifyToken, deleteOne);
 
-router.route("/:postId/like").patch(verifyToken, likePost);
+router.route("/:postId/like").put(verifyToken, likePost);
 router.post("/:postId/comment", verifyToken, commentPost);
 
 export default router;

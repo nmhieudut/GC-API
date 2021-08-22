@@ -5,7 +5,9 @@ async function getAll(req, res, next) {
   try {
     const posts = await Post.find({})
       .sort("-createdAt")
-      .populate({ path: "author", select: "displayName avatar" })
+      .populate("author", "displayName avatar")
+      .populate("likes", "displayName avatar")
+      .populate("comments.commentor", "displayName avatar")
       .select("content createdAt likes comments");
     res.status(200).json({
       status: "success",
@@ -22,8 +24,9 @@ async function createOne(req, res, next) {
     const { userId } = req.user;
     const post = await Post.create({ ...req.body, author: userId });
     const newPost = await Post.findOne({ _id: post.id })
-      .populate({ path: "author", select: "displayName avatar" })
-      .select("content createdAt likes comments");
+      .populate("author", "displayName avatar")
+      .populate("likes", "displayName avatar")
+      .populate("comments.commentor", "displayName avatar");
     console.log("new post", newPost);
     res.status(200).json({
       status: "success",
@@ -43,8 +46,9 @@ async function updateOne(req, res, next) {
       { new: true, runValidator: true }
     );
     const newPost = await Post.findOne({ _id: post.id })
-      .populate({ path: "author", select: "displayName avatar" })
-      .select("content createdAt likes comments");
+      .populate("author", "displayName avatar")
+      .populate("likes", "displayName avatar")
+      .populate("comments.commentor", "displayName avatar");
     res.status(200).json({
       status: "success",
       data: { post: newPost }
@@ -82,8 +86,7 @@ async function likePost(req, res, next) {
     );
 
     if (index === -1) {
-      const likedUser = await User.findById(userId).select("_id displayName");
-      post.likes.push(likedUser);
+      post.likes.push(userId);
     } else {
       post.likes = post.likes.filter(
         likedUser => !likedUser._id.equals(userId)
@@ -92,10 +95,13 @@ async function likePost(req, res, next) {
     const updatedPost = await Post.findByIdAndUpdate(postId, post, {
       new: true,
       runValidator: true
-    });
+    })
+      .populate("author", "displayName avatar")
+      .populate("likes", "displayName avatar")
+      .populate("comments.commentor", "displayName avatar");
     res.status(200).json({
       status: "success",
-      data: { updatedPost }
+      data: { post: updatedPost }
     });
   } catch (e) {
     next(e);
@@ -108,13 +114,13 @@ async function commentPost(req, res, next) {
     const { content } = req.body;
 
     const post = await Post.findById(postId);
-    const commentor = await User.findById(userId).select(
-      "_id displayName avatar"
-    );
-    post.comments.push({ comment: content, commentor });
+    post.comments.push({ comment: content, commentor: userId });
     const commentedPost = await Post.findByIdAndUpdate(postId, post, {
       new: true
-    });
+    })
+      .populate("author", "displayName avatar")
+      .populate("likes", "displayName avatar")
+      .populate("comments.commentor", "displayName avatar");
 
     res.status(200).json({
       status: "success",

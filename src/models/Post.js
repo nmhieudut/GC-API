@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { userSchema } from "./User";
-import { commentSchema } from "./Comment";
+
 const postSchema = new mongoose.Schema(
   {
     content: {
@@ -13,13 +13,34 @@ const postSchema = new mongoose.Schema(
       ref: "User"
     },
     likes: {
-      type: [userSchema],
+      type: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
       default: []
     },
     comments: {
-      type: [commentSchema],
+      type: [
+        {
+          comment: {
+            type: String,
+            trim: true,
+            required: [true, "Comment must have content"]
+          },
+          commentor: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+          }
+        }
+      ],
       default: []
     }
+    // comments: {
+    //   type: [
+    //     {
+    //       type: mongoose.Schema.Types.ObjectId,
+    //       ref: "Comment"
+    //     }
+    //   ],
+    //   default: []
+    // }
   },
   { timestamps: true }
 );
