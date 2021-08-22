@@ -14,11 +14,11 @@ export const userSchema = new mongoose.Schema(
       type: String,
       unique: true,
       trim: true,
+      dropDups: true,
       required: [true, "Username must be required"]
     },
     password: {
       type: String,
-      unique: true,
       trim: true,
       required: [true, "Password must be required"],
       minlength: [6, "Password must be at least 6 characters"]

@@ -11,7 +11,11 @@ const update = async (req, res, next) => {
     res.status(200).json({
       status: "sucess",
       data: {
-        user: { displayName: user.displayName, avatar: user.avatar }
+        user: {
+          id: user._id,
+          displayName: user.displayName,
+          avatar: user.avatar
+        }
       }
     });
   } catch (e) {
