@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { userSchema } from "./User";
-
+import { commentSchema } from "./Comment";
 const postSchema = new mongoose.Schema(
   {
     content: {
@@ -17,7 +17,7 @@ const postSchema = new mongoose.Schema(
       default: []
     },
     comments: {
-      type: [String],
+      type: [commentSchema],
       default: []
     }
   },

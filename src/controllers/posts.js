@@ -103,22 +103,50 @@ async function likePost(req, res, next) {
 }
 async function commentPost(req, res, next) {
   try {
-    const { id } = req.params;
+    const { userId } = req.user;
+    const { postId } = req.params;
     const { content } = req.body;
 
-    const post = await Post.findById(id);
-
-    post.comments.push(content);
-
-    const updatedPost = await Post.findByIdAndUpdate(id, post, { new: true });
+    const post = await Post.findById(postId);
+    const commentor = await User.findById(userId).select(
+      "_id displayName avatar"
+    );
+    post.comments.push({ comment: content, commentor });
+    const commentedPost = await Post.findByIdAndUpdate(postId, post, {
+      new: true
+    });
 
     res.status(200).json({
       status: "success",
-      data: { updatedPost }
+      data: { post: commentedPost }
     });
   } catch (e) {
     next(e);
   }
 }
 
-export { getAll, createOne, updateOne, deleteOne, likePost, commentPost };
+async function getBySearch(req, res, next) {
+  try {
+    const { q } = req.query;
+    console.log("query", q);
+    const content = new RegExp(q, "i");
+    const posts = await Post.find({ content })
+      .sort("-createdAt")
+      .populate({ path: "author", select: "displayName avatar" })
+      .select("content createdAt likes comments");
+
+    res.status(200).json({ status: "success", data: posts });
+  } catch (e) {
+    next(e);
+  }
+}
+
+export {
+  getBySearch,
+  getAll,
+  createOne,
+  updateOne,
+  deleteOne,
+  likePost,
+  commentPost
+};

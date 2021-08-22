@@ -1,6 +1,7 @@
 import express from "express";
 import { verifyToken } from "../middlewares/verifyToken";
 import {
+  getBySearch,
   getAll,
   createOne,
   updateOne,
@@ -11,6 +12,8 @@ import {
 
 const router = express.Router();
 
+router.get("/search", getBySearch);
+
 router.route("/").get(getAll).post(verifyToken, createOne);
 
 router
@@ -19,6 +22,6 @@ router
   .delete(verifyToken, deleteOne);
 
 router.route("/:postId/like").patch(verifyToken, likePost);
-router.post("/:postId/comment", commentPost);
+router.post("/:postId/comment", verifyToken, commentPost);
 
 export default router;

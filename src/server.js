@@ -9,6 +9,7 @@ import logger from "./middlewares/logger";
 // Routes
 import auth from "./routes/auth";
 import posts from "./routes/posts";
+import user from "./routes/user";
 const app = express();
 
 require("dotenv").config();
@@ -24,6 +25,7 @@ app.use(cors());
 // Mounted the routes
 app.use("/api/v1/auth", auth);
 app.use("/api/v1/posts", posts);
+app.use("/api/v1/user", user);
 
 app.all("*", (req, res, next) => {
   const err = new Error("Invalid route");
