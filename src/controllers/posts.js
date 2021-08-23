@@ -1,13 +1,20 @@
-import { User } from "../models/User";
 import { Post } from "../models/Post";
-
+import { Comment } from "../models/Comment";
 async function getAll(req, res, next) {
   try {
     const posts = await Post.find({})
       .sort("-createdAt")
       .populate("author", "displayName avatar")
       .populate("likes", "displayName avatar")
-      .populate("comments.commentor", "displayName avatar")
+      .populate({
+        path: "comments",
+        model: "Comment",
+        populate: {
+          path: "commentor",
+          model: "User",
+          select: "displayName avatar"
+        }
+      })
       .select("content createdAt likes comments");
     res.status(200).json({
       status: "success",
@@ -26,7 +33,15 @@ async function createOne(req, res, next) {
     const newPost = await Post.findOne({ _id: post.id })
       .populate("author", "displayName avatar")
       .populate("likes", "displayName avatar")
-      .populate("comments.commentor", "displayName avatar");
+      .populate({
+        path: "comments",
+        model: "Comment",
+        populate: {
+          path: "commentor",
+          model: "User",
+          select: "displayName avatar"
+        }
+      });
     console.log("new post", newPost);
     res.status(200).json({
       status: "success",
@@ -48,7 +63,15 @@ async function updateOne(req, res, next) {
     const newPost = await Post.findOne({ _id: post.id })
       .populate("author", "displayName avatar")
       .populate("likes", "displayName avatar")
-      .populate("comments.commentor", "displayName avatar");
+      .populate({
+        path: "comments",
+        model: "Comment",
+        populate: {
+          path: "commentor",
+          model: "User",
+          select: "displayName avatar"
+        }
+      });
     res.status(200).json({
       status: "success",
       data: { post: newPost }
@@ -98,7 +121,15 @@ async function likePost(req, res, next) {
     })
       .populate("author", "displayName avatar")
       .populate("likes", "displayName avatar")
-      .populate("comments.commentor", "displayName avatar");
+      .populate({
+        path: "comments",
+        model: "Comment",
+        populate: {
+          path: "commentor",
+          model: "User",
+          select: "displayName avatar"
+        }
+      });
     res.status(200).json({
       status: "success",
       data: { post: updatedPost }
@@ -114,13 +145,25 @@ async function commentPost(req, res, next) {
     const { content } = req.body;
 
     const post = await Post.findById(postId);
-    post.comments.push({ comment: content, commentor: userId });
+    const comment = await Comment.create({
+      text: content,
+      commentor: userId
+    });
+    post.comments.push(comment);
     const commentedPost = await Post.findByIdAndUpdate(postId, post, {
       new: true
     })
       .populate("author", "displayName avatar")
       .populate("likes", "displayName avatar")
-      .populate("comments.commentor", "displayName avatar");
+      .populate({
+        path: "comments",
+        model: "Comment",
+        populate: {
+          path: "commentor",
+          model: "User",
+          select: "displayName avatar"
+        }
+      });
 
     res.status(200).json({
       status: "success",
@@ -130,8 +173,12 @@ async function commentPost(req, res, next) {
     next(e);
   }
 }
+// =======Will be implemented
+// async function editComment(req, res, next) {}
+// async function deleteComment(req, res, next) {}
+// async function getCommentsById(req,res,next) {}
 
-async function getBySearch(req, res, next) {
+async function getPostsBySearch(req, res, next) {
   try {
     const { q } = req.query;
     console.log("query", q);
@@ -148,7 +195,7 @@ async function getBySearch(req, res, next) {
 }
 
 export {
-  getBySearch,
+  getPostsBySearch,
   getAll,
   createOne,
   updateOne,

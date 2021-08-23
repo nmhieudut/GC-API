@@ -19,16 +19,20 @@ const postSchema = new mongoose.Schema(
     comments: {
       type: [
         {
-          comment: {
-            type: String,
-            trim: true,
-            required: [true, "Comment must have content"]
-          },
-          commentor: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
-          }
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Comment"
         }
+        // {
+        //   comment: {
+        //     type: String,
+        //     trim: true,
+        //     required: [true, "Comment must have content"]
+        //   },
+        //   commentor: {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     ref: "User"
+        //   }
+        // }
       ],
       default: []
     }

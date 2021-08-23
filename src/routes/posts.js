@@ -1,7 +1,7 @@
 import express from "express";
 import { verifyToken } from "../middlewares/verifyToken";
 import {
-  getBySearch,
+  getPostsBySearch,
   getAll,
   createOne,
   updateOne,
@@ -12,7 +12,7 @@ import {
 
 const router = express.Router();
 
-router.get("/search", getBySearch);
+router.get("/search", getPostsBySearch);
 
 router.route("/").get(getAll).post(verifyToken, createOne);
 
