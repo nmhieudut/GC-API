@@ -185,7 +185,17 @@ async function getPostsBySearch(req, res, next) {
     const content = new RegExp(q, "i");
     const posts = await Post.find({ content })
       .sort("-createdAt")
-      .populate({ path: "author", select: "displayName avatar" })
+      .populate("author", "displayName avatar")
+      .populate("likes", "displayName avatar")
+      .populate({
+        path: "comments",
+        model: "Comment",
+        populate: {
+          path: "commentor",
+          model: "User",
+          select: "displayName avatar"
+        }
+      })
       .select("content createdAt likes comments");
 
     res.status(200).json({ status: "success", data: posts });
