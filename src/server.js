@@ -24,6 +24,11 @@ app.use(helmet());
 // Middleware
 app.use(logger);
 app.use(cors());
+
+app.use("/", (req, res) => {
+  res.send("Green Charity APIs");
+});
+
 // Mounted the routes
 app.use("/api/v1/auth", auth);
 app.use("/api/v1/user", user);
