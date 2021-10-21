@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { jwt_key } from "../utils/settings";
 
-const checkCurrentUser = (req, res, next) => {
+const verifyCurrentUser = (req, res, next) => {
   const Authorization = req.headers.authorization;
   if (!Authorization) {
     req.user = null;
@@ -20,4 +20,4 @@ const checkCurrentUser = (req, res, next) => {
   }
 };
 
-export { checkCurrentUser };
+export { verifyCurrentUser };
