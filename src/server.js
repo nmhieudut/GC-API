@@ -25,7 +25,7 @@ app.use(helmet());
 app.use(logger);
 app.use(cors());
 
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Green Charity APIs");
 });
 
