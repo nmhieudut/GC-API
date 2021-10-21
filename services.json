@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "greencharity-a3030",
+  "private_key_id": "f2a86fd33afa09776150d348c01a1da5d42cd295",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDAMvK+uCpzOhfP\nh9XgTebgJIo0CclAWpm0coXegna35aI/0zHPKYef+cFZaSeBuGDVMjLodYWJ3I3g\n+ocOnMbnC3R1rJVozH3iouGWCBWY8EBzvEzBXG/9wbc5U4cgRSSjLJf/SbdRpuNH\nKTpMEZcS3tPvhx710RIuQ/keVW/b73RKnHyHQTNk9Hp1egU8eCqlC1ChYUX2pfxG\nOvpnhuO5JNnQnVkIwoFq5ouVUXNc7WGunMVGCmZqfTo39ofz5Agl9LgbPyu3BL4T\n6NvMtiTf8Xpm7MjZZxnqBUQgBU2rxia25SuzKXO/lHFYSIuoYPpB3MvGLVEretv4\nLvWqYjgtAgMBAAECggEAEwM3NhybvmhJwLLMOnMaWqPitAEf0mjj+ZC2o2s+eTST\nF0M6EycljnKzaLfZO6DUm2Jq3Mn7WsbhlhbSU2S43FQqwhU/dm18KnY4YJIOKOHj\nTk+bPCl7vptyF46muE9+r1GS+6L8Kmya4Qg4BxxaWHiIeJJiQqja5o68zv5eoV/j\ns7zxFuhpAcUaGx4mmrfcZOfGDqfK4HwBrbBsoR4P0rNnZyHgtpjuYo5Q8ccAvq1a\nZrE7smqbOrQqdFsW8aSqNxx79KoWZ9h60+tXXZ5ygwTB6Z7pcFd1u/ywRg7EjH1a\nq+xXYuNoN+XaqD6OcvyQyEm9yGEXk7911OQt2NViIQKBgQDmKSC2IvB7Xw0/5KV9\ncJDKrIFyW2D6GHqqv/RJ5oVQRJDZ8LiaDlOvqk0AvgoNxt5XtRz1M6tUqbpzvWOX\nhM1jZCpFVoz+/7IsGr97Kc92mqyADUFPyC+zhEiSD+YPkSz4ixGDDXtZO/wNx1cD\nYN7tyr36fKgrrr7wEir2rxlQ1QKBgQDVxss7PhJAmsSuiHLZL6vcuOq7yJfyxbD6\ngVYJpW0al6Jok0akgKqQslEkKzFXioY/8+gLoiKCR/3Dk1nT7ynC5STzsMC+MS/L\nVVvzQaZZjPgEzLR5S06dqa3WexfVm9iXb1m/V/ngalH1yTSOLlqHyrIQqRXzQ9Se\nNkEsUCy1+QKBgQCcJLjBd/Cn8fM+LnMrJ6vDI8bp+x5ObT8DChjD7fTxYKLYiBvk\nv+V8Xk/BOiv97rW20PMlUnlghYktrgWbrIfebvzSb4ZWFMgebcML3nCV6RcwBE4T\nvx7FbfABz3FnjDjzIP2vZ/0Pq8cy3dKlQxnaPtolzl4UzIdSvTCSjHXjRQKBgBKs\nrAI/2N5V5sqMVuQMGwpMCQ1gZ42ooV4wwDBViCNjjadu/iPOrZe4TAhJ0aShEDsz\n9lhV0Ifq/AsCqz0tTkudMs4q6ZtztoYfrcmhOYPnIZ9htn5GCtcRBIOQ+zMIyzHn\nY0Koz8Y/42sCKZomCHiGR2nXK3i1uzQa7zSMyGsZAoGBAJ2x5EdETl2nc+flbUBG\nQQUtBaqdwDRQxGa8UfKVZceUVUFa1QGMnbIhA8dArc24jq4FjSpnfFhT74Bn4qXZ\ni3TA7NeiXXnS5BBvuLFDLZ1/hTwigtK5Z1GAjfhOR+4joAwYxS00IZcjoZFSQHUB\nmRKqmMxYj9Xrfg+VbKFdCoDF\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-damlx@greencharity-a3030.iam.gserviceaccount.com",
+  "client_id": "115875092775128882545",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-damlx%40greencharity-a3030.iam.gserviceaccount.com"
+}
