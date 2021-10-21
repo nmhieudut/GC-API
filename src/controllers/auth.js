@@ -61,7 +61,7 @@ const login = async (req, res, next) => {
   }
 };
 
-const getCurrentUser = async (req, res, next) => {
+const verifyUser = async (req, res, next) => {
   try {
     const data = { user: null };
     if (req.user) {
@@ -137,4 +137,4 @@ const facebookLogin = async (req, res, next) => {
   }
 };
 
-export { login, register, getCurrentUser, googleLogin, facebookLogin };
+export { login, register, verifyUser, googleLogin, facebookLogin };

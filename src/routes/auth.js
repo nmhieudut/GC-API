@@ -1,6 +1,6 @@
 import express from "express";
 import {
-  getCurrentUser,
+  verifyUser,
   login,
   register,
   googleLogin,
@@ -14,6 +14,6 @@ router.route("/register").post(register);
 router.route("/login").post(login);
 router.route("/google").post(googleLogin);
 router.route("/facebook").post(facebookLogin);
-router.route("/verify").get(checkCurrentUser, getCurrentUser);
+router.route("/verify").get(checkCurrentUser, verifyUser);
 
 export default router;
