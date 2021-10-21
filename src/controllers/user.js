@@ -9,12 +9,12 @@ const update = async (req, res, next) => {
       { new: true, runValidator: true }
     );
     res.status(200).json({
-      status: "sucess",
+      status: "success",
       data: {
         user: {
           id: user._id,
-          displayName: user.displayName,
-          avatar: user.avatar
+          name: user.name,
+          picture: user.picture
         }
       }
     });

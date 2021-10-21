@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import { jwt_key } from "../utils/settings";
 
 const checkCurrentUser = (req, res, next) => {
   const Authorization = req.headers.authorization;
@@ -9,7 +10,7 @@ const checkCurrentUser = (req, res, next) => {
     // Get token
     const token = Authorization.replace("Bearer ", "");
     try {
-      const { userId } = jwt.verify(token, process.env.APP_SECRET);
+      const { userId } = jwt.verify(token, jwt_key);
       req.user = { userId };
       next();
     } catch {

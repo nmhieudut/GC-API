@@ -1,18 +1,24 @@
 import { User } from "../models/User";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
+import admin from "../config/firebase";
+import { jwt_key } from "../utils/settings";
+
 const register = async (req, res, next) => {
   try {
     const user = await User.create(req.body);
-    const token = jwt.sign({ userId: user._id }, process.env.APP_SECRET);
+    const token = jwt.sign({ userId: user._id }, jwt_key);
     res.status(200).json({
-      status: "sucess",
+      status: "success",
       data: {
         token,
         user: {
           id: user._id,
-          displayName: user.displayName,
-          avatar: user.avatar
+          phoneNumber: user.phoneNumber,
+          email: user.email,
+          name: user.name,
+          picture: user.picture,
+          isAdmin: user.isAdmin
         }
       }
     });
@@ -30,15 +36,18 @@ const login = async (req, res, next) => {
       return next(err);
     }
     if (bcrypt.compareSync(req.body.password, user.password)) {
-      const token = jwt.sign({ userId: user._id }, process.env.APP_SECRET);
+      const token = jwt.sign({ userId: user._id }, jwt_key);
       res.status(200).json({
         status: "success",
         data: {
           token,
           user: {
             id: user._id,
-            displayName: user.displayName,
-            avatar: user.avatar
+            phoneNumber: user.phoneNumber,
+            email: user.email,
+            name: user.name,
+            picture: user.picture,
+            isAdmin: user.isAdmin
           }
         }
       });
@@ -59,8 +68,11 @@ const getCurrentUser = async (req, res, next) => {
       const user = await User.findOne({ _id: req.user.userId });
       data.user = {
         id: user._id,
-        displayName: user.displayName,
-        avatar: user.avatar
+        phoneNumber: user.phoneNumber,
+        email: user.email,
+        name: user.name,
+        picture: user.picture,
+        isAdmin: user.isAdmin
       };
     }
     res.status(200).json({
@@ -72,4 +84,57 @@ const getCurrentUser = async (req, res, next) => {
   }
 };
 
-export { login, register, getCurrentUser };
+const googleLogin = async (req, res, next) => {
+  try {
+    const { idToken } = req.body;
+    const decodedToken = await admin.auth().verifyIdToken(idToken);
+    const { name, email, picture } = decodedToken;
+    User.findOne({ email }).exec(async (err, user) => {
+      if (err) {
+        let error = new Error("Something went wrong");
+        error.statusCode = 400;
+        return next(error);
+      } else {
+        if (user) {
+          const token = jwt.sign({ userId: user._id }, jwt_key);
+          return res.status(200).json({
+            status: "success",
+            data: {
+              token,
+              user
+            }
+          });
+        } else {
+          let customPassword = email + name;
+          let newUser = new User({
+            name,
+            email,
+            password: customPassword,
+            picture
+          });
+          const createdUser = await newUser.save();
+          const token = jwt.sign({ userId: createdUser._id }, jwt_key);
+          return res.status(200).json({
+            status: "success",
+            data: {
+              token,
+              user: createdUser
+            }
+          });
+        }
+      }
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
+const facebookLogin = async (req, res, next) => {
+  try {
+    //  const {idToken} = req.
+  } catch (e) {
+    next(e);
+  }
+};
+
+export { login, register, getCurrentUser, googleLogin, facebookLogin };

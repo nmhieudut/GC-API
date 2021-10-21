@@ -8,8 +8,10 @@ import { errorHandler } from "./middlewares/errors/errorHandler";
 import logger from "./middlewares/logger";
 // Routes
 import auth from "./routes/auth";
-import posts from "./routes/posts";
+// import campaign from "./routes/campaign";
 import user from "./routes/user";
+import news from "./routes/news";
+
 const app = express();
 
 require("dotenv").config();
@@ -24,9 +26,9 @@ app.use(logger);
 app.use(cors());
 // Mounted the routes
 app.use("/api/v1/auth", auth);
-app.use("/api/v1/posts", posts);
 app.use("/api/v1/user", user);
-
+// app.use("/api/v1/campaign", campaign);
+app.use("/api/v1/news", news);
 app.all("*", (req, res, next) => {
   const err = new Error("Invalid route");
   err.statusCode = 404;

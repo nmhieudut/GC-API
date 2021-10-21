@@ -10,8 +10,9 @@ const verifyToken = (req, res, next) => {
   // Get token
   const token = Authorization.replace("Bearer ", "");
   // Verify
-  const { userId } = jwt.verify(token, process.env.APP_SECRET);
+  const { userId } = jwt.verify(token, jwt_key);
   // Assign to req
+  console.log("----", userId);
   req.user = { userId };
   next();
 };
