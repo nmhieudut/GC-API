@@ -8,13 +8,13 @@ const campaignSchema = new mongoose.Schema(
       required: [true, "Campaign must have name"]
     },
     image: {
-      type: [String],
+      type: String,
       required: [true, "Campaign must have at least one picture"]
     },
     status: {
-      type: Boolean,
+      type: String,
       required: true,
-      default: false
+      default: "pending"
     },
     content: {
       type: String,
@@ -25,12 +25,8 @@ const campaignSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User"
     },
-    finished_date: {
+    finishedAt: {
       type: Date,
-      required: true
-    },
-    bank_account_number: {
-      type: String,
       required: true
     },
     amount: {
@@ -47,13 +43,8 @@ const campaignSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Category"
     },
-    comments: {
-      type: [
-        {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Comment"
-        }
-      ],
+    comment_ids: {
+      type: Array,
       default: []
     },
     donators: {

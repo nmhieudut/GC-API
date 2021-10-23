@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const commentSchema = new mongoose.Schema(
+const donationSchema = new mongoose.Schema(
   {
     userId: {
       type: String
@@ -21,4 +21,4 @@ const commentSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export const Comment = mongoose.model("Comment", commentSchema);
+export const Donation = mongoose.model("Donation", donationSchema);

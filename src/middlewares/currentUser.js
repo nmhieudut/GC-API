@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { jwt_key } from "../utils/settings";
+import { jwt_key } from "utils/settings";
 
 const checkCurrentUser = (req, res, next) => {
   const Authorization = req.headers.authorization;

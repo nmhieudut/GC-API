@@ -1,9 +1,22 @@
 {
   "presets": ["@babel/preset-env"],
   "plugins": [
+    ["module-resolver", {
+      "root": ["./src/"],
+      "alias": {
+        "config": "./src/config",
+        "constants": "./src/constants",
+        "controllers": "./src/controllers",
+        "middlewares": "./src/middlewares",
+        "models": "./src/models",
+        "routes": "./src/routes",
+        "utils": "./src/utils",
+      }
+    }],
     "@babel/plugin-transform-runtime",
     "@babel/plugin-proposal-class-properties",
     "@babel/syntax-dynamic-import",
-    "@babel/transform-async-to-generator"
+    "@babel/transform-async-to-generator",
+   
   ]
 }

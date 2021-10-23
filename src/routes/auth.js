@@ -5,8 +5,8 @@ import {
   register,
   googleLogin,
   facebookLogin
-} from "../controllers/auth";
-import { checkCurrentUser } from "../middlewares/currentUser";
+} from "controllers/auth";
+import { checkCurrentUser } from "middlewares/currentUser";
 
 const router = express.Router();
 

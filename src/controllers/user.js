@@ -1,4 +1,4 @@
-import { User } from "../models/User";
+import { User } from "models/User";
 
 const update = async (req, res, next) => {
   try {
@@ -9,13 +9,10 @@ const update = async (req, res, next) => {
       { new: true, runValidator: true }
     );
     res.status(200).json({
-      status: "success",
-      data: {
-        user: {
-          id: user._id,
-          name: user.name,
-          picture: user.picture
-        }
+      user: {
+        id: user._id,
+        name: user.name,
+        picture: user.picture
       }
     });
   } catch (e) {

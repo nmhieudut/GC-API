@@ -1,22 +1,13 @@
-import { Campaign } from "../models/Campaign";
-// import { Comment } from "../models/Comment";
-async function getAll(req, res, next) {
+import { Campaign } from "models/Campaign";
+// import { Comment } from "models/Comment";
+async function getByQuery(req, res, next) {
+  const { status, q } = req.query;
+  const name = new RegExp(q, "i");
   try {
-    const campaigns = await Campaign.find({})
+    const campaigns = await Campaign.find({ $or: [{ status }, { name }] })
       .sort("-createdAt")
-      .populate("author", "name picture")
-      .populate({
-        path: "comments",
-        model: "Comment",
-        populate: {
-          path: "commentor",
-          model: "User",
-          select: "name picture"
-        }
-      })
-      .select("content createdAt comments");
+      .populate("author", "name picture");
     res.status(200).json({
-      status: "success",
       total: campaigns.length,
       data: { campaigns }
     });
@@ -25,31 +16,34 @@ async function getAll(req, res, next) {
   }
 }
 
-// async function createOne(req, res, next) {
-//   try {
-//     const { userId } = req.user;
-//     const post = await Post.create({ ...req.body, author: userId });
-//     const newPost = await Post.findOne({ _id: post.id })
-//       .populate("author", "name picture")
-//       .populate("likes", "name picture")
-//       .populate({
-//         path: "comments",
-//         model: "Comment",
-//         populate: {
-//           path: "commentor",
-//           model: "User",
-//           select: "name picture"
-//         }
-//       });
-//     console.log("new post", newPost);
-//     res.status(200).json({
-//       status: "success",
-//       data: { post: newPost }
-//     });
-//   } catch (e) {
-//     next(e);
-//   }
-// }
+async function getByAuthor(req, res, next) {
+  const { userId } = req.user;
+
+  try {
+    const campaigns = await Campaign.find({ author: userId });
+
+    res.json({ data: campaigns });
+  } catch (e) {
+    next(e);
+  }
+}
+
+async function createOne(req, res, next) {
+  try {
+    const { userId } = req.user;
+    const campaign = await Campaign.create({ ...req.body, author: userId });
+    const newCampaign = await Campaign.findOne({ _id: campaign.id }).populate(
+      "author",
+      "name picture"
+    );
+    console.log("new post", newCampaign);
+    res.status(200).json({
+      data: newCampaign
+    });
+  } catch (e) {
+    next(e);
+  }
+}
 
 // async function updateOne(req, res, next) {
 //   try {
@@ -203,12 +197,12 @@ async function getAll(req, res, next) {
 //   }
 // }
 
-// export {
-//   getPostsBySearch,
-//   getAll,
-//   createOne,
-//   updateOne,
-//   deleteOne,
-//   likePost,
-//   commentPost
-// };
+export {
+  getByQuery,
+  getByAuthor,
+  createOne
+  // updateOne,
+  // deleteOne,
+  // likePost,
+  // commentPost
+};

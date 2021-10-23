@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import { jwt_key } from "utils/settings";
 
 const verifyToken = (req, res, next) => {
   const Authorization = req.header("authorization");

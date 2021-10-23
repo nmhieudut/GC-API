@@ -1,25 +1,22 @@
-import { User } from "../models/User";
+import { User } from "models/User";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import admin from "../config/firebase";
-import { jwt_key } from "../utils/settings";
+import admin from "config/firebase";
+import { jwt_key } from "utils/settings";
 
 const register = async (req, res, next) => {
   try {
     const user = await User.create(req.body);
     const token = jwt.sign({ userId: user._id }, jwt_key);
     res.status(200).json({
-      status: "success",
-      data: {
-        token,
-        user: {
-          id: user._id,
-          phoneNumber: user.phoneNumber,
-          email: user.email,
-          name: user.name,
-          picture: user.picture,
-          isAdmin: user.isAdmin
-        }
+      token,
+      user: {
+        id: user._id,
+        phoneNumber: user.phoneNumber,
+        email: user.email,
+        name: user.name,
+        picture: user.picture,
+        isAdmin: user.isAdmin
       }
     });
   } catch (e) {
@@ -38,17 +35,14 @@ const login = async (req, res, next) => {
     if (bcrypt.compareSync(req.body.password, user.password)) {
       const token = jwt.sign({ userId: user._id }, jwt_key);
       res.status(200).json({
-        status: "success",
-        data: {
-          token,
-          user: {
-            id: user._id,
-            phoneNumber: user.phoneNumber,
-            email: user.email,
-            name: user.name,
-            picture: user.picture,
-            isAdmin: user.isAdmin
-          }
+        token,
+        user: {
+          id: user._id,
+          phoneNumber: user.phoneNumber,
+          email: user.email,
+          name: user.name,
+          picture: user.picture,
+          isAdmin: user.isAdmin
         }
       });
     } else {
@@ -76,8 +70,7 @@ const verifyUser = async (req, res, next) => {
       };
     }
     res.status(200).json({
-      status: "success",
-      data: data
+      data
     });
   } catch (e) {
     next(e);
@@ -98,11 +91,8 @@ const googleLogin = async (req, res, next) => {
         if (user) {
           const token = jwt.sign({ userId: user._id }, jwt_key);
           return res.status(200).json({
-            status: "success",
-            data: {
-              token,
-              user
-            }
+            token,
+            user
           });
         } else {
           let customPassword = email + name;
@@ -115,10 +105,13 @@ const googleLogin = async (req, res, next) => {
           const createdUser = await newUser.save();
           const token = jwt.sign({ userId: createdUser._id }, jwt_key);
           return res.status(200).json({
-            status: "success",
-            data: {
-              token,
-              user: createdUser
+            token,
+            user: {
+              name,
+              email,
+              picture,
+              phoneNumber,
+              isAdmin
             }
           });
         }
