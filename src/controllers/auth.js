@@ -57,10 +57,10 @@ const login = async (req, res, next) => {
 
 const verifyUser = async (req, res, next) => {
   try {
-    const data = { user: null };
+    let data = null;
     if (req.user) {
       const user = await User.findOne({ _id: req.user.userId });
-      data.user = {
+      data = {
         id: user._id,
         phoneNumber: user.phoneNumber,
         email: user.email,
