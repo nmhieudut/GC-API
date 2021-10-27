@@ -1,5 +1,21 @@
 import { Campaign } from "models/Campaign";
-// import { Comment } from "models/Comment";
+import { errorMessage } from "constants/error";
+
+async function getById(req, res, next) {
+  const { campaignId } = req.params;
+  try {
+    const campaign = await Campaign.findOne({ _id: campaignId }).populate(
+      "author",
+      "name picture phoneNumber"
+    );
+    res.status(200).json({
+      campaign
+    });
+  } catch (e) {
+    next(e);
+  }
+}
+
 async function getByQuery(req, res, next) {
   const { status, q } = req.query;
   const name = new RegExp(q, "i");
@@ -9,7 +25,7 @@ async function getByQuery(req, res, next) {
       .populate("author", "name picture");
     res.status(200).json({
       total: campaigns.length,
-      data: { campaigns }
+      campaigns
     });
   } catch (e) {
     next(e);
@@ -20,8 +36,9 @@ async function getByAuthor(req, res, next) {
   const { userId } = req.user;
 
   try {
-    const campaigns = await Campaign.find({ author: userId });
-
+    const campaigns = await Campaign.find({ author: userId }).sort(
+      "-createdAt"
+    );
     res.json({ data: campaigns });
   } catch (e) {
     next(e);
@@ -38,99 +55,79 @@ async function createOne(req, res, next) {
     );
     console.log("new post", newCampaign);
     res.status(200).json({
-      data: newCampaign
+      newCampaign
     });
   } catch (e) {
     next(e);
   }
 }
 
-// async function updateOne(req, res, next) {
-//   try {
-//     const { postId } = req.params;
-//     const post = await Post.findByIdAndUpdate(
-//       postId,
-//       { ...req.body },
-//       { new: true, runValidator: true }
-//     );
-//     const newPost = await Post.findOne({ _id: post.id })
-//       .populate("author", "name picture")
-//       .populate("likes", "name picture")
-//       .populate({
-//         path: "comments",
-//         model: "Comment",
-//         populate: {
-//           path: "commentor",
-//           model: "User",
-//           select: "name picture"
-//         }
-//       });
-//     res.status(200).json({
-//       status: "success",
-//       data: { post: newPost }
-//     });
-//   } catch (e) {
-//     next(e);
-//   }
-// }
+async function updateOne(req, res, next) {
+  try {
+    const { userId } = req.user;
+    const { campaignId } = req.params;
+    const campaign = await Campaign.findOne({ _id: campaignId });
+    if (userId !== String(campaign.author)) {
+      const err = new Error(errorMessage.FORBIDDEN);
+      err.statusCode = 403;
+      return next(err);
+    }
+    const updatedCampaign = await Campaign.findByIdAndUpdate(
+      campaignId,
+      { ...req.body },
+      { new: true, runValidator: true }
+    );
 
-// async function deleteOne(req, res, next) {
-//   try {
-//     const { postId } = req.params;
-//     await Post.findByIdAndDelete(postId);
-//     res.status(200).json({
-//       status: "success",
-//       message: "Post has been deleted"
-//     });
-//   } catch (e) {
-//     next(e);
-//   }
-// }
+    res.status(200).json({
+      updatedCampaign
+    });
+  } catch (e) {
+    next(e);
+  }
+}
 
-// async function likePost(req, res, next) {
-//   try {
-//     const { postId } = req.params;
-//     const { userId } = req.user;
-//     if (!userId) {
-//       return res.status(403).json({
-//         message: "Unauthenticated"
-//       });
-//     }
-//     const post = await Post.findById(postId);
-//     const index = post.likes.findIndex(likedUser =>
-//       likedUser._id.equals(userId)
-//     );
+async function deleteOne(req, res, next) {
+  try {
+    const { userId } = req.user;
+    const { campaignId } = req.params;
+    const campaign = await Campaign.findOne({ _id: campaignId });
+    if (userId !== String(campaign.author)) {
+      const err = new Error(errorMessage.FORBIDDEN);
+      err.statusCode = 403;
+      return next(err);
+    }
+    await Campaign.findByIdAndDelete(campaignId);
+    res.status(200).json({
+      message: "Campaign has been deleted"
+    });
+  } catch (e) {
+    next(e);
+  }
+}
 
-//     if (index === -1) {
-//       post.likes.push(userId);
-//     } else {
-//       post.likes = post.likes.filter(
-//         likedUser => !likedUser._id.equals(userId)
-//       );
-//     }
-//     const updatedPost = await Post.findByIdAndUpdate(postId, post, {
-//       new: true,
-//       runValidator: true
-//     })
-//       .populate("author", "name picture")
-//       .populate("likes", "name picture")
-//       .populate({
-//         path: "comments",
-//         model: "Comment",
-//         populate: {
-//           path: "commentor",
-//           model: "User",
-//           select: "name picture"
-//         }
-//       });
-//     res.status(200).json({
-//       status: "success",
-//       data: { post: updatedPost }
-//     });
-//   } catch (e) {
-//     next(e);
-//   }
-// }
+async function endOne(req, res, next) {
+  try {
+    const { userId } = req.user;
+    const { campaignId } = req.params;
+    const campaign = await Campaign.findOne({ _id: campaignId });
+    if (userId !== String(campaign.author)) {
+      const err = new Error(errorMessage.FORBIDDEN);
+      err.statusCode = 403;
+      return next(err);
+    }
+    await Campaign.findByIdAndUpdate(
+      campaignId,
+      { status: "ended" },
+      { new: true, runValidator: true }
+    );
+    res.status(200).json({
+      message: "Campaign has been ended"
+    });
+  } catch (e) {
+    next(e);
+  }
+}
+
 // async function commentPost(req, res, next) {
 //   try {
 //     const { userId } = req.user;
@@ -171,38 +168,13 @@ async function createOne(req, res, next) {
 // // async function deleteComment(req, res, next) {}
 // // async function getCommentsById(req,res,next) {}
 
-// async function getPostsBySearch(req, res, next) {
-//   try {
-//     const { q } = req.query;
-//     console.log("query", q);
-//     const content = new RegExp(q, "i");
-//     const posts = await Post.find({ content })
-//       .sort("-createdAt")
-//       .populate("author", "name picture")
-//       .populate("likes", "name picture")
-//       .populate({
-//         path: "comments",
-//         model: "Comment",
-//         populate: {
-//           path: "commentor",
-//           model: "User",
-//           select: "name picture"
-//         }
-//       })
-//       .select("content createdAt likes comments");
-
-//     res.status(200).json({ status: "success", data: posts });
-//   } catch (e) {
-//     next(e);
-//   }
-// }
-
 export {
   getByQuery,
   getByAuthor,
-  createOne
-  // updateOne,
-  // deleteOne,
-  // likePost,
+  getById,
+  createOne,
+  updateOne,
+  deleteOne,
+  endOne
   // commentPost
 };

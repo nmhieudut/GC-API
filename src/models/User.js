@@ -4,7 +4,8 @@ import { isVietnamesePhoneNumber } from "utils/validate";
 export const userSchema = new mongoose.Schema(
   {
     picture: {
-      type: String
+      type: String,
+      default: "https://picsum.photos/200/300"
     },
     name: {
       type: String,
@@ -15,7 +16,6 @@ export const userSchema = new mongoose.Schema(
       type: String,
       unique: true,
       trim: true,
-      dropDups: true,
       required: [true, "Vui lòng nhập email"]
     },
     password: {

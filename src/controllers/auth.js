@@ -6,6 +6,14 @@ import { jwt_key } from "utils/settings";
 
 const register = async (req, res, next) => {
   try {
+    const existedUser = await User.findOne({ email: req.body.email });
+    if (existedUser) {
+      const err = new Error(
+        "Email này được đăng kí rồi. Vui lòng thử tài khoản khác"
+      );
+      err.statusCode = 400;
+      return next(err);
+    }
     const user = await User.create(req.body);
     const token = jwt.sign({ userId: user._id }, jwt_key);
     res.status(200).json({
@@ -26,14 +34,17 @@ const register = async (req, res, next) => {
 
 const login = async (req, res, next) => {
   try {
-    const user = await User.findOne({ username: req.body.username });
+    const user = await User.findOne({ email: req.body.email });
     if (!user) {
-      const err = new Error("User is not correct");
+      const err = new Error("Tài khoản sai");
       err.statusCode = 400;
       return next(err);
     }
     if (bcrypt.compareSync(req.body.password, user.password)) {
-      const token = jwt.sign({ userId: user._id }, jwt_key);
+      let token = null;
+      if (user.isAdmin) {
+        token = jwt.sign({ userId: user._id, isAdmin: true }, jwt_key);
+      } else token = jwt.sign({ userId: user._id }, jwt_key);
       res.status(200).json({
         token,
         user: {
@@ -46,7 +57,7 @@ const login = async (req, res, next) => {
         }
       });
     } else {
-      const err = new Error("Password is not correct");
+      const err = new Error("Mật khẩu không đúng");
       err.statusCode = 400;
       return next(err);
     }

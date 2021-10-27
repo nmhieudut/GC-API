@@ -9,6 +9,7 @@ import logger from "./middlewares/logger";
 // Routes
 import auth from "./routes/auth";
 import campaign from "./routes/campaign";
+import comment from "./routes/comment";
 import user from "./routes/user";
 import news from "./routes/news";
 
@@ -32,7 +33,8 @@ app.get("/", (req, res) => {
 // Mounted the routes
 app.use("/api/v1/auth", auth);
 app.use("/api/v1/user", user);
-app.use("/api/v1/campaign", campaign);
+app.use("/api/v1/campaigns", campaign);
+app.use("/api/v1/comments", comment);
 app.use("/api/v1/news", news);
 app.all("*", (req, res, next) => {
   const err = new Error("Invalid route");

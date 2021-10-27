@@ -1,8 +1,8 @@
 export const errorMessage = {
-  BAD_REQUEST: "Your inputs were wrong, try it again correctly.",
-  UNAUTHORIZED: "You need to login",
-  FORBIDDEN: "You have no role to execute it.",
-  NOT_FOUND: "Your destination was not founded.",
-  CONFLICT: "Data is not correct. Maybe it is duplicated.",
-  INTERNAL_SERVER_ERROR: "Something went wrong, try again later!"
+  BAD_REQUEST: "Bạn nhập sai gì đó rồi, hãy thử nhập lại.",
+  UNAUTHORIZED: "Bạn cần đăng nhập.",
+  FORBIDDEN: "Bạn không được phép thực hiện việc này.",
+  NOT_FOUND: "Không tìm thấy trang điều hướng.",
+  CONFLICT: "Dữ liệu không đúng, có khi nó đã có rồi.",
+  INTERNAL_SERVER_ERROR: "Lỗi server."
 };

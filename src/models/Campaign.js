@@ -18,6 +18,7 @@ const campaignSchema = new mongoose.Schema(
     },
     content: {
       type: String,
+      unique: true,
       trim: true,
       required: [true, "Campaign must have content"]
     },
@@ -43,15 +44,11 @@ const campaignSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Category"
     },
-    comment_ids: {
-      type: Array,
-      default: []
-    },
-    donators: {
+    donations: {
       type: [
         {
           type: mongoose.Schema.Types.ObjectId,
-          ref: "Donator"
+          ref: "Donation"
         }
       ]
     }
