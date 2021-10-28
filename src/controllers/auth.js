@@ -3,19 +3,21 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import admin from "config/firebase";
 import { jwt_key } from "utils/settings";
+import { errorInputMessage, errorMessage } from "constants/error";
 
 const register = async (req, res, next) => {
   try {
     const existedUser = await User.findOne({ email: req.body.email });
     if (existedUser) {
-      const err = new Error(
-        "Email này được đăng kí rồi. Vui lòng thử tài khoản khác"
-      );
+      const err = new Error(errorInputMessage.EXISTED_EMAIL);
       err.statusCode = 400;
       return next(err);
     }
     const user = await User.create(req.body);
-    const token = jwt.sign({ userId: user._id }, jwt_key);
+    const token = jwt.sign(
+      { userId: user._id, isAdmin: user.isAdmin },
+      jwt_key
+    );
     res.status(200).json({
       token,
       user: {
@@ -36,15 +38,15 @@ const login = async (req, res, next) => {
   try {
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
-      const err = new Error("Tài khoản sai");
+      const err = new Error(errorInputMessage.WRONG_EMAIL);
       err.statusCode = 400;
       return next(err);
     }
     if (bcrypt.compareSync(req.body.password, user.password)) {
-      let token = null;
-      if (user.isAdmin) {
-        token = jwt.sign({ userId: user._id, isAdmin: true }, jwt_key);
-      } else token = jwt.sign({ userId: user._id }, jwt_key);
+      const token = jwt.sign(
+        { userId: user._id, isAdmin: user.isAdmin },
+        jwt_key
+      );
       res.status(200).json({
         token,
         user: {
@@ -57,7 +59,7 @@ const login = async (req, res, next) => {
         }
       });
     } else {
-      const err = new Error("Mật khẩu không đúng");
+      const err = new Error(errorInputMessage.WRONG_PASSWORD);
       err.statusCode = 400;
       return next(err);
     }
@@ -95,12 +97,15 @@ const googleLogin = async (req, res, next) => {
     const { name, email, picture } = decodedToken;
     User.findOne({ email }).exec(async (err, user) => {
       if (err) {
-        let error = new Error("Something went wrong");
-        error.statusCode = 400;
+        let error = new Error(errorMessage.INTERNAL_SERVER_ERROR);
+        error.statusCode = 500;
         return next(error);
       } else {
         if (user) {
-          const token = jwt.sign({ userId: user._id }, jwt_key);
+          const token = jwt.sign(
+            { userId: user._id, isAdmin: user.isAdmin },
+            jwt_key
+          );
           return res.status(200).json({
             token,
             user
@@ -114,7 +119,10 @@ const googleLogin = async (req, res, next) => {
             picture
           });
           const createdUser = await newUser.save();
-          const token = jwt.sign({ userId: createdUser._id }, jwt_key);
+          const token = jwt.sign(
+            { userId: createdUser._id, isAdmin: user.isAdmin },
+            jwt_key
+          );
           return res.status(200).json({
             token,
             user: {

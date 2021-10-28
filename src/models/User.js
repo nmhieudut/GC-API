@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import { isVietnamesePhoneNumber } from "utils/validate";
+import { Campaign } from "./Campaign";
+import { Comment } from "./Comment";
+
 export const userSchema = new mongoose.Schema(
   {
     picture: {
@@ -23,6 +26,10 @@ export const userSchema = new mongoose.Schema(
       trim: true,
       required: [true, "Vui lòng nhập password"],
       minlength: [6, "Mật khẩu ít nhất 6 chữ cái"]
+    },
+    address: {
+      type: String,
+      trim: true
     },
     phoneNumber: {
       type: String,
@@ -53,6 +60,14 @@ userSchema.pre("save", async function (next) {
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(user.password, salt);
   }
+  next();
+});
+
+userSchema.pre("deleteOne", async function (next) {
+  let user = this;
+  const userId = user._conditions._id;
+  await Comment.deleteMany({ author: userId });
+  await Campaign.deleteMany({ author: userId });
   next();
 });
 

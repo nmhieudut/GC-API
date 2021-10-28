@@ -64,23 +64,22 @@ async function createOne(req, res, next) {
 
 async function updateOne(req, res, next) {
   try {
-    const { userId } = req.user;
+    const { userId, isAdmin } = req.user;
     const { campaignId } = req.params;
     const campaign = await Campaign.findOne({ _id: campaignId });
-    if (userId !== String(campaign.author)) {
-      const err = new Error(errorMessage.FORBIDDEN);
-      err.statusCode = 403;
-      return next(err);
+    if (userId === String(campaign.author) || isAdmin) {
+      const updatedCampaign = await Campaign.findByIdAndUpdate(
+        campaignId,
+        { ...req.body },
+        { new: true, runValidator: true }
+      );
+      return res.status(200).json({
+        updatedCampaign
+      });
     }
-    const updatedCampaign = await Campaign.findByIdAndUpdate(
-      campaignId,
-      { ...req.body },
-      { new: true, runValidator: true }
-    );
-
-    res.status(200).json({
-      updatedCampaign
-    });
+    const err = new Error(errorMessage.FORBIDDEN);
+    err.statusCode = 403;
+    return next(err);
   } catch (e) {
     next(e);
   }
@@ -88,29 +87,49 @@ async function updateOne(req, res, next) {
 
 async function deleteOne(req, res, next) {
   try {
-    const { userId } = req.user;
+    const { userId, isAdmin } = req.user;
     const { campaignId } = req.params;
     const campaign = await Campaign.findOne({ _id: campaignId });
-    if (userId !== String(campaign.author)) {
+    if (userId !== String(campaign.author) || !isAdmin) {
       const err = new Error(errorMessage.FORBIDDEN);
       err.statusCode = 403;
       return next(err);
     }
     await Campaign.findByIdAndDelete(campaignId);
-    res.status(200).json({
-      message: "Campaign has been deleted"
+    return res.status(200).json({
+      message: "Hoạt động đã bị xóa"
     });
   } catch (e) {
     next(e);
   }
 }
-
+async function activeOne(req, res, next) {
+  try {
+    const { isAdmin } = req.user;
+    const { campaignId } = req.params;
+    if (!isAdmin) {
+      const err = new Error(errorMessage.FORBIDDEN);
+      err.statusCode = 403;
+      return next(err);
+    }
+    await Campaign.findByIdAndUpdate(
+      campaignId,
+      { status: "active" },
+      { new: true, runValidator: true }
+    );
+    res.status(200).json({
+      message: "Đã phê duyệt hoạt động này"
+    });
+  } catch (e) {
+    next(e);
+  }
+}
 async function endOne(req, res, next) {
   try {
-    const { userId } = req.user;
+    const { userId, isAdmin } = req.user;
     const { campaignId } = req.params;
     const campaign = await Campaign.findOne({ _id: campaignId });
-    if (userId !== String(campaign.author)) {
+    if (userId !== String(campaign.author) || !isAdmin) {
       const err = new Error(errorMessage.FORBIDDEN);
       err.statusCode = 403;
       return next(err);
@@ -121,53 +140,12 @@ async function endOne(req, res, next) {
       { new: true, runValidator: true }
     );
     res.status(200).json({
-      message: "Campaign has been ended"
+      message: "Kết thúc hoạt động thành công"
     });
   } catch (e) {
     next(e);
   }
 }
-
-// async function commentPost(req, res, next) {
-//   try {
-//     const { userId } = req.user;
-//     const { postId } = req.params;
-//     const { content } = req.body;
-
-//     const post = await Post.findById(postId);
-//     const comment = await Comment.create({
-//       text: content,
-//       commentor: userId
-//     });
-//     post.comments.push(comment);
-//     const commentedPost = await Post.findByIdAndUpdate(postId, post, {
-//       new: true
-//     })
-//       .populate("author", "name picture")
-//       .populate("likes", "name picture")
-//       .populate({
-//         path: "comments",
-//         model: "Comment",
-//         populate: {
-//           path: "commentor",
-//           model: "User",
-//           select: "name picture"
-//         }
-//       });
-
-//     res.status(200).json({
-//       status: "success",
-//       data: { post: commentedPost }
-//     });
-//   } catch (e) {
-//     next(e);
-//   }
-// }
-// // =======Will be implemented
-// // async function editComment(req, res, next) {}
-// // async function deleteComment(req, res, next) {}
-// // async function getCommentsById(req,res,next) {}
-
 export {
   getByQuery,
   getByAuthor,
@@ -175,6 +153,6 @@ export {
   createOne,
   updateOne,
   deleteOne,
+  activeOne,
   endOne
-  // commentPost
 };

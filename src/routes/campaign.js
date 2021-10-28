@@ -7,8 +7,8 @@ import {
   createOne,
   updateOne,
   deleteOne,
+  activeOne,
   endOne
-  // commentCampaign
 } from "controllers/campaign";
 import { getCommentByCampaignId } from "controllers/comment";
 const router = express.Router();
@@ -24,6 +24,7 @@ router
   .delete(verifyToken, deleteOne);
 
 router.get("/:campaignId/comments", getCommentByCampaignId);
+router.put("/:campaignId/active", verifyToken, activeOne);
 router.put("/:campaignId/end", verifyToken, endOne);
 
 export default router;

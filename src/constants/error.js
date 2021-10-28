@@ -6,3 +6,9 @@ export const errorMessage = {
   CONFLICT: "Dữ liệu không đúng, có khi nó đã có rồi.",
   INTERNAL_SERVER_ERROR: "Lỗi server."
 };
+
+export const errorInputMessage = {
+  EXISTED_EMAIL: "Email này được đăng kí rồi. Vui lòng thử email khác",
+  WRONG_EMAIL: "Sai email rồi",
+  WRONG_PASSWORD: "Sai mật khẩu rồi"
+};

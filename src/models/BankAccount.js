@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export const bankAccountSchema = new mongoose.Schema(
   {
-    author: {
+    owner: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User"
     },
@@ -18,7 +18,7 @@ export const bankAccountSchema = new mongoose.Schema(
       trim: true,
       required: [true, "Vui lòng nhập tên chủ tài khoản"]
     },
-    address: {
+    bankAddress: {
       type: String,
       unique: true,
       trim: true,
@@ -28,6 +28,6 @@ export const bankAccountSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const BankAccount = mongoose.model("BankAccount", userSchema);
+const BankAccount = mongoose.model("BankAccount", bankAccountSchema);
 
 export { BankAccount };

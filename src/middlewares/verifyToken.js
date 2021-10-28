@@ -12,10 +12,10 @@ const verifyToken = (req, res, next) => {
   // Get token
   const token = Authorization.replace("Bearer ", "");
   // Verify
-  const { userId } = jwt.verify(token, jwt_key);
+  const { userId, isAdmin } = jwt.verify(token, jwt_key);
   // Assign to req
-  console.log("----", userId);
-  req.user = { userId };
+  console.log(`user id: ${userId}, isAdmin: ${isAdmin}`);
+  req.user = { userId, isAdmin };
   next();
 };
 
