@@ -21,6 +21,9 @@ export const userSchema = new mongoose.Schema(
       trim: true,
       required: [true, "Vui lòng nhập email"]
     },
+    dateOfBirth: {
+      type: Date
+    },
     password: {
       type: String,
       trim: true,

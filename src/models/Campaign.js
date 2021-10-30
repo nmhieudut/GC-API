@@ -56,6 +56,13 @@ const campaignSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+campaignSchema.pre("deleteOne", async function (next) {
+  let campaign = this;
+  const campaignId = campaign._conditions._id;
+  await Comment.deleteMany({ campaignId });
+  next();
+});
+
 const Campaign = mongoose.model("Campaign", campaignSchema);
 
 export { Campaign };

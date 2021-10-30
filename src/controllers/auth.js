@@ -23,6 +23,7 @@ const register = async (req, res, next) => {
       user: {
         id: user._id,
         phoneNumber: user.phoneNumber,
+        dateOfBirth: user.dateOfBirth,
         email: user.email,
         name: user.name,
         picture: user.picture,
@@ -52,6 +53,7 @@ const login = async (req, res, next) => {
         user: {
           id: user._id,
           phoneNumber: user.phoneNumber,
+          dateOfBirth: user.dateOfBirth,
           email: user.email,
           name: user.name,
           picture: user.picture,
@@ -76,6 +78,7 @@ const verifyUser = async (req, res, next) => {
       data = {
         id: user._id,
         phoneNumber: user.phoneNumber,
+        dateOfBirth: user.dateOfBirth,
         email: user.email,
         name: user.name,
         picture: user.picture,
@@ -130,6 +133,7 @@ const googleLogin = async (req, res, next) => {
               email,
               picture,
               phoneNumber,
+              dateOfBirth,
               isAdmin
             }
           });
