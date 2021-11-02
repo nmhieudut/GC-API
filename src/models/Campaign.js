@@ -43,14 +43,6 @@ const campaignSchema = new mongoose.Schema(
     category: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Category"
-    },
-    donations: {
-      type: [
-        {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Donation"
-        }
-      ]
     }
   },
   { timestamps: true }

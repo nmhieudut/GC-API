@@ -1,15 +1,28 @@
 import { Campaign } from "models/Campaign";
 import { errorMessage } from "constants/error";
+import mongoose from "mongoose";
 
 async function getById(req, res, next) {
   const { campaignId } = req.params;
+
   try {
+    if (!mongoose.Types.ObjectId.isValid(campaignId)) {
+      return res.status(200).json({
+        campaign: {}
+      });
+    }
+
     const campaign = await Campaign.findOne({ _id: campaignId }).populate(
       "author",
       "name picture phoneNumber"
     );
-    res.status(200).json({
-      campaign
+    if (campaign) {
+      return res.status(200).json({
+        campaign
+      });
+    }
+    return res.status(200).json({
+      campaign: {}
     });
   } catch (e) {
     next(e);
@@ -67,7 +80,10 @@ async function updateOne(req, res, next) {
     const { userId, isAdmin } = req.user;
     const { campaignId } = req.params;
     const campaign = await Campaign.findOne({ _id: campaignId });
-    if (userId === String(campaign.author) || isAdmin) {
+    if (
+      userId === String(campaign.author) ||
+      (userId !== String(campaign.author) && isAdmin === true)
+    ) {
       const updatedCampaign = await Campaign.findByIdAndUpdate(
         campaignId,
         { ...req.body },
@@ -90,15 +106,18 @@ async function deleteOne(req, res, next) {
     const { userId, isAdmin } = req.user;
     const { campaignId } = req.params;
     const campaign = await Campaign.findOne({ _id: campaignId });
-    if (userId !== String(campaign.author) || !isAdmin) {
-      const err = new Error(errorMessage.FORBIDDEN);
-      err.statusCode = 403;
-      return next(err);
+    if (
+      userId === String(campaign.author) ||
+      (userId !== String(campaign.author) && isAdmin === true)
+    ) {
+      await Campaign.findByIdAndDelete(campaignId);
+      return res.status(200).json({
+        message: "Hoạt động đã bị xóa"
+      });
     }
-    await Campaign.findByIdAndDelete(campaignId);
-    return res.status(200).json({
-      message: "Hoạt động đã bị xóa"
-    });
+    const err = new Error(errorMessage.FORBIDDEN);
+    err.statusCode = 403;
+    return next(err);
   } catch (e) {
     next(e);
   }
@@ -107,7 +126,7 @@ async function activeOne(req, res, next) {
   try {
     const { isAdmin } = req.user;
     const { campaignId } = req.params;
-    if (!isAdmin) {
+    if (isAdmin === false) {
       const err = new Error(errorMessage.FORBIDDEN);
       err.statusCode = 403;
       return next(err);
@@ -129,7 +148,10 @@ async function endOne(req, res, next) {
     const { userId, isAdmin } = req.user;
     const { campaignId } = req.params;
     const campaign = await Campaign.findOne({ _id: campaignId });
-    if (userId !== String(campaign.author) || !isAdmin) {
+    if (
+      userId === String(campaign.author) ||
+      (userId !== String(campaign.author) && isAdmin === true)
+    ) {
       const err = new Error(errorMessage.FORBIDDEN);
       err.statusCode = 403;
       return next(err);

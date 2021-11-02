@@ -2,20 +2,14 @@ import mongoose from "mongoose";
 
 const donationSchema = new mongoose.Schema(
   {
-    userId: {
+    donatorId: {
       type: String
     },
-    userAvatar: {
+    campaignId: {
       type: String
     },
-    postId: {
-      type: String
-    },
-    text: {
-      type: String,
-      trim: true,
-      max: 500,
-      required: [true, "Comment must have content"]
+    amount: {
+      type: Number
     }
   },
   { timestamps: true }
