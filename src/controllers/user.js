@@ -12,18 +12,15 @@ const getMany = async (req, res, next) => {
 const update = async (req, res, next) => {
   try {
     const { userId, isAdmin } = req.user;
-
-    const { name, phoneNumber, dateOfBirth } = req.body;
     const foundUser = await User.findOne({ _id: userId });
     if (
       userId === String(foundUser._id) ||
       (userId !== String(foundUser._id) && isAdmin === true)
     ) {
-      const user = await User.findByIdAndUpdate(
-        userId,
-        { name, phoneNumber, dateOfBirth },
-        { new: true, runValidator: true }
-      );
+      const user = await User.findByIdAndUpdate(userId, req.body, {
+        new: true,
+        runValidator: true
+      });
       return res.status(200).json({
         user: {
           id: user._id,

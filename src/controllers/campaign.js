@@ -11,7 +11,6 @@ async function getById(req, res, next) {
         campaign: {}
       });
     }
-
     const campaign = await Campaign.findOne({ _id: campaignId }).populate(
       "author",
       "name picture phoneNumber"
@@ -30,12 +29,26 @@ async function getById(req, res, next) {
 }
 
 async function getByQuery(req, res, next) {
-  const { status, q } = req.query;
+  const { q, skip } = req.query;
+  const status = req.query.status ? req.query.status : "all";
   const name = new RegExp(q, "i");
+  console.log("lllll", q, status);
   try {
-    const campaigns = await Campaign.find({ $or: [{ status }, { name }] })
-      .sort("-createdAt")
-      .populate("author", "name picture");
+    let campaigns;
+    if (status === "all") {
+      campaigns = await Campaign.find({ name })
+        .sort("-createdAt")
+        .populate("author", "name picture")
+        .skip(Number.parseInt(skip))
+        .limit(5);
+    } else {
+      campaigns = await Campaign.find({ $and: [{ status }, { name }] })
+        .sort("-createdAt")
+        .populate("author", "name picture")
+        .skip(Number.parseInt(skip))
+        .limit(5);
+    }
+    console.log("===found", campaigns);
     res.status(200).json({
       total: campaigns.length,
       campaigns
@@ -79,6 +92,11 @@ async function updateOne(req, res, next) {
   try {
     const { userId, isAdmin } = req.user;
     const { campaignId } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(campaignId)) {
+      return res.status(200).json({
+        campaign: {}
+      });
+    }
     const campaign = await Campaign.findOne({ _id: campaignId });
     if (
       userId === String(campaign.author) ||

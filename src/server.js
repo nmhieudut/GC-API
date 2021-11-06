@@ -12,6 +12,7 @@ import campaign from "./routes/campaign";
 import comment from "./routes/comment";
 import user from "./routes/user";
 import news from "./routes/news";
+import payment from "/routes/payment";
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.use("/api/v1/user", user);
 app.use("/api/v1/campaigns", campaign);
 app.use("/api/v1/comments", comment);
 app.use("/api/v1/news", news);
+app.use("/api/v1/payment", payment);
 app.all("*", (req, res, next) => {
   const err = new Error("Invalid route");
   err.statusCode = 404;
