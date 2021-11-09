@@ -13,7 +13,7 @@ import comment from "./routes/comment";
 import user from "./routes/user";
 import news from "./routes/news";
 import payment from "/routes/payment";
-
+import wallet from "/routes/wallet";
 const app = express();
 
 require("dotenv").config();
@@ -38,6 +38,7 @@ app.use("/api/v1/campaigns", campaign);
 app.use("/api/v1/comments", comment);
 app.use("/api/v1/news", news);
 app.use("/api/v1/payment", payment);
+app.use("/api/v1/wallet", wallet);
 app.all("*", (req, res, next) => {
   const err = new Error("Invalid route");
   err.statusCode = 404;

@@ -1,30 +1,21 @@
-import express from "express";
-import { verifyToken } from "middlewares/verifyToken";
-import {
-  getByQuery,
-  getByAuthor,
-  getById,
-  createOne,
-  updateOne,
-  deleteOne,
-  activeOne,
-  endOne
-} from "controllers/campaign";
-import { getCommentByCampaignId } from "controllers/comment";
+import { campaignController } from 'controllers/campaign';
+import { getCommentByCampaignId } from 'controllers/comment';
+import express from 'express';
+import { verifyToken } from 'middlewares/verifyToken';
 const router = express.Router();
 
-router.get("/search", getByQuery);
-router.get("/own/:userId", verifyToken, getByAuthor);
-router.post("/", verifyToken, createOne);
+router.get('/search', campaignController.getByQuery);
+router.get('/own/:userId', verifyToken, campaignController.getByAuthor);
+router.post('/', verifyToken, campaignController.createOne);
 
+router.route('/:slug').get(campaignController.getBySlug);
 router
-  .route("/:campaignId")
-  .get(getById)
-  .put(verifyToken, updateOne)
-  .delete(verifyToken, deleteOne);
+  .route('/:campaignId')
+  .put(verifyToken, campaignController.updateOne)
+  .delete(verifyToken, campaignController.deleteOne);
 
-router.get("/:campaignId/comments", getCommentByCampaignId);
-router.put("/:campaignId/active", verifyToken, activeOne);
-router.put("/:campaignId/end", verifyToken, endOne);
+router.get('/:campaignId/comments', getCommentByCampaignId);
+router.put('/:campaignId/active', verifyToken, campaignController.activeOne);
+router.put('/:campaignId/end', verifyToken, campaignController.endOne);
 
 export default router;

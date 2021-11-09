@@ -1,11 +1,13 @@
+import { userController } from "controllers/user";
 import express from "express";
-import { remove, update } from "controllers/user";
 import { verifyToken } from "middlewares/verifyToken";
-import { getMany } from "controllers/user";
 
 const router = express.Router();
-router.get("/", getMany);
+router.get("/", userController.getMany);
 
-router.route("/").put(verifyToken, update).delete(verifyToken, remove);
+router
+  .route("/")
+  .put(verifyToken, userController.update)
+  .delete(verifyToken, userController.remove);
 
 export default router;

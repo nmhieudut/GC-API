@@ -7,10 +7,8 @@ export const walletSchema = new mongoose.Schema(
       ref: "User"
     },
     amount: {
-      type: String,
-      unique: true,
-      trim: true,
-      required: [true, "Vui lòng nhập tên chủ tài khoản"]
+      type: Number,
+      default: 0
     }
   },
   { timestamps: true }

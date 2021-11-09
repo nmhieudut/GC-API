@@ -11,6 +11,11 @@ const campaignSchema = new mongoose.Schema(
       type: String,
       required: [true, "Campaign must have at least one picture"]
     },
+    slug: {
+      type: String,
+      trim: true,
+      required: [true, "Campaign must have slug"]
+    },
     status: {
       type: String,
       required: true,

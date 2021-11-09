@@ -1,17 +1,20 @@
 import { nanoid } from "nanoid";
 import crypto from "crypto";
 import https from "https";
+
 export const sendMomoRequest = async (userId, info, amount_money) => {
   return new Promise((resolve, reject) => {
-    //https://developers.momo.vn/#/docs/en/aiov2/?id=payment-method
     //parameters
     const partnerCode = process.env.MOMO_MERCHANT_ID;
     const accessKey = process.env.MOMO_ACCESS_KEY;
     const secretKey = process.env.MOMO_SECRET_KEY;
-    const requestId = userId + "-" + nanoid();
-    const orderId = requestId + nanoid();
+    const requestId = userId + "-" + nanoid(5);
+    const orderId = requestId + nanoid(5);
     const orderInfo = info ? info : "pay with MoMo";
-    const redirectUrl = "https://green-charity.vercel.app";
+    const redirectUrl =
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3000/account"
+        : "https://green-charity.vercel.app/account";
     const ipnUrl = "https://callback.url/notify";
     // const ipnUrl = redirectUrl = "https://webhook.site/454e7b77-f177-4ece-8236-ddf1c26ba7f8";
     const amount = amount_money ? amount_money : "50000";
