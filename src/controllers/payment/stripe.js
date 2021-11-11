@@ -1,1 +1,27 @@
-import mongoose from "mongoose";
+import Stripe from 'stripe';
+
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+
+export const stripeMethod = async (info, amount, id) => {
+  console.log('stripe-routes.js 10 | amount and id', amount, id);
+  try {
+    const payment = await stripe.paymentIntents.create({
+      amount: amount,
+      currency: 'USD',
+      description: info,
+      payment_method: id,
+      confirm: true
+    });
+    console.log('stripe-routes.js 19 | payment', payment);
+    res.json({
+      message: 'Payment Successful',
+      success: true
+    });
+  } catch (error) {
+    console.log('stripe-routes.js 17 | error', error);
+    res.json({
+      message: 'Payment Failed',
+      success: false
+    });
+  }
+};

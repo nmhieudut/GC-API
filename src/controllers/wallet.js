@@ -1,12 +1,12 @@
-import { Wallet } from "models/Wallet";
+import { Wallet } from 'models/Wallet';
 
 export const WalletController = {
   getAll: async (req, res, next) => {},
   createOne: async (req, res, next) => {
     try {
-      const newWallet = await Wallet.create({ owner: req.user.userId });
+      await Wallet.create({ owner: req.user.userId });
       return res.status(201).json({
-        wallet: newWallet
+        message: 'Tạo ví thành công'
       });
     } catch (error) {
       return next(error);

@@ -1,35 +1,35 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const campaignSchema = new mongoose.Schema(
   {
     name: {
       type: String,
       trim: true,
-      required: [true, "Campaign must have name"]
+      required: [true, 'Campaign must have name']
     },
-    image: {
-      type: String,
-      required: [true, "Campaign must have at least one picture"]
+    images: {
+      type: [String],
+      required: [true, 'Campaign must have at least one picture']
     },
     slug: {
       type: String,
       trim: true,
-      required: [true, "Campaign must have slug"]
+      required: [true, 'Campaign must have slug']
     },
     status: {
       type: String,
       required: true,
-      default: "pending"
+      default: 'pending'
     },
     content: {
       type: String,
       unique: true,
       trim: true,
-      required: [true, "Campaign must have content"]
+      required: [true, 'Campaign must have content']
     },
     author: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User"
+      ref: 'User'
     },
     finishedAt: {
       type: Date,
@@ -47,19 +47,19 @@ const campaignSchema = new mongoose.Schema(
     },
     category: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Category"
+      ref: 'Category'
     }
   },
   { timestamps: true }
 );
 
-campaignSchema.pre("deleteOne", async function (next) {
+campaignSchema.pre('deleteOne', async function (next) {
   let campaign = this;
   const campaignId = campaign._conditions._id;
   await Comment.deleteMany({ campaignId });
   next();
 });
 
-const Campaign = mongoose.model("Campaign", campaignSchema);
+const Campaign = mongoose.model('Campaign', campaignSchema);
 
 export { Campaign };
