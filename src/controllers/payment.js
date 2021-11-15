@@ -1,5 +1,5 @@
-import { sendMomoRequest } from './momo';
-import { stripeMethod } from './stripe';
+import { sendMomoRequest } from '../libs/momo';
+import { stripeMethod } from '../libs/stripe';
 
 const payWithStripe = (req, res, next) => {
   const { info, amount_money } = req.body;

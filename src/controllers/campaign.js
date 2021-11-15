@@ -112,7 +112,7 @@ export const campaignController = {
           { new: true, runValidator: true }
         );
         return res.status(200).json({
-          updatedCampaign
+          data: updatedCampaign
         });
       }
       const err = new Error(errorMessage.FORBIDDEN);

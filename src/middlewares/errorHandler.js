@@ -1,5 +1,8 @@
+import { errorMessage } from 'constants/error';
+
 const errorHandler = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
+  err.message = err.message || errorMessage.INTERNAL_SERVER_ERROR;
   // Duplicated err
   console.log(err);
   if (err.code === 11000) {
@@ -9,7 +12,7 @@ const errorHandler = (err, req, res, next) => {
     }
   }
   // ObjectId not found
-  if (err.kind === "ObjectId") {
+  if (err.kind === 'ObjectId') {
     err.statusCode = 404;
     err.message = `The ${req.originalUrl} is not found because of wrong ID`;
   }
