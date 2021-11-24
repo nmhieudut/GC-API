@@ -1,9 +1,9 @@
-import { User } from "models/User";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
-import admin from "config/firebase";
-import { jwt_key } from "utils/settings";
-import { errorInputMessage, errorMessage } from "constants/error";
+import bcrypt from 'bcrypt';
+import admin from 'config/firebase';
+import { errorInputMessage, errorMessage } from 'constants/error';
+import jwt from 'jsonwebtoken';
+import { User } from 'models/User';
+import { jwt_key } from 'utils/settings';
 
 const register = async (req, res, next) => {
   try {
@@ -14,10 +14,7 @@ const register = async (req, res, next) => {
       return next(err);
     }
     const user = await User.create(req.body);
-    const token = jwt.sign(
-      { userId: user._id, isAdmin: user.isAdmin },
-      jwt_key
-    );
+    const token = jwt.sign({ userId: user._id, role: user.role }, jwt_key);
     res.status(200).json({
       token,
       user: {
@@ -27,7 +24,8 @@ const register = async (req, res, next) => {
         email: user.email,
         name: user.name,
         picture: user.picture,
-        isAdmin: user.isAdmin
+        role: user.role,
+        balance: user.balance
       }
     });
   } catch (e) {
@@ -44,10 +42,7 @@ const login = async (req, res, next) => {
       return next(err);
     }
     if (bcrypt.compareSync(req.body.password, user.password)) {
-      const token = jwt.sign(
-        { userId: user._id, isAdmin: user.isAdmin },
-        jwt_key
-      );
+      const token = jwt.sign({ userId: user._id, role: user.role }, jwt_key);
       res.status(200).json({
         token,
         user: {
@@ -57,7 +52,8 @@ const login = async (req, res, next) => {
           email: user.email,
           name: user.name,
           picture: user.picture,
-          isAdmin: user.isAdmin
+          role: user.role,
+          balance: user.balance
         }
       });
     } else {
@@ -70,7 +66,7 @@ const login = async (req, res, next) => {
   }
 };
 
-const verifyUser = async (req, res, next) => {
+const getCurrentUser = async (req, res, next) => {
   try {
     let data = null;
     if (req.user) {
@@ -82,7 +78,8 @@ const verifyUser = async (req, res, next) => {
         email: user.email,
         name: user.name,
         picture: user.picture,
-        isAdmin: user.isAdmin
+        role: user.role,
+        balance: user.balance
       };
     }
     res.status(200).json({
@@ -106,7 +103,7 @@ const googleLogin = async (req, res, next) => {
       } else {
         if (user) {
           const token = jwt.sign(
-            { userId: user._id, isAdmin: user.isAdmin },
+            { userId: user._id, role: user.role },
             jwt_key
           );
           return res.status(200).json({
@@ -123,7 +120,7 @@ const googleLogin = async (req, res, next) => {
           });
           const createdUser = await newUser.save();
           const token = jwt.sign(
-            { userId: createdUser._id, isAdmin: user.isAdmin },
+            { userId: createdUser._id, role: createdUser.role },
             jwt_key
           );
           return res.status(200).json({
@@ -134,7 +131,8 @@ const googleLogin = async (req, res, next) => {
               picture,
               phoneNumber,
               dateOfBirth,
-              isAdmin
+              role: createdUser.role,
+              balance: createdUser.balance
             }
           });
         }
@@ -153,4 +151,4 @@ const facebookLogin = async (req, res, next) => {
   }
 };
 
-export { login, register, verifyUser, googleLogin, facebookLogin };
+export { login, register, getCurrentUser, googleLogin, facebookLogin };

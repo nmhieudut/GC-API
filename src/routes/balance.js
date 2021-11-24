@@ -1,9 +1,8 @@
+import { BalanceController } from 'controllers/balance';
 import express from 'express';
 import { auth } from 'middlewares/auth.middleware';
-import { createOne } from 'controllers/comment';
 
 const router = express.Router();
-
-router.post('/:campaignId', auth, createOne);
+router.put('/charge/:userId', auth, BalanceController.charge); // nap tien vao vi
 
 export default router;

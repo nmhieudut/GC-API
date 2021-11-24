@@ -18,6 +18,7 @@ export const campaignController = {
           campaign
         });
       }
+      console.log('---notFound');
       return res.status(404).json({
         message: 'Không tìm thấy hoạt động này'
       });
@@ -44,7 +45,6 @@ export const campaignController = {
           .skip(Number.parseInt(skip))
           .limit(5);
       }
-      console.log('by query', campaigns);
       res.status(200).json({
         total: campaigns.length,
         campaigns
@@ -88,7 +88,7 @@ export const campaignController = {
   },
   updateOne: async (req, res, next) => {
     try {
-      const { userId, isAdmin } = req.user;
+      const { userId, role } = req.user;
       const { campaignId } = req.params;
       if (!mongoose.Types.ObjectId.isValid(campaignId)) {
         return res.status(200).json({
@@ -96,58 +96,52 @@ export const campaignController = {
         });
       }
       const campaign = await Campaign.findOne({ _id: campaignId });
-      if (
-        userId === String(campaign.author) ||
-        (userId !== String(campaign.author) && isAdmin === true)
-      ) {
-        const slug = slugify(req.body.name, {
-          replacement: '-',
-          lower: true,
-          locale: 'vi',
-          trim: true
-        });
-        const updatedCampaign = await Campaign.findByIdAndUpdate(
-          campaignId,
-          { ...req.body, slug },
-          { new: true, runValidator: true }
-        );
-        return res.status(200).json({
-          data: updatedCampaign
-        });
+      if (role !== 'admin' && String(campaign.author) !== userId) {
+        const err = new Error(errorMessage.FORBIDDEN);
+        err.statusCode = 403;
+        return next(err);
       }
-      const err = new Error(errorMessage.FORBIDDEN);
-      err.statusCode = 403;
-      return next(err);
+      const slug = slugify(req.body.name, {
+        replacement: '-',
+        lower: true,
+        locale: 'vi',
+        trim: true
+      });
+      const updatedCampaign = await Campaign.findByIdAndUpdate(
+        campaignId,
+        { ...req.body, slug },
+        { new: true, runValidator: true }
+      );
+      return res.status(200).json({
+        data: updatedCampaign
+      });
     } catch (e) {
       next(e);
     }
   },
   deleteOne: async (req, res, next) => {
     try {
-      const { userId, isAdmin } = req.user;
+      const { userId, role } = req.user;
       const { campaignId } = req.params;
       const campaign = await Campaign.findOne({ _id: campaignId });
-      if (
-        userId === String(campaign.author) ||
-        (userId !== String(campaign.author) && isAdmin === true)
-      ) {
-        await Campaign.findByIdAndDelete(campaignId);
-        return res.status(200).json({
-          message: 'Hoạt động đã bị xóa'
-        });
+      if (role !== 'admin' && String(campaign.author) !== userId) {
+        const err = new Error(errorMessage.FORBIDDEN);
+        err.statusCode = 403;
+        return next(err);
       }
-      const err = new Error(errorMessage.FORBIDDEN);
-      err.statusCode = 403;
-      return next(err);
+      await Campaign.findByIdAndDelete(campaignId);
+      return res.status(200).json({
+        message: 'Hoạt động đã bị xóa'
+      });
     } catch (e) {
       next(e);
     }
   },
   activeOne: async (req, res, next) => {
     try {
-      const { isAdmin } = req.user;
+      const { role } = req.user;
       const { campaignId } = req.params;
-      if (isAdmin === false) {
+      if (role !== 'admin') {
         const err = new Error(errorMessage.FORBIDDEN);
         err.statusCode = 403;
         return next(err);
@@ -166,13 +160,10 @@ export const campaignController = {
   },
   endOne: async (req, res, next) => {
     try {
-      const { userId, isAdmin } = req.user;
+      const { userId, role } = req.user;
       const { campaignId } = req.params;
       const campaign = await Campaign.findOne({ _id: campaignId });
-      if (
-        userId === String(campaign.author) ||
-        (userId !== String(campaign.author) && isAdmin === true)
-      ) {
+      if (role !== 'admin' && String(campaign.author) !== userId) {
         const err = new Error(errorMessage.FORBIDDEN);
         err.statusCode = 403;
         return next(err);
