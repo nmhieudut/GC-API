@@ -35,7 +35,7 @@ const campaignSchema = new mongoose.Schema(
       type: Date,
       required: true
     },
-    amount: {
+    goal: {
       type: Number,
       required: true,
       default: 0

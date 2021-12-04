@@ -2,7 +2,7 @@ import { nanoid } from 'nanoid';
 import crypto from 'crypto';
 import https from 'https';
 
-export const sendMomoRequest = async (userId, amount_money) => {
+export const sendMoMoRequest = async (userId, amount_money) => {
   return new Promise((resolve, reject) => {
     //parameters
     const partnerCode = process.env.MOMO_MERCHANT_ID;
@@ -13,8 +13,8 @@ export const sendMomoRequest = async (userId, amount_money) => {
     const orderInfo = 'Nạp tiền vào hệ thống';
     const redirectUrl =
       process.env.NODE_ENV === 'development'
-        ? 'http://localhost:3000/checkout/return'
-        : 'https://green-charity.vercel.app/checkout/return';
+        ? 'http://localhost:3000/checkout/return/momo'
+        : 'https://green-charity.vercel.app/checkout/return/momo';
     const ipnUrl = 'https://callback.url/notify';
     // const ipnUrl = redirectUrl = "https://webhook.site/454e7b77-f177-4ece-8236-ddf1c26ba7f8";
     const amount = amount_money ? amount_money : '50000';

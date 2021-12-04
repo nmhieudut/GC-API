@@ -8,7 +8,7 @@ const errorHandler = (err, req, res, next) => {
   if (err.code === 11000) {
     err.statusCode = 400;
     for (let p in err.keyValue) {
-      err.message = `${p} không được trùng nhau`;
+      err.message = `${p} đã được dùng rồi.`;
     }
   }
   // ObjectId not found

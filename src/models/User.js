@@ -31,10 +31,6 @@ export const userSchema = new mongoose.Schema(
       required: [true, 'Vui lòng nhập password'],
       minlength: [6, 'Mật khẩu ít nhất 6 chữ cái']
     },
-    address: {
-      type: String,
-      trim: true
-    },
     phoneNumber: {
       type: String,
       trim: true,

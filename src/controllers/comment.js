@@ -1,11 +1,11 @@
-import { errorMessage } from "constants/error";
-import { Comment } from "models/Comment";
+import { errorMessage } from 'constants/error';
+import { Comment } from 'models/Comment';
 
 async function getCommentByCampaignId(req, res, next) {
   const { campaignId } = req.params;
   try {
     const commentList = await Comment.find({ campaignId })
-      .populate("author", "name picture")
+      .populate('author', 'name picture')
       .sort({ createdAt: -1 });
     // .skip(Number.parseInt(skip))
     // .limit(3);
@@ -19,13 +19,12 @@ async function createOne(req, res, next) {
   try {
     const { userId } = req.user;
     const { campaignId } = req.params;
-    console.log("=======", userId, campaignId);
     const comment = await Comment.create({
       ...req.body,
       author: userId,
       campaignId
     });
-    console.log("new comment", comment);
+    console.log('new comment', comment);
     res.status(200).json({
       data: comment
     });
@@ -38,7 +37,7 @@ async function updateOne(req, res, next) {
     const { userId } = req.user;
     const { commentId } = req.params;
     const comment = await Comment.findOne({ _id: commentId });
-    console.log("=======", userId, commentId);
+    console.log('=======', userId, commentId);
     if (userId !== String(comment.author)) {
       const err = new Error(errorMessage.FORBIDDEN);
       err.statusCode = 403;
@@ -49,7 +48,7 @@ async function updateOne(req, res, next) {
       { ...req.body },
       { new: true, runValidator: true }
     );
-    console.log("new comment", comment);
+    console.log('new comment', comment);
     res.status(200).json({
       updatedComment
     });
@@ -69,7 +68,7 @@ async function deleteOne(req, res, next) {
     }
     await Comment.findByIdAndDelete(commentId);
     res.status(200).json({
-      message: "OK"
+      message: 'OK'
     });
   } catch (e) {
     next(e);

@@ -7,13 +7,7 @@ import './config/db';
 import { errorHandler } from './middlewares/errorHandler';
 import logger from './middlewares/logger';
 // Routes
-import auth from './routes/auth';
-import campaign from './routes/campaign';
-import comment from './routes/comment';
-import user from './routes/user';
-import news from './routes/news';
-import checkout from '/routes/checkout';
-import balance from './routes/balance';
+import router from 'routes';
 const app = express();
 
 require('dotenv').config();
@@ -32,13 +26,7 @@ app.get('/', (req, res) => {
 });
 
 // Mounted the routes
-app.use('/api/v1/auth', auth);
-app.use('/api/v1/users', user);
-app.use('/api/v1/campaigns', campaign);
-app.use('/api/v1/comments', comment);
-app.use('/api/v1/news', news);
-app.use('/api/v1/checkout', checkout);
-app.use('/api/v1/balance', balance);
+app.use('/api/v1', router);
 app.all('*', (req, res, next) => {
   const err = new Error('Invalid route');
   err.statusCode = 404;

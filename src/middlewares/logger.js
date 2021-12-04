@@ -17,11 +17,16 @@ const logger = (req, res, next) => {
   let method = req.method;
   let url = req.url;
   let body = req.body;
+  let query = req.query;
   winstonLogger.log({
     level: 'info',
     message: `${chalk.green(method)} ${chalk.blue(url)} ${chalk.yellow(
       formatted_date
-    )}, body: ${JSON.stringify(body, null, 2)}`
+    )}, body: ${JSON.stringify(body, null, 2)}, query: ${JSON.stringify(
+      query,
+      null,
+      2
+    )}`
   });
   // console.log("Request:", `${chalk.green(method)} ${url} `);
 

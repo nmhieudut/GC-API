@@ -6,19 +6,16 @@ import slugify from 'slugify';
 export const campaignController = {
   getBySlug: async (req, res, next) => {
     const { slug } = req.params;
-    console.log('getting by id');
     try {
       const campaign = await Campaign.findOne({ slug }).populate(
         'author',
         'name picture phoneNumber'
       );
-      console.log('campaign by id', campaign);
       if (campaign) {
         return res.status(200).json({
           campaign
         });
       }
-      console.log('---notFound');
       return res.status(404).json({
         message: 'Không tìm thấy hoạt động này'
       });
@@ -54,13 +51,13 @@ export const campaignController = {
     }
   },
   getByAuthor: async (req, res, next) => {
-    const { userId } = req.user;
+    const { userId } = req.params;
 
     try {
       const campaigns = await Campaign.find({ author: userId }).sort(
         '-createdAt'
       );
-      res.json({ data: campaigns });
+      res.json({ campaigns });
     } catch (e) {
       next(e);
     }

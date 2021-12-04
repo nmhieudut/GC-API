@@ -1,7 +1,6 @@
 import {
   createPaymentUrlVNPay,
-  createVNPayIpn,
-  payWithMomo,
+  payWithMoMo,
   payWithStripe,
   returnVNPayUrl
 } from 'controllers/checkout';
@@ -12,9 +11,8 @@ const router = express.Router();
 
 router.post('/stripe', auth, payWithStripe);
 
-router.post('/momo', auth, payWithMomo);
+router.post('/momo', auth, payWithMoMo);
 
-router.post('/vnpay', auth, createPaymentUrlVNPay);
-// router.post('/charge/vn-pay/ipn', auth, createVNPayIpn);
-// router.post('/charge/vn-pay/return', auth, returnVNPayUrl);
+router.post('/vn-pay', auth, createPaymentUrlVNPay);
+router.get('/vn-pay/return', auth, returnVNPayUrl);
 export default router;
