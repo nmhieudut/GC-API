@@ -3,11 +3,13 @@ import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import './config/db';
+import 'cronjob/updatedb';
 // Error handler
 import { errorHandler } from './middlewares/errorHandler';
 import logger from './middlewares/logger';
 // Routes
 import router from 'routes';
+import { dailyUpdate } from './modules/daily_update_data';
 const app = express();
 
 require('dotenv').config();
