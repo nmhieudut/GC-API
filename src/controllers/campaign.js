@@ -1,9 +1,32 @@
-import { Campaign } from 'models/Campaign';
 import { errorMessage } from 'constants/error';
+import logger from 'middlewares/logger';
+import { Campaign } from 'models/Campaign';
+import { Donation } from 'models/Donation';
 import mongoose from 'mongoose';
 import slugify from 'slugify';
 
 export const campaignController = {
+  getSummary: async (req, res, next) => {
+    logger.info('CampaignController.getSummary');
+    try {
+      const campaigns = await Campaign.findOne({});
+      const donations = await Donation.find({});
+      const totalDonations = donations.reduce(
+        (acc, curr) => acc + curr.amount,
+        0
+      );
+      console.log(campaigns.length, totalDonations, donations.length);
+      res.status(200).json({
+        total_campaigns: campaigns.length,
+        total_amount_donations: totalDonations,
+        total_donors: donations.length
+      });
+    } catch (error) {
+      logger.info(error);
+      next(error);
+    }
+  },
+
   getBySlug: async (req, res, next) => {
     const { slug } = req.params;
     try {
@@ -23,6 +46,30 @@ export const campaignController = {
       next(e);
     }
   },
+
+  getByStatus: async (req, res, next) => {
+    const status = req.params.status ? req.params.status : 'all';
+    try {
+      let campaigns;
+      if (status === 'all') {
+        campaigns = await Campaign.find({ name })
+          .sort('-createdAt')
+          .populate('author', 'name picture')
+          .limit(6);
+      } else {
+        campaigns = await Campaign.find({ status })
+          .sort('-createdAt')
+          .populate('author', 'name picture')
+          .limit(6);
+      }
+      res.status(200).json({
+        campaigns
+      });
+    } catch (e) {
+      next(e);
+    }
+  },
+
   getByQuery: async (req, res, next) => {
     const { q, skip } = req.query;
     const status = req.query.status ? req.query.status : 'all';
@@ -43,13 +90,13 @@ export const campaignController = {
           .limit(5);
       }
       res.status(200).json({
-        total: campaigns.length,
         campaigns
       });
     } catch (e) {
       next(e);
     }
   },
+
   getByAuthor: async (req, res, next) => {
     const { userId } = req.params;
 

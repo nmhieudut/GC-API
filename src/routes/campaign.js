@@ -7,16 +7,17 @@ const router = express.Router();
 
 router.get('/search', campaignController.getByQuery);
 router.get('/owner/:userId', campaignController.getByAuthor);
+router.get('/status/:status', campaignController.getByStatus);
+router.get('/:slug', campaignController.getBySlug);
+router.get('/summary', campaignController.getSummary);
+router.get('/:campaignId/comments', getCommentByCampaignId);
 router.post('/', auth, campaignController.createOne);
-
-router.route('/:slug').get(campaignController.getBySlug);
+router.post('/:campaignId/donate', auth, DonateController.donate);
+router.put('/:campaignId/active', auth, campaignController.activeOne);
+router.put('/:campaignId/end', auth, campaignController.endOne);
 router
   .route('/:campaignId')
   .put(auth, campaignController.updateOne)
   .delete(auth, campaignController.deleteOne);
 
-router.get('/:campaignId/comments', getCommentByCampaignId);
-router.put('/:campaignId/active', auth, campaignController.activeOne);
-router.put('/:campaignId/end', auth, campaignController.endOne);
-router.post('/:campaignId/donate', auth, DonateController.donate);
 export default router;
