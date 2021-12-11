@@ -6,5 +6,5 @@ const router = express.Router();
 
 router.get('/donate', auth, HistoryController.getDonations);
 
-router.get('/charge', auth, HistoryController.getCharges);
+router.get('/transaction', auth, HistoryController.getTransactions);
 export default router;

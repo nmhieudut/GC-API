@@ -1,4 +1,4 @@
-import { ChargeHistory } from 'models/ChargeHistory';
+import { History } from 'models/History';
 import { User } from 'models/User';
 import { convertToVND } from 'utils/currency';
 
@@ -9,7 +9,7 @@ export const BalanceController = {
       const { userId } = req.params;
       const user = await User.findOne({ _id: userId });
       if (req.user.role !== 'admin' && userId !== req.user.userId) {
-        const err = new Error(errorMessage.FORBIDDEN);
+        const err = new Error(responseErrorMessage.FORBIDDEN);
         err.statusCode = 403;
         return next(err);
       }
@@ -17,11 +17,12 @@ export const BalanceController = {
       user.balance += convertedBalance / 100;
       const updatedUser = await user.save();
       if (updatedUser) {
-        await ChargeHistory.create({
+        await History.create({
           author: userId,
           amount,
           orderId,
-          method
+          method,
+          action: 'charge'
         });
       }
       return res.status(201).json({

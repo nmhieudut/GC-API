@@ -9,7 +9,7 @@ router.get('/search', campaignController.getByQuery);
 router.get('/owner/:userId', campaignController.getByAuthor);
 router.get('/status/:status', campaignController.getByStatus);
 router.get('/:slug', campaignController.getBySlug);
-router.get('/summary', campaignController.getSummary);
+router.get('/info/summary', campaignController.getSummary);
 router.get('/:campaignId/comments', getCommentByCampaignId);
 router.post('/', auth, campaignController.createOne);
 router.post('/:campaignId/donate', auth, DonateController.donate);

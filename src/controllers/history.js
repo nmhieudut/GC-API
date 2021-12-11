@@ -1,24 +1,24 @@
-import { ChargeHistory } from 'models/ChargeHistory';
+import { History } from 'models/History';
 import { Donation } from 'models/Donation';
 import { User } from 'models/User';
 
 export const HistoryController = {
-  getCharges: async (req, res, next) => {
+  getTransactions: async (req, res, next) => {
     try {
       const { userId } = req.params;
       if (req.user.role !== 'admin' && userId !== req.user.userId) {
-        const err = new Error(errorMessage.FORBIDDEN);
+        const err = new Error(responseErrorMessage.FORBIDDEN);
         err.statusCode = 403;
         return next(err);
       }
-      const charges = await ChargeHistory.findOne({ author: userId });
-      if (!charges) {
-        const err = new Error(errorMessage.NOT_FOUND);
+      const histories = await History.findOne({ author: userId });
+      if (!histories) {
+        const err = new Error(responseErrorMessage.NOT_FOUND);
         err.statusCode = 404;
         return next(err);
       }
       res.status(200).json({
-        charges
+        histories
       });
     } catch (error) {
       return next(error);
@@ -28,13 +28,13 @@ export const HistoryController = {
     try {
       const { userId } = req.params;
       if (req.user.role !== 'admin' && userId !== req.user.userId) {
-        const err = new Error(errorMessage.FORBIDDEN);
+        const err = new Error(responseErrorMessage.FORBIDDEN);
         err.statusCode = 403;
         return next(err);
       }
       const donations = await Donation.findOne({ author: userId });
       if (!donations) {
-        const err = new Error(errorMessage.NOT_FOUND);
+        const err = new Error(responseErrorMessage.NOT_FOUND);
         err.statusCode = 404;
         return next(err);
       }

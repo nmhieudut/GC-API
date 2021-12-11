@@ -1,4 +1,4 @@
-import { errorMessage } from 'constants/error';
+import { responseErrorMessage } from 'constants/error';
 import { Comment } from 'models/Comment';
 
 async function getCommentByCampaignId(req, res, next) {
@@ -39,7 +39,7 @@ async function updateOne(req, res, next) {
     const comment = await Comment.findOne({ _id: commentId });
     console.log('=======', userId, commentId);
     if (userId !== String(comment.author)) {
-      const err = new Error(errorMessage.FORBIDDEN);
+      const err = new Error(responseErrorMessage.FORBIDDEN);
       err.statusCode = 403;
       return next(err);
     }
@@ -62,7 +62,7 @@ async function deleteOne(req, res, next) {
     const { commentId } = req.params;
     const comment = await Comment.findOne({ _id: commentId });
     if (userId !== String(comment.author)) {
-      const err = new Error(errorMessage.FORBIDDEN);
+      const err = new Error(responseErrorMessage.FORBIDDEN);
       err.statusCode = 403;
       return next(err);
     }

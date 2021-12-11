@@ -1,8 +1,8 @@
-import { errorMessage } from 'constants/error';
+import { responseErrorMessage } from 'constants/error';
 
 const adminGuard = (req, res, next) => {
   if (!req.user.role !== 'admin') {
-    const err = new Error(errorMessage.FORBIDDEN);
+    const err = new Error(responseErrorMessage.FORBIDDEN);
     err.statusCode = 403;
     return next(err);
   }

@@ -1,9 +1,9 @@
 import { User } from 'models/User';
-import { errorMessage } from 'constants/error';
+import { requestErrorMessage, responseErrorMessage } from 'constants/error';
 import bcrypt from 'bcrypt';
 import { Donation } from 'models/Donation';
 import { Campaign } from 'models/Campaign';
-import { ChargeHistory } from 'models/ChargeHistory';
+import { History } from 'models/History';
 
 export const userController = {
   getMany: async (req, res, next) => {
@@ -17,7 +17,7 @@ export const userController = {
       const { userId, role } = req.user;
       const { userId: updatedUserId } = req.params;
       if (role !== 'admin' && updatedUserId !== userId) {
-        const err = new Error(errorMessage.FORBIDDEN);
+        const err = new Error(responseErrorMessage.FORBIDDEN);
         err.statusCode = 403;
         return next(err);
       }
@@ -47,23 +47,30 @@ export const userController = {
       const { userId: updatedUserId } = req.params;
       const { currentPassword, newPassword } = req.body;
       if (userId !== updatedUserId && role !== 'admin') {
-        const err = new Error(errorMessage.FORBIDDEN);
+        const err = new Error(responseErrorMessage.FORBIDDEN);
         err.statusCode = 403;
         return next(err);
       }
       const user = await User.findById(userId);
       // compare old and new password
-      const isMatch = bcrypt.compareSync(currentPassword, user.password);
+      const isMatch = bcrypt.compare(currentPassword, user.password);
       if (isMatch) {
+        // check newPassword duplicated with old password
+        const isDuplicated = currentPassword === newPassword;
+        if (isDuplicated) {
+          const err = new Error(requestErrorMessage.DUPLICATED_PASSWORD);
+          err.statusCode = 409;
+          return next(err);
+        }
         user.password = newPassword;
         await user.save();
         return res.status(200).json({
           message: 'Đổi mật khẩu thành công'
         });
       }
-      return res.status(400).json({
-        message: 'Mật khẩu cũ không đúng'
-      });
+      const err = new Error('Mật khẩu cũ không đúng');
+      err.statusCode = 400;
+      return next(err);
     } catch (e) {
       next(e);
     }
@@ -85,7 +92,7 @@ export const userController = {
       const { userId, role } = req.user;
       const { userId: updatedUserId } = req.params;
       if (userId !== updatedUserId && role !== 'admin') {
-        const err = new Error(errorMessage.FORBIDDEN);
+        const err = new Error(responseErrorMessage.FORBIDDEN);
         err.statusCode = 403;
         return next(err);
       }
@@ -110,19 +117,18 @@ export const userController = {
       return next(error);
     }
   },
-  getOwnCharges: async (req, res, next) => {
+  getOwnTransactions: async (req, res, next) => {
     try {
       const { userId, role } = req.user;
       const { userId: updatedUserId } = req.params;
       if (userId !== updatedUserId && role !== 'admin') {
-        const err = new Error(errorMessage.FORBIDDEN);
+        const err = new Error(responseErrorMessage.FORBIDDEN);
         err.statusCode = 403;
         return next(err);
       }
-      const charges = await ChargeHistory.find({ donator: userId });
+      const histories = await History.find({ author: userId });
       return res.status(200).json({
-        status: 'ok',
-        charges
+        histories
       });
     } catch (error) {
       return next(error);

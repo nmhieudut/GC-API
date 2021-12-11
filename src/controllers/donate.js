@@ -1,7 +1,8 @@
 import { Campaign } from 'models/Campaign';
 import { Donation } from 'models/Donation';
 import { User } from 'models/User';
-import { errorMessage } from 'constants/error';
+import { responseErrorMessage } from 'constants/error';
+import { History } from 'models/History';
 
 export const DonateController = {
   donate: async (req, res, next) => {
@@ -10,7 +11,7 @@ export const DonateController = {
       const { amount } = req.body;
       const donatingUser = await User.findOne({ _id: req.user.userId });
       if (donatingUser.balance - amount < 0) {
-        const error = new Error(errorMessage.INSUFFICIENT_BALANCE);
+        const error = new Error(responseErrorMessage.INSUFFICIENT_BALANCE);
         error.statusCode = 400;
         return next(error);
       }
@@ -23,6 +24,11 @@ export const DonateController = {
         ...req.body,
         campaignId,
         donator: req.user.userId
+      });
+      await History.create({
+        author: req.user.userId,
+        amount,
+        action: 'donate'
       });
       return res.status(200).json({
         status: 'ok',

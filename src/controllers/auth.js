@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import admin from 'config/firebase';
-import { errorInputMessage, errorMessage } from 'constants/error';
+import { requestErrorMessage, responseErrorMessage } from 'constants/error';
 import jwt from 'jsonwebtoken';
 import { User } from 'models/User';
 import { jwt_key } from 'utils/settings';
@@ -9,7 +9,7 @@ const register = async (req, res, next) => {
   try {
     const existedUser = await User.findOne({ email: req.body.email });
     if (existedUser) {
-      const err = new Error(errorInputMessage.EXISTED_EMAIL);
+      const err = new Error(requestErrorMessage.EXISTED_EMAIL);
       err.statusCode = 400;
       return next(err);
     }
@@ -37,10 +37,11 @@ const login = async (req, res, next) => {
   try {
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
-      const err = new Error(errorInputMessage.WRONG_EMAIL);
+      const err = new Error(requestErrorMessage.WRONG_EMAIL);
       err.statusCode = 400;
       return next(err);
     }
+    console.log('----', req.body.password, user.password);
     if (bcrypt.compareSync(req.body.password, user.password)) {
       const token = jwt.sign({ userId: user._id, role: user.role }, jwt_key);
       res.status(200).json({
@@ -57,7 +58,7 @@ const login = async (req, res, next) => {
         }
       });
     } else {
-      const err = new Error(errorInputMessage.WRONG_PASSWORD);
+      const err = new Error(requestErrorMessage.WRONG_PASSWORD);
       err.statusCode = 400;
       return next(err);
     }
@@ -97,7 +98,7 @@ const googleLogin = async (req, res, next) => {
     const { name, email, picture } = decodedToken;
     User.findOne({ email }).exec(async (err, user) => {
       if (err) {
-        let error = new Error(errorMessage.INTERNAL_SERVER_ERROR);
+        let error = new Error(responseErrorMessage.INTERNAL_SERVER_ERROR);
         error.statusCode = 500;
         return next(error);
       } else {

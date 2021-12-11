@@ -1,4 +1,4 @@
-import { errorMessage } from 'constants/error';
+import { responseErrorMessage } from 'constants/error';
 import logger from 'middlewares/logger';
 import { Campaign } from 'models/Campaign';
 import { Donation } from 'models/Donation';
@@ -7,9 +7,8 @@ import slugify from 'slugify';
 
 export const campaignController = {
   getSummary: async (req, res, next) => {
-    logger.info('CampaignController.getSummary');
     try {
-      const campaigns = await Campaign.findOne({});
+      const campaigns = await Campaign.find({});
       const donations = await Donation.find({});
       const totalDonations = donations.reduce(
         (acc, curr) => acc + curr.amount,
@@ -52,7 +51,7 @@ export const campaignController = {
     try {
       let campaigns;
       if (status === 'all') {
-        campaigns = await Campaign.find({ name })
+        campaigns = await Campaign.find({})
           .sort('-createdAt')
           .populate('author', 'name picture')
           .limit(6);
@@ -115,7 +114,7 @@ export const campaignController = {
       const slug = slugify(req.body.name, {
         replacement: '-',
         lower: true,
-        locale: 'en',
+        locale: 'vi',
         trim: true
       });
       await Campaign.create({
@@ -141,7 +140,7 @@ export const campaignController = {
       }
       const campaign = await Campaign.findOne({ _id: campaignId });
       if (role !== 'admin' && String(campaign.author) !== userId) {
-        const err = new Error(errorMessage.FORBIDDEN);
+        const err = new Error(responseErrorMessage.FORBIDDEN);
         err.statusCode = 403;
         return next(err);
       }
@@ -169,7 +168,7 @@ export const campaignController = {
       const { campaignId } = req.params;
       const campaign = await Campaign.findOne({ _id: campaignId });
       if (role !== 'admin' && String(campaign.author) !== userId) {
-        const err = new Error(errorMessage.FORBIDDEN);
+        const err = new Error(responseErrorMessage.FORBIDDEN);
         err.statusCode = 403;
         return next(err);
       }
@@ -186,7 +185,7 @@ export const campaignController = {
       const { role } = req.user;
       const { campaignId } = req.params;
       if (role !== 'admin') {
-        const err = new Error(errorMessage.FORBIDDEN);
+        const err = new Error(responseErrorMessage.FORBIDDEN);
         err.statusCode = 403;
         return next(err);
       }
@@ -208,7 +207,7 @@ export const campaignController = {
       const { campaignId } = req.params;
       const campaign = await Campaign.findOne({ _id: campaignId });
       if (role !== 'admin' && String(campaign.author) !== userId) {
-        const err = new Error(errorMessage.FORBIDDEN);
+        const err = new Error(responseErrorMessage.FORBIDDEN);
         err.statusCode = 403;
         return next(err);
       }

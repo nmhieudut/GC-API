@@ -4,6 +4,8 @@ import { isVietnamesePhoneNumber } from 'utils/validate';
 import { Campaign } from './Campaign';
 import { Comment } from './Comment';
 import { bcryptService } from 'plugins/bcrypt';
+import { requestErrorMessage } from 'constants/error';
+import { History } from './History';
 
 export const userSchema = new mongoose.Schema(
   {
@@ -54,7 +56,7 @@ userSchema.pre('save', async function (next) {
   let user = this;
   if (user.phoneNumber) {
     if (!isVietnamesePhoneNumber(user.phoneNumber)) {
-      const err = new Error('Số điện thoại không khả dụng');
+      const err = new Error(requestErrorMessage.INVALID_PHONE);
       err.statusCode = 400;
       return next(err);
     }
@@ -63,7 +65,6 @@ userSchema.pre('save', async function (next) {
   if (user.password) {
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(user.password, salt);
-    // user.password = await bcryptService.hashSync(user.password);
   }
   next();
 });
@@ -73,6 +74,7 @@ userSchema.pre('deleteOne', async function (next) {
   const userId = user._conditions._id;
   await Comment.deleteMany({ author: userId });
   await Campaign.deleteMany({ author: userId });
+  await History.deleteMany({ author: userId });
   next();
 });
 

@@ -10,7 +10,7 @@ router
   .put(auth, userController.update)
   .delete(auth, adminGuard, userController.remove);
 
-router.put('/:userId/password', auth, userController.resetPassword);
+router.put('/:userId/reset-password', auth, userController.resetPassword);
 router.get('/:userId/donations', auth, userController.getOwnDonations);
-router.get('/:userId/charges', auth, userController.getOwnCharges);
+router.get('/:userId/transactions', auth, userController.getOwnTransactions);
 export default router;

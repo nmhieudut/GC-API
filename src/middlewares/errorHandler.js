@@ -1,8 +1,8 @@
-import { errorMessage } from 'constants/error';
+import { responseErrorMessage } from 'constants/error';
 
 const errorHandler = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
-  err.message = err.message || errorMessage.INTERNAL_SERVER_ERROR;
+  err.message = err.message || responseErrorMessage.INTERNAL_SERVER_ERROR;
   // Duplicated err
   console.log(err);
   if (err.code === 11000) {
