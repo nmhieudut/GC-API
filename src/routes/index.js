@@ -6,6 +6,7 @@ import commentRoute from './comment';
 import checkoutRoute from './checkout';
 import balanceRoute from './balance';
 import historyRoute from './history';
+import newsRoute from './news';
 
 const router = express.Router();
 
@@ -37,6 +38,10 @@ const defaultRoutes = [
   {
     path: '/history',
     route: historyRoute
+  },
+  {
+    path: '/news',
+    route: newsRoute
   }
 ];
 

@@ -1,6 +1,6 @@
 import { New } from 'models/New';
 import puppeteer from 'puppeteer';
-import slugify from 'slugify';
+
 export const dailyUpdateNews = async () => {
   const nldUrl = 'https://laodong.vn/tags/tien-tu-thien-312787.ldo';
   const browser = await puppeteer.launch({
@@ -26,7 +26,6 @@ export const dailyUpdateNews = async () => {
     return news;
   });
   let contents = [];
-  console.log(newsData);
   if (newsData.length > 0) {
     for (let i = 0; i < newsData.length; i++) {
       let content;

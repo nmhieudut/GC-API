@@ -1,20 +1,20 @@
 import cors from 'cors';
-// import 'cronjob/getNews';
-import 'cronjob/updateDb';
-
+import 'cronjob/getNews';
+import 'cronjob/updatedb';
 import express from 'express';
 import helmet from 'helmet';
-import { dailyUpdateNews } from 'modules/daily_update_news';
 import morgan from 'morgan';
+import env from 'dotenv';
 // Routes
 import router from 'routes';
 import './config/db';
 // Error handler
 import { errorHandler } from './middlewares/errorHandler';
 import logger from './middlewares/logger';
+
 const app = express();
 
-require('dotenv').config();
+env.config();
 
 // JSON parser
 app.use(express.json());
@@ -28,7 +28,7 @@ app.use(cors());
 app.get('/', (req, res) => {
   res.send('Green Charity APIs');
 });
-dailyUpdateNews();
+
 // Mounted the routes
 app.use('/api/v1', router);
 app.all('*', (req, res, next) => {
