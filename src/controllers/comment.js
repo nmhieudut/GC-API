@@ -37,7 +37,6 @@ async function updateOne(req, res, next) {
     const { userId } = req.user;
     const { commentId } = req.params;
     const comment = await Comment.findOne({ _id: commentId });
-    console.log('=======', userId, commentId);
     if (userId !== String(comment.author)) {
       const err = new Error(responseErrorMessage.FORBIDDEN);
       err.statusCode = 403;
@@ -48,7 +47,6 @@ async function updateOne(req, res, next) {
       { ...req.body },
       { new: true, runValidator: true }
     );
-    console.log('new comment', comment);
     res.status(200).json({
       updatedComment
     });

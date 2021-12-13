@@ -28,7 +28,6 @@ const logger = (req, res, next) => {
       2
     )}`
   });
-  // console.log("Request:", `${chalk.green(method)} ${url} `);
 
   next();
 };

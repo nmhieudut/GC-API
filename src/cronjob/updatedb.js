@@ -7,5 +7,3 @@ cron.schedule('0 * * * *', () => {
   dailyUpdate();
   console.log('Updated campaigns every hour');
 });
-
-export default { cron };
