@@ -1,13 +1,18 @@
 import { New } from 'models/New';
 import puppeteer from 'puppeteer';
 
-export const dailyUpdateNews = async () => {
+export const dailyGetNews = async () => {
   const nldUrl = 'https://laodong.vn/tags/tien-tu-thien-312787.ldo';
+  const browser = await puppeteer.launch({
+    headless: false,
+    args: [
+      '--single-process',
+      '--no-zygote',
+      '--no-sandbox',
+      '--disable-setuid-sandbox'
+    ]
+  });
   try {
-    const browser = await puppeteer.launch({
-      headless: false,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
     const page = await browser.newPage();
     await page.goto(nldUrl);
     const newsData = await page.evaluate(() => {
@@ -28,23 +33,29 @@ export const dailyUpdateNews = async () => {
       for (let i = 0; i < newsData.length; i++) {
         let content;
         const url = newsData[i].url;
-        await page.goto(`${url}`);
+        await page.goto(`${url}`, { waitUntil: 'load', timeout: 0 });
         content = await page.evaluate(
           () => document.querySelector('.article-content').innerHTML
         );
         contents.push(content);
       }
     }
-    await New.remove();
     newsData.map((item, idx) => {
       return Object.assign(item, {
         content: contents[idx]
       });
     });
-    await New.insertMany(newsData, { ordered: true });
-    console.log('Updated News Successfully');
-    await browser.close();
+    return newsData;
   } catch (e) {
     console.log('error', e);
+  } finally {
+    await browser.close();
   }
+};
+
+export const dailyUpdateNews = async () => {
+  await New.remove();
+  const newsData = await dailyGetNews();
+  await New.insertMany(newsData, { ordered: true });
+  console.log('Updated News Successfully');
 };
