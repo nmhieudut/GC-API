@@ -9,7 +9,7 @@ async function getCommentByCampaignId(req, res, next) {
       .sort({ createdAt: -1 });
     // .skip(Number.parseInt(skip))
     // .limit(3);
-    res.status(200).json(commentList);
+    res.status(200).json({ comments: commentList });
   } catch (error) {
     next(error);
   }

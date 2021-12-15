@@ -1103,3 +1103,641 @@
 {"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e4\u001b[39m \u001b[33m2021-12-14 15:6:51\u001b[39m, body: {}, query: {}"}
 {"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 15:6:54\u001b[39m, body: {}, query: {}"}
 {"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 15:6:54\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:3:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:3:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:3:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:3:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:4:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:4:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:4:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:5:1\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:5:1\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:5:6\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:5:6\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:7:47\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:7:47\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e4\u001b[39m \u001b[33m2021-12-14 17:7:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e4\u001b[39m \u001b[33m2021-12-14 17:7:52\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e4\u001b[39m \u001b[33m2021-12-14 17:8:56\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e4\u001b[39m \u001b[33m2021-12-14 17:8:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84ef\u001b[39m \u001b[33m2021-12-14 17:9:2\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e7\u001b[39m \u001b[33m2021-12-14 17:9:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e4\u001b[39m \u001b[33m2021-12-14 17:9:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:9:6\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:9:6\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b86caabcd7c189004ccb77\u001b[39m \u001b[33m2021-12-14 17:9:12\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:9:17\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:9:17\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:9:23\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:9:23\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:9:23\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:9:23\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:9:28\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:9:28\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:9:33\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:9:33\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:9:33\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:9:33\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:9:58\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:9:58\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b86d59bcd7c189004ccb9d\u001b[39m \u001b[33m2021-12-14 17:9:58\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:10:0\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:10:0\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:10:0\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:12:41\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:12:41\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:13:23\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:13:23\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:13:39\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:13:39\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:13:53\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:13:53\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:13:56\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:14:47\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:14:47\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:15:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:15:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:15:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:15:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:15:35\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:15:39\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:15:39\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:15:43\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:16:13\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:16:13\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:16:22\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:16:22\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:16:26\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b86d59bcd7c189004ccb97\u001b[39m \u001b[33m2021-12-14 17:16:45\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:16:48\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:16:48\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:16:48\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:16:48\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:17:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:17:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 17:17:5\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?\u001b[39m \u001b[33m2021-12-14 17:17:15\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?\u001b[39m \u001b[33m2021-12-14 17:17:15\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?\u001b[39m \u001b[33m2021-12-14 17:17:26\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?\u001b[39m \u001b[33m2021-12-14 17:17:26\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/testing\u001b[39m \u001b[33m2021-12-14 17:17:28\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:17:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:17:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?\u001b[39m \u001b[33m2021-12-14 17:20:15\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:20:15\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/testing\u001b[39m \u001b[33m2021-12-14 17:20:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:20:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?\u001b[39m \u001b[33m2021-12-14 17:20:23\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:20:23\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/testing\u001b[39m \u001b[33m2021-12-14 17:20:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:20:33\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:20:33\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?\u001b[39m \u001b[33m2021-12-14 17:22:27\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:22:27\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/testing\u001b[39m \u001b[33m2021-12-14 17:22:29\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 17:22:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a63a5233dad73a5cbd5ebd/donate\u001b[39m \u001b[33m2021-12-14 17:22:46\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPOST\u001b[39m \u001b[34m/api/v1/campaigns/61a63a5233dad73a5cbd5ebd/donate\u001b[39m \u001b[33m2021-12-14 17:22:46\u001b[39m, body: {\n  \"amount\": 1111,\n  \"message\": \"dsadsad\"\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a63a5233dad73a5cbd5ebd/donate\u001b[39m \u001b[33m2021-12-14 17:23:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPOST\u001b[39m \u001b[34m/api/v1/campaigns/61a63a5233dad73a5cbd5ebd/donate\u001b[39m \u001b[33m2021-12-14 17:23:4\u001b[39m, body: {\n  \"amount\": 1111321,\n  \"message\": \"dsadsad\"\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a63a5233dad73a5cbd5ebd/comments\u001b[39m \u001b[33m2021-12-14 17:23:47\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a63a5233dad73a5cbd5ebd/comments\u001b[39m \u001b[33m2021-12-14 17:23:47\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-14 20:22:44\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:22:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:22:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:22:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:22:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:23:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:23:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:23:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:23:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:23:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:23:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:23:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:23:36\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:23:36\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:23:41\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:23:57\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:23:57\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:24:0\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:24:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:24:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:24:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:24:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:24:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:24:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e4\u001b[39m \u001b[33m2021-12-14 20:24:32\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e4\u001b[39m \u001b[33m2021-12-14 20:24:37\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e4\u001b[39m \u001b[33m2021-12-14 20:26:13\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e4\u001b[39m \u001b[33m2021-12-14 20:26:18\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:26:23\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:26:23\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:26:36\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:26:36\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e4\u001b[39m \u001b[33m2021-12-14 20:26:39\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e4\u001b[39m \u001b[33m2021-12-14 20:28:24\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e4\u001b[39m \u001b[33m2021-12-14 20:29:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e4\u001b[39m \u001b[33m2021-12-14 20:30:14\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:30:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:30:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b835d06f82e407c48a84e4\u001b[39m \u001b[33m2021-12-14 20:36:55\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:36:58\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:36:58\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:37:2\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:37:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:37:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:37:22\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:37:22\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:37:24\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:37:24\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:37:24\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:37:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:37:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:41:11\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:41:11\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:41:20\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:41:20\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:41:22\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:41:25\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:41:25\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:41:25\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:41:35\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:41:35\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:43:46\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:43:48\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:43:48\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:43:48\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:43:54\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:43:54\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:45:9\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:45:9\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:45:13\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:45:13\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:45:13\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b89fbd54b3174d185b0f53\u001b[39m \u001b[33m2021-12-14 20:45:17\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:45:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:45:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:45:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:45:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:45:35\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:45:35\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:45:53\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:45:53\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:45:57\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:46:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:46:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:46:18\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:46:18\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:46:26\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:46:26\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:46:54\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:46:54\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b89fbd54b3174d185b0f60\u001b[39m \u001b[33m2021-12-14 20:47:1\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:47:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:47:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:47:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:47:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:47:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:47:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:47:42\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:47:42\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:48:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:48:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news/61b89fbd54b3174d185b0f5f\u001b[39m \u001b[33m2021-12-14 20:48:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/news\u001b[39m \u001b[33m2021-12-14 20:48:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:48:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:48:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-14 20:48:38\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:48:39\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:48:39\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:50:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:50:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-14 20:50:43\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:50:46\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:50:46\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:50:46\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:50:46\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:51:0\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:51:0\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:51:10\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:51:10\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:51:18\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:51:18\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:51:26\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:51:26\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:51:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:51:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-14 20:51:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:51:54\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:51:54\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-14 20:51:54\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:52:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:52:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:53:18\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 20:53:18\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 22:47:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-14 22:47:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-15 17:2:54\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 17:2:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 17:2:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 17:3:44\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 17:3:44\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 17:8:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 17:8:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/login\u001b[39m \u001b[33m2021-12-15 17:8:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPOST\u001b[39m \u001b[34m/api/v1/auth/login\u001b[39m \u001b[33m2021-12-15 17:8:8\u001b[39m, body: {\n  \"email\": \"congvinhno1@gmail.com\",\n  \"password\": \"123456\"\n}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-15 17:8:9\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-15 17:8:10\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 17:8:10\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 17:8:10\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-15 17:25:0\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-15 20:49:33\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 20:49:45\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:49:45\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 20:49:45\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:49:45\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:49:56\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:49:56\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:49:59\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:50:3\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:50:3\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:51:19\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:51:19\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:51:27\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:51:27\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:51:27\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:51:27\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&status=pending&skip=5\u001b[39m \u001b[33m2021-12-15 20:51:31\u001b[39m, body: {}, query: {\n  \"status\": \"pending\",\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&status=pending&skip=5\u001b[39m \u001b[33m2021-12-15 20:51:31\u001b[39m, body: {}, query: {\n  \"status\": \"pending\",\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&status=all&skip=5\u001b[39m \u001b[33m2021-12-15 20:51:33\u001b[39m, body: {}, query: {\n  \"status\": \"all\",\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&status=all&skip=5\u001b[39m \u001b[33m2021-12-15 20:51:33\u001b[39m, body: {}, query: {\n  \"status\": \"all\",\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&status=all&skip=5\u001b[39m \u001b[33m2021-12-15 20:51:40\u001b[39m, body: {}, query: {\n  \"status\": \"all\",\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&status=all&skip=5\u001b[39m \u001b[33m2021-12-15 20:51:40\u001b[39m, body: {}, query: {\n  \"status\": \"all\",\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:51:43\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:51:43\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:51:43\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:51:43\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:52:6\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:52:6\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:52:17\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:52:17\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:52:20\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&status=all&skip=5\u001b[39m \u001b[33m2021-12-15 20:52:20\u001b[39m, body: {}, query: {\n  \"status\": \"all\",\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&status=all&skip=5\u001b[39m \u001b[33m2021-12-15 20:52:20\u001b[39m, body: {}, query: {\n  \"status\": \"all\",\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&status=all&skip=5\u001b[39m \u001b[33m2021-12-15 20:53:7\u001b[39m, body: {}, query: {\n  \"status\": \"all\",\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&status=all&skip=5\u001b[39m \u001b[33m2021-12-15 20:53:7\u001b[39m, body: {}, query: {\n  \"status\": \"all\",\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&status=all&skip=5\u001b[39m \u001b[33m2021-12-15 20:53:10\u001b[39m, body: {}, query: {\n  \"status\": \"all\",\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:53:13\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:53:13\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:53:13\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:53:13\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:55:7\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:55:7\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:55:30\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:55:30\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:55:39\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:55:39\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:55:39\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:55:39\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5\u001b[39m \u001b[33m2021-12-15 20:55:47\u001b[39m, body: {}, query: {\n  \"skip\": \"5\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&perPage=1\u001b[39m \u001b[33m2021-12-15 20:55:59\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"perPage\": \"1\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&perPage=1\u001b[39m \u001b[33m2021-12-15 20:55:59\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"perPage\": \"1\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&perPage=1\u001b[39m \u001b[33m2021-12-15 20:56:2\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"perPage\": \"1\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:56:2\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:56:2\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&perPage=1\u001b[39m \u001b[33m2021-12-15 20:56:26\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"perPage\": \"1\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&perPage=1\u001b[39m \u001b[33m2021-12-15 20:56:26\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"perPage\": \"1\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&perPage=2\u001b[39m \u001b[33m2021-12-15 20:56:31\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"perPage\": \"2\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:56:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&perPage=2\u001b[39m \u001b[33m2021-12-15 20:56:31\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"perPage\": \"2\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:56:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&perPage=2\u001b[39m \u001b[33m2021-12-15 20:56:57\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"perPage\": \"2\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&perPage=2\u001b[39m \u001b[33m2021-12-15 20:56:57\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"perPage\": \"2\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&page=2\u001b[39m \u001b[33m2021-12-15 20:57:1\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"page\": \"2\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:57:1\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&page=2\u001b[39m \u001b[33m2021-12-15 20:57:1\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"page\": \"2\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:57:1\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&page=2\u001b[39m \u001b[33m2021-12-15 20:58:24\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"page\": \"2\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&page=2\u001b[39m \u001b[33m2021-12-15 20:58:24\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"page\": \"2\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&page=2\u001b[39m \u001b[33m2021-12-15 20:58:27\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"page\": \"2\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/con-djai-dich-dja-cuon-nam-tra-my-vao-guong-xoay\u001b[39m \u001b[33m2021-12-15 20:58:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:58:36\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 20:58:36\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 20:58:43\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 20:58:43\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 20:58:44\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:0:24\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:0:24\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:1:1\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:1:1\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:1:14\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:1:14\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:3:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:3:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:3:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:3:39\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:3:42\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:4:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:4:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:4:52\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:10:29\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:10:29\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:10:43\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:10:43\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/con-djai-dich-dja-cuon-nam-tra-my-vao-guong-xoay\u001b[39m \u001b[33m2021-12-15 21:11:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:11:38\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:11:38\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/con-djai-dich-dja-cuon-nam-tra-my-vao-guong-xoay\u001b[39m \u001b[33m2021-12-15 21:13:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:13:10\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:13:10\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/con-djai-dich-dja-cuon-nam-tra-my-vao-guong-xoay\u001b[39m \u001b[33m2021-12-15 21:13:33\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:13:37\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:13:37\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:13:40\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:13:40\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/comments/61793357a4fcab2cb0bd118a\u001b[39m \u001b[33m2021-12-15 21:13:45\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPOST\u001b[39m \u001b[34m/api/v1/comments/61793357a4fcab2cb0bd118a\u001b[39m \u001b[33m2021-12-15 21:13:45\u001b[39m, body: {\n  \"text\": \"huhuhu\"\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:13:46\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:13:46\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/comments/61793357a4fcab2cb0bd118a\u001b[39m \u001b[33m2021-12-15 21:13:53\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPOST\u001b[39m \u001b[34m/api/v1/comments/61793357a4fcab2cb0bd118a\u001b[39m \u001b[33m2021-12-15 21:13:53\u001b[39m, body: {\n  \"text\": \"sao kê giúp với ạ\"\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:13:53\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:13:53\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:13:58\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/donators\u001b[39m \u001b[33m2021-12-15 21:14:6\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/donators\u001b[39m \u001b[33m2021-12-15 21:14:6\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/donators\u001b[39m \u001b[33m2021-12-15 21:14:7\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/donators\u001b[39m \u001b[33m2021-12-15 21:14:9\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/donators\u001b[39m \u001b[33m2021-12-15 21:14:13\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/donators\u001b[39m \u001b[33m2021-12-15 21:14:13\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/donators\u001b[39m \u001b[33m2021-12-15 21:14:47\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/donators\u001b[39m \u001b[33m2021-12-15 21:14:47\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:14:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/comments\u001b[39m \u001b[33m2021-12-15 21:14:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/donators\u001b[39m \u001b[33m2021-12-15 21:14:54\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/donators\u001b[39m \u001b[33m2021-12-15 21:14:54\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/donators\u001b[39m \u001b[33m2021-12-15 21:14:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61793357a4fcab2cb0bd118a/donators\u001b[39m \u001b[33m2021-12-15 21:14:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&page=2\u001b[39m \u001b[33m2021-12-15 21:15:4\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"page\": \"2\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&skip=5&page=2\u001b[39m \u001b[33m2021-12-15 21:15:4\u001b[39m, body: {}, query: {\n  \"skip\": \"5\",\n  \"page\": \"2\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&status=all&skip=5&page=2\u001b[39m \u001b[33m2021-12-15 21:15:8\u001b[39m, body: {}, query: {\n  \"status\": \"all\",\n  \"skip\": \"5\",\n  \"page\": \"2\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&status=all&skip=5&page=2\u001b[39m \u001b[33m2021-12-15 21:15:8\u001b[39m, body: {}, query: {\n  \"status\": \"all\",\n  \"skip\": \"5\",\n  \"page\": \"2\"\n}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/search?&status=all&skip=5&page=2\u001b[39m \u001b[33m2021-12-15 21:15:18\u001b[39m, body: {}, query: {\n  \"status\": \"all\",\n  \"skip\": \"5\",\n  \"page\": \"2\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/search?&status=all&skip=5&page=2\u001b[39m \u001b[33m2021-12-15 21:15:18\u001b[39m, body: {}, query: {\n  \"status\": \"all\",\n  \"skip\": \"5\",\n  \"page\": \"2\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-15 21:15:21\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:15:27\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:15:27\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:15:27\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:15:27\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:15:37\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:15:37\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/testing1\u001b[39m \u001b[33m2021-12-15 21:15:37\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:15:40\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:15:40\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:15:44\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:15:44\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:16:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:16:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-15 21:16:5\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:16:15\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:16:15\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:16:18\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:16:24\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:16:24\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:16:24\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:16:29\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:16:29\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/testing1\u001b[39m \u001b[33m2021-12-15 21:16:30\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:16:33\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:16:33\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:16:35\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:16:35\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:16:48\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:16:48\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:20:53\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:20:53\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:21:12\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:21:12\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:30:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:30:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:32:30\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:32:30\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:32:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:33:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:33:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:33:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:33:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:33:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:33:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:33:28\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:33:28\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:33:29\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:34:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:34:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:34:5\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:35:56\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:35:56\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:35:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:36:2\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:36:2\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:36:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:36:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:36:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:36:5\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:36:5\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:36:7\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:36:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:36:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:36:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:36:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/\u001b[39m \u001b[33m2021-12-15 21:36:11\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/favicon.ico\u001b[39m \u001b[33m2021-12-15 21:36:11\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:36:23\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:36:23\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:36:36\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:36:36\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:36:45\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:36:45\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:36:48\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:36:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:36:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:37:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:37:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:38:52\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:38:52\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/testing1\u001b[39m \u001b[33m2021-12-15 21:38:53\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:38:57\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:38:58\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:38:58\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:38:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:39:1\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:39:5\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:39:5\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:39:30\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donators\u001b[39m \u001b[33m2021-12-15 21:39:30\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:39:30\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:39:30\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:39:32\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:39:32\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:39:32\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/testing1\u001b[39m \u001b[33m2021-12-15 21:39:40\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:39:44\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:39:44\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:39:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:39:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/testing1\u001b[39m \u001b[33m2021-12-15 21:40:39\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:40:43\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:40:43\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:40:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:40:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/testing1\u001b[39m \u001b[33m2021-12-15 21:41:19\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:41:24\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:41:24\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:42:12\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:42:12\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:42:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:42:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:42:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:42:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:42:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:43:1\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:43:1\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:43:11\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:43:11\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:43:11\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:43:11\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:43:13\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:43:13\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/testing1\u001b[39m \u001b[33m2021-12-15 21:43:14\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:43:18\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:43:18\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:43:20\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:43:20\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:43:41\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:43:41\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:43:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:43:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:44:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:44:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:44:44\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:44:44\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:44:44\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:44:44\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:45:20\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:45:20\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:45:24\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:45:41\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:45:41\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:45:53\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:45:53\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:45:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:45:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:46:5\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:46:5\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:46:11\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:46:11\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:46:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:46:20\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:46:20\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:46:20\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:46:20\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/comments/61a335e54b52141ceca7e0d0\u001b[39m \u001b[33m2021-12-15 21:46:25\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPOST\u001b[39m \u001b[34m/api/v1/comments/61a335e54b52141ceca7e0d0\u001b[39m \u001b[33m2021-12-15 21:46:25\u001b[39m, body: {\n  \"text\": \"huhuhu\"\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:46:25\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:46:25\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:46:29\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:46:29\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:46:33\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:46:34\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:46:34\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:47:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:47:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:47:43\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:47:43\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:47:54\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:47:54\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:47:57\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:47:57\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:48:15\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:48:15\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:48:35\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:48:35\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:49:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:49:16\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:49:39\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:49:39\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:49:42\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:50:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:50:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:51:0\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:51:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:51:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:51:9\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:51:11\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:52:6\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:52:6\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:52:11\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:52:11\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:53:27\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:53:27\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:53:29\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:53:31\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:53:32\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:53:32\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:53:53\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:53:53\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:53:57\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:54:9\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:54:9\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:54:10\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:54:10\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:54:10\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:54:12\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:54:13\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:54:13\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:54:15\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:54:15\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:54:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/donations\u001b[39m \u001b[33m2021-12-15 21:54:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:54:51\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/61a335e54b52141ceca7e0d0/comments\u001b[39m \u001b[33m2021-12-15 21:54:51\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-15 21:55:1\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:55:5\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:55:5\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:55:5\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 21:55:5\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:55:35\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:55:35\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:58:23\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:58:23\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:58:28\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 21:58:28\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:0:15\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:0:15\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:1:12\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:1:12\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:1:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:1:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:1:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:4:25\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:4:25\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:4:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:4:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 22:4:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-15 22:4:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/owner/61b30ec98636de334886a18f\u001b[39m \u001b[33m2021-12-15 22:5:6\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/owner/61b30ec98636de334886a18f\u001b[39m \u001b[33m2021-12-15 22:5:6\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/google\u001b[39m \u001b[33m2021-12-15 22:5:45\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPOST\u001b[39m \u001b[34m/api/v1/auth/google\u001b[39m \u001b[33m2021-12-15 22:5:45\u001b[39m, body: {\n  \"idToken\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk1NmMwNDEwZmE1MjFjMTZlNDQ2NWE4ZjVjODU5NjZhNWY1MDk5NGIiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiSGlldSBOZ3V5ZW4iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2lNdVFJaHVQM2tucFNCTEVVUXVRUXd3UjQxZVZCcUxIaEtsN3piaGc9czk2LWMiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZW5jaGFyaXR5LWEzMDMwIiwiYXVkIjoiZ3JlZW5jaGFyaXR5LWEzMDMwIiwiYXV0aF90aW1lIjoxNjM5NTgwNzQ1LCJ1c2VyX2lkIjoidWM3STJ0aGltRlR1RkF5Y3NNRmVXY2NyWllvMiIsInN1YiI6InVjN0kydGhpbUZUdUZBeWNzTUZlV2NjclpZbzIiLCJpYXQiOjE2Mzk1ODA3NDUsImV4cCI6MTYzOTU4NDM0NSwiZW1haWwiOiJoaWV1dGs1QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTAxNzYyNzMxNjI0Mjc0NDE2NDA2Il0sImVtYWlsIjpbImhpZXV0azVAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZ29vZ2xlLmNvbSJ9fQ.Uibt1Z6NiezmP1xYBX6iZK-xfonayRnyAznUxsK4eWLcVgX4s2sCLQbR4e46UNm-nUZAgvjxeq-M_Y092jaVGDpVbszYXbUrh8O0h_q8k-j4Mv06rlpuH6Kmu4ylkMTIObLVQydEiu2DojvVFACaWN2u8vPHZ2JJreSzwt1hqaAcxFXACwSO5K8M_4HdNf49N3ekxiD6jEpifzpXrklpHvebWOYFEMNpTuqHyfrgeUl1eyuXkxe0cPRysldwLkfeP4-P6MlvG4XOCOcyFPJySdy1Qe0GIL8Rf6a1gDbRL1c0UXoWS-qc0xdSMherri16CtSE3HA8pNdZ6t1OJMJt6w\"\n}, query: {}"}
+{"level":"info","message":"\u001b[32mPOST\u001b[39m \u001b[34m/api/v1/auth/google\u001b[39m \u001b[33m2021-12-15 22:5:46\u001b[39m, body: {\n  \"idToken\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk1NmMwNDEwZmE1MjFjMTZlNDQ2NWE4ZjVjODU5NjZhNWY1MDk5NGIiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiSGlldSBOZ3V5ZW4iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2lNdVFJaHVQM2tucFNCTEVVUXVRUXd3UjQxZVZCcUxIaEtsN3piaGc9czk2LWMiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZW5jaGFyaXR5LWEzMDMwIiwiYXVkIjoiZ3JlZW5jaGFyaXR5LWEzMDMwIiwiYXV0aF90aW1lIjoxNjM5NTgwNzQ1LCJ1c2VyX2lkIjoidWM3STJ0aGltRlR1RkF5Y3NNRmVXY2NyWllvMiIsInN1YiI6InVjN0kydGhpbUZUdUZBeWNzTUZlV2NjclpZbzIiLCJpYXQiOjE2Mzk1ODA3NDUsImV4cCI6MTYzOTU4NDM0NSwiZW1haWwiOiJoaWV1dGs1QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTAxNzYyNzMxNjI0Mjc0NDE2NDA2Il0sImVtYWlsIjpbImhpZXV0azVAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZ29vZ2xlLmNvbSJ9fQ.Uibt1Z6NiezmP1xYBX6iZK-xfonayRnyAznUxsK4eWLcVgX4s2sCLQbR4e46UNm-nUZAgvjxeq-M_Y092jaVGDpVbszYXbUrh8O0h_q8k-j4Mv06rlpuH6Kmu4ylkMTIObLVQydEiu2DojvVFACaWN2u8vPHZ2JJreSzwt1hqaAcxFXACwSO5K8M_4HdNf49N3ekxiD6jEpifzpXrklpHvebWOYFEMNpTuqHyfrgeUl1eyuXkxe0cPRysldwLkfeP4-P6MlvG4XOCOcyFPJySdy1Qe0GIL8Rf6a1gDbRL1c0UXoWS-qc0xdSMherri16CtSE3HA8pNdZ6t1OJMJt6w\"\n}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-15 22:5:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-15 22:5:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:5:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:5:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-15 22:5:50\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:6:21\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:6:21\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:6:48\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:6:48\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:6:56\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-15 22:6:56\u001b[39m, body: {}, query: {}"}

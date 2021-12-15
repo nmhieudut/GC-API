@@ -11,6 +11,7 @@ router.get('/status/:status', campaignController.getByStatus);
 router.get('/:slug', campaignController.getBySlug);
 router.get('/info/summary', campaignController.getSummary);
 router.get('/:campaignId/comments', getCommentByCampaignId);
+router.get('/:campaignId/donations', campaignController.getDonations);
 router.post('/', auth, campaignController.createOne);
 router.post('/:campaignId/donate', auth, DonateController.donate);
 router.put('/:campaignId/active', auth, campaignController.activeOne);

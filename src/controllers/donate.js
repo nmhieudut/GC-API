@@ -10,6 +10,12 @@ export const DonateController = {
       const { campaignId } = req.params;
       const { amount } = req.body;
       const donatingUser = await User.findOne({ _id: req.user.userId });
+      const donatedCampaign = await Campaign.findOne({ _id: campaignId });
+      if (donatedCampaign.status === 'ended') {
+        const error = new Error(responseErrorMessage.ENDED_CAMPAIGN);
+        error.statusCode = 400;
+        return next(error);
+      }
       if (donatingUser.balance - amount < 0) {
         const error = new Error(responseErrorMessage.INSUFFICIENT_BALANCE);
         error.statusCode = 400;
@@ -17,7 +23,6 @@ export const DonateController = {
       }
       donatingUser.balance -= amount;
       await donatingUser.save();
-      const donatedCampaign = await Campaign.findOne({ _id: campaignId });
       donatedCampaign.donated_amount += amount;
       await donatedCampaign.save();
       await Donation.create({

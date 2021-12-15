@@ -12,5 +12,6 @@ export const responseErrorMessage = {
   NOT_FOUND: 'Không tìm thấy trang điều hướng.',
   CONFLICT: 'Dữ liệu không đúng, có khi nó đã có rồi.',
   INTERNAL_SERVER_ERROR: 'Lỗi server.',
-  INSUFFICIENT_BALANCE: 'Số dư không đủ vui lòng nạp thêm tiền.'
+  INSUFFICIENT_BALANCE: 'Số dư không đủ vui lòng nạp thêm tiền.',
+  ENDED_CAMPAIGN: 'Chiến dịch đã kết thúc.'
 };
