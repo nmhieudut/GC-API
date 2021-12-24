@@ -7,6 +7,9 @@ import checkoutRoute from './checkout';
 import balanceRoute from './balance';
 import historyRoute from './history';
 import newsRoute from './news';
+import auctionRoute from './auction';
+//admin
+import adminRoute from './admin';
 
 const router = express.Router();
 
@@ -40,9 +43,17 @@ const defaultRoutes = [
     route: historyRoute
   },
   {
+    path: '/auctions',
+    route: auctionRoute
+  },
+  {
     path: '/news',
     route: newsRoute
   }
+  // {
+  //   path: '/admin',
+  //   route: adminRoute
+  // }
 ];
 
 defaultRoutes.forEach(route => {

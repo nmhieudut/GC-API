@@ -14,6 +14,10 @@ const donationSchema = new mongoose.Schema(
     },
     message: {
       type: String
+    },
+    donatedType: {
+      type: String,
+      default: 'donation'
     }
   },
   { timestamps: true }

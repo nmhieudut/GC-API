@@ -4,8 +4,7 @@ import puppeteer from 'puppeteer';
 export const dailyGetNews = async () => {
   const nldUrl = 'https://laodong.vn/tags/tien-tu-thien-312787.ldo';
   const browser = await puppeteer.launch({
-    headless: false,
-    args: ['--single-process', '--no-sandbox', '--disable-setuid-sandbox']
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
   try {
     const page = await browser.newPage();

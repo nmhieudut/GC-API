@@ -1,17 +1,17 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 const bidSchema = new Schema(
   {
-    authorId: {
-      type: Schema.Types.ObjectId
+    author: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
     },
-    value: {
+    auctionId: {
+      type: String
+    },
+    amount: {
       type: Number,
       min: 0
-    },
-    blocked: {
-      type: Boolean,
-      default: false
     }
   },
   { timestamps: true }

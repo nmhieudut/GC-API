@@ -7,6 +7,7 @@ const errorHandler = (err, req, res, next) => {
   console.log(err);
   if (err.code === 11000) {
     err.statusCode = 400;
+    console.log('-------------', err);
     for (let p in err.keyValue) {
       err.message = `${p} đã được dùng rồi.`;
     }

@@ -13,5 +13,11 @@ export const responseErrorMessage = {
   CONFLICT: 'Dữ liệu không đúng, có khi nó đã có rồi.',
   INTERNAL_SERVER_ERROR: 'Lỗi server.',
   INSUFFICIENT_BALANCE: 'Số dư không đủ vui lòng nạp thêm tiền.',
-  ENDED_CAMPAIGN: 'Chiến dịch đã kết thúc.'
+  INVALID_CAMPAIGN:
+    'Chiến dịch đã kết thúc hoặc đang trong thời gian kiểm duyệt. Hãy để dành kinh phí cho các chiến dịch khác.',
+  AUCTION_EXPIRED: 'Phiên đấu giá đã kết thúc',
+  DUPLICATED_BID: 'Bạn đã đấu giá rồi',
+  INVALID_BID: 'Giá đấu phải lớn hơn giá đấu đầu tiên',
+  INVALID_CURRENT_BID: 'Giá đấu phải lớn hơn giá đấu hiện tại',
+  FORBIDDEN_BID: 'Bạn không thể đấu giá cho chính mình'
 };

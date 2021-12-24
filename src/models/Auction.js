@@ -1,43 +1,55 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
+import { Bid } from './Bid';
 
 const auctionSchema = new Schema(
   {
-    name: {
+    title: {
       type: String,
-      required: true,
-      index: {
-        unique: true
-      }
+      required: true
+    },
+    author: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    },
+    images: [String],
+    campaign: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Campaign'
     },
     description: {
       type: String
-    },
-    startedAt: {
-      type: Date,
-      required: true
     },
     finishedAt: {
       type: Date,
       required: true
     },
-    startAmount: {
+    startPrice: {
       type: Number,
+      default: 0,
       required: true
     },
-    featured: {
-      type: Boolean,
-      default: false
+    status: {
+      type: String,
+      default: 'active'
     },
-    enabled: {
-      type: Boolean,
-      default: false
+    result: {
+      type: String,
+      default: null
     },
     currentBid: {
-      type: Bid.schema,
-      required: false
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Bid',
+      default: null
     },
-    countdown: { type: Number, default: 1 },
-    bids: [Bid.schema]
+    bids: {
+      type: [
+        {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Bid'
+        }
+      ],
+      default: []
+    }
   },
   { timestamps: true }
 );

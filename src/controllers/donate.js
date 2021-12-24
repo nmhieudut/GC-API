@@ -11,8 +11,8 @@ export const DonateController = {
       const { amount } = req.body;
       const donatingUser = await User.findOne({ _id: req.user.userId });
       const donatedCampaign = await Campaign.findOne({ _id: campaignId });
-      if (donatedCampaign.status === 'ended') {
-        const error = new Error(responseErrorMessage.ENDED_CAMPAIGN);
+      if (donatedCampaign.status !== 'active') {
+        const error = new Error(responseErrorMessage.INVALID_CAMPAIGN);
         error.statusCode = 400;
         return next(error);
       }
