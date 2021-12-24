@@ -5837,3 +5837,96 @@
 {"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda\u001b[39m \u001b[33m2021-12-24 16:24:54\u001b[39m, body: {}, query: {}"}
 {"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 16:24:57\u001b[39m, body: {}, query: {}"}
 {"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 16:24:57\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 16:55:10\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 16:55:10\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 17:0:55\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 17:0:55\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-24 17:1:40\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-24 23:9:12\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-24 23:11:41\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:11:41\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-24 23:11:41\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:11:41\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions?status=active\u001b[39m \u001b[33m2021-12-24 23:11:45\u001b[39m, body: {}, query: {\n  \"status\": \"active\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auctions?status=active\u001b[39m \u001b[33m2021-12-24 23:11:45\u001b[39m, body: {}, query: {\n  \"status\": \"active\"\n}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda\u001b[39m \u001b[33m2021-12-24 23:13:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:13:12\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:13:12\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-24 23:13:38\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda\u001b[39m \u001b[33m2021-12-24 23:13:41\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-24 23:13:41\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-24 23:13:41\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/login\u001b[39m \u001b[33m2021-12-24 23:13:57\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPOST\u001b[39m \u001b[34m/api/v1/auth/login\u001b[39m \u001b[33m2021-12-24 23:13:58\u001b[39m, body: {\n  \"email\": \"congvinhno1@gmail.com\",\n  \"password\": \"123456\"\n}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-24 23:14:1\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-24 23:14:1\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPOST\u001b[39m \u001b[34m/api/v1/auth/login\u001b[39m \u001b[33m2021-12-24 23:14:1\u001b[39m, body: {\n  \"email\": \"congvinhno1@gmail.com\",\n  \"password\": \"123456\"\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-24 23:14:1\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-24 23:14:1\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-24 23:14:2\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-24 23:14:2\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-24 23:14:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda\u001b[39m \u001b[33m2021-12-24 23:14:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-24 23:14:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-24 23:14:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-24 23:14:5\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda\u001b[39m \u001b[33m2021-12-24 23:14:5\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/info/summary\u001b[39m \u001b[33m2021-12-24 23:14:6\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/campaigns/status/active\u001b[39m \u001b[33m2021-12-24 23:14:6\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda\u001b[39m \u001b[33m2021-12-24 23:14:6\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda\u001b[39m \u001b[33m2021-12-24 23:14:9\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:14:9\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:14:9\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:14:12\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:14:14\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:14:14\u001b[39m, body: {\n  \"amount\": 12223344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:14:17\u001b[39m, body: {\n  \"amount\": 12723344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:14:47\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:14:47\u001b[39m, body: {\n  \"amount\": 12723344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:15:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:15:8\u001b[39m, body: {\n  \"amount\": 12723344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda\u001b[39m \u001b[33m2021-12-24 23:15:13\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:15:17\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:15:17\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda\u001b[39m \u001b[33m2021-12-24 23:17:40\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:17:43\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:17:43\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda\u001b[39m \u001b[33m2021-12-24 23:17:46\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:17:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:17:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda\u001b[39m \u001b[33m2021-12-24 23:18:59\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda\u001b[39m \u001b[33m2021-12-24 23:19:0\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:19:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:19:3\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:19:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:19:4\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda\u001b[39m \u001b[33m2021-12-24 23:19:48\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda\u001b[39m \u001b[33m2021-12-24 23:19:49\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:19:55\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:19:55\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:20:47\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:20:47\u001b[39m, body: {\n  \"amount\": 13223344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:20:54\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:20:54\u001b[39m, body: {\n  \"amount\": 13723344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:21:10\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:21:10\u001b[39m, body: {\n  \"amount\": 14223344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:21:25\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:21:25\u001b[39m, body: {\n  \"amount\": 14223344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:23:52\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:23:52\u001b[39m, body: {\n  \"amount\": 14223344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:24:44\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:24:44\u001b[39m, body: {\n  \"amount\": 14223344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:26:27\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:26:27\u001b[39m, body: {\n  \"amount\": 14223344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:27:30\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:27:30\u001b[39m, body: {\n  \"amount\": 14223344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:29:54\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:29:54\u001b[39m, body: {\n  \"amount\": 14223344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:30:46\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:30:46\u001b[39m, body: {\n  \"amount\": 14223344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:33:8\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:33:8\u001b[39m, body: {\n  \"amount\": 14223344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:34:6\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mPUT\u001b[39m \u001b[34m/api/v1/auctions/61c578334b82b1110411adda/bid\u001b[39m \u001b[33m2021-12-24 23:34:6\u001b[39m, body: {\n  \"amount\": 14223344\n}, query: {}"}
+{"level":"info","message":"\u001b[32mOPTIONS\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:35:26\u001b[39m, body: {}, query: {}"}
+{"level":"info","message":"\u001b[32mGET\u001b[39m \u001b[34m/api/v1/auth/verify\u001b[39m \u001b[33m2021-12-24 23:35:26\u001b[39m, body: {}, query: {}"}

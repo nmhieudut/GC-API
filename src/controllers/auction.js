@@ -33,6 +33,11 @@ export const AuctionController = {
         .populate('author', 'name picture')
         .populate('campaign', 'name slug')
         .populate({
+          path: 'currentBid',
+          model: 'Bid',
+          populate: { path: 'author', model: 'User', select: 'name picture' }
+        })
+        .populate({
           path: 'bids',
           model: 'Bid',
           populate: {
@@ -87,33 +92,42 @@ export const AuctionController = {
       const auction = await Auction.findById(auctionId)
         .populate('author')
         .populate('campaign')
-        .populate('currentBid');
+        .populate({
+          path: 'currentBid',
+          model: 'Bid',
+          populate: { path: 'author', model: 'User', select: 'name picture' }
+        });
       const now = new Date();
       // check if auction is expired
       if (auction.finishedAt < now) {
         const err = new Error(responseErrorMessage.AUCTION_EXPIRED);
         err.statusCode = 400;
-        throw err;
+        return next(err);
       }
       if (auction.author._id === userId) {
-        const err = new Error(responseErrorMessage.DUPLICATED_BID);
-        err.statusCode = 400;
-        throw err;
-      }
-      if (auction.currentBid && auction.currentBid.author === userId) {
         const err = new Error(responseErrorMessage.FORBIDDEN_BID);
         err.statusCode = 400;
-        throw err;
+        return next(err);
       }
+
+      if (
+        auction.currentBid &&
+        auction.currentBid.author._id.toString() === userId
+      ) {
+        const err = new Error(responseErrorMessage.DUPLICATED_BID);
+        err.statusCode = 400;
+        return next(err);
+      }
+      console.log('--=-passss');
       if (amount <= auction.startPrice) {
         const err = new Error(responseErrorMessage.INVALID_BID);
         err.statusCode = 400;
-        throw err;
+        return next(err);
       }
       if (auction.currentBid && auction.currentBid.amount >= amount) {
         const err = new Error(responseErrorMessage.INVALID_CURRENT_BID);
         err.statusCode = 400;
-        throw err;
+        return next(err);
       }
 
       if (auction.currentBid) {

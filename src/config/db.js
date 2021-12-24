@@ -20,7 +20,11 @@ const connect = async ({ io }) => {
       const auction = await Auction.findById(change.fullDocument._id)
         .populate('author', 'name picture')
         .populate('campaign', 'name slug')
-        .populate('currentBid')
+        .populate({
+          path: 'currentBid',
+          model: 'Bid',
+          populate: { path: 'author', model: 'User', select: 'name picture' }
+        })
         .populate({
           path: 'bids',
           model: 'Bid',
