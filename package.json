@@ -39,7 +39,6 @@
     "request": "^2.88.2",
     "slugify": "^1.6.2",
     "socket.io": "^4.4.0",
-    "stripe": "^8.186.1",
     "winston": "^3.3.3"
   },
   "devDependencies": {

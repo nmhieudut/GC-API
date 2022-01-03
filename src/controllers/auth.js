@@ -13,7 +13,10 @@ const register = async (req, res, next) => {
       err.statusCode = 400;
       return next(err);
     }
-    const user = await User.create(req.body);
+    const newUser = new User(req.body);
+    const salt = await bcrypt.genSalt(10);
+    newUser.password = await bcrypt.hash(newUser.password, salt);
+    const user = await newUser.save();
     const token = jwt.sign({ userId: user._id, role: user.role }, jwt_key);
     res.status(200).json({
       token,
@@ -41,7 +44,12 @@ const login = async (req, res, next) => {
       err.statusCode = 400;
       return next(err);
     }
-    console.log('----', req.body.password, user.password);
+    // check if user is not activated
+    if (user.isActive === false) {
+      const err = new Error(requestErrorMessage.NOT_ACTIVATED);
+      err.statusCode = 400;
+      return next(err);
+    }
     if (bcrypt.compareSync(req.body.password, user.password)) {
       const token = jwt.sign({ userId: user._id, role: user.role }, jwt_key);
       res.status(200).json({
@@ -103,6 +111,11 @@ const googleLogin = async (req, res, next) => {
         return next(error);
       } else {
         if (user) {
+          if (user.isActive === false) {
+            const err = new Error(requestErrorMessage.NOT_ACTIVATED);
+            err.statusCode = 400;
+            return next(err);
+          }
           const token = jwt.sign(
             { userId: user._id, role: user.role },
             jwt_key
@@ -144,12 +157,4 @@ const googleLogin = async (req, res, next) => {
   }
 };
 
-const facebookLogin = async (req, res, next) => {
-  try {
-    //  const {idToken} = req.
-  } catch (e) {
-    next(e);
-  }
-};
-
-export { login, register, getCurrentUser, googleLogin, facebookLogin };
+export { login, register, getCurrentUser, googleLogin };

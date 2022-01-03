@@ -1,7 +1,14 @@
+import { Campaign } from 'models/Campaign';
+import { Donation } from 'models/Donation';
+import { User } from 'models/User';
+import bcrypt from 'bcrypt';
+
 export const AdminController = {
   getUsers: async (req, res, next) => {
     try {
-      const users = await User.find({});
+      const users = await User.find({ role: { $ne: 'admin' } }).select(
+        '-password'
+      );
       res.json({ users });
     } catch (e) {
       next(e);
@@ -10,7 +17,7 @@ export const AdminController = {
   getUserById: async (req, res, next) => {
     const { userId } = req.params;
     try {
-      const user = await User.findById(userId);
+      const user = await User.findById(userId).select('-password');
       res.json({ user });
     } catch (e) {
       next(e);
@@ -19,10 +26,37 @@ export const AdminController = {
   updateUserById: async (req, res, next) => {
     const { userId } = req.params;
     try {
-      const user = await User.findByIdAndUpdate(userId, ...req.body, {
-        new: true
+      const { password } = req.body;
+      if (password) {
+        const salt = await bcrypt.genSalt(10);
+        req.body.password = await bcrypt.hash(password, salt);
+      }
+      await User.findByIdAndUpdate(
+        userId,
+        { ...req.body, balance: parseFloat(req.body.balance) },
+        {
+          new: true,
+          runValidator: true
+        }
+      );
+      res.status(200).json({
+        message: 'Cập nhật thành công'
       });
-      res.json({ user });
+    } catch (e) {
+      next(e);
+    }
+  },
+  toggleUserStatus: async (req, res, next) => {
+    const { userId } = req.params;
+    try {
+      const user = await User.findById(userId);
+      user.isActive = !user.isActive;
+      await user.save();
+      res.status(200).json({
+        message: user.active
+          ? 'Kích hoạt thành công'
+          : 'Khóa tài khoản thành công'
+      });
     } catch (e) {
       next(e);
     }
@@ -30,8 +64,11 @@ export const AdminController = {
   deleteUserById: async (req, res, next) => {
     const { userId } = req.params;
     try {
-      const user = await User.findByIdAndDelete(userId);
-      res.json({ user });
+      const user = await User.findById(userId);
+      await user.remove();
+      res.status(200).json({
+        message: 'Xóa tài khoản thành công'
+      });
     } catch (e) {
       next(e);
     }

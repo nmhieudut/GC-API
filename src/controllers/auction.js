@@ -12,11 +12,21 @@ export const AuctionController = {
         auctions = await Auction.find({})
           .sort('-createdAt')
           .populate('author', 'name picture')
+          .populate({
+            path: 'currentBid',
+            model: 'Bid',
+            populate: { path: 'author', model: 'User', select: 'name picture' }
+          })
           .limit(6);
       } else {
         auctions = await Auction.find({ status })
           .sort('-createdAt')
           .populate('author', 'name picture')
+          .populate({
+            path: 'currentBid',
+            model: 'Bid',
+            populate: { path: 'author', model: 'User', select: 'name picture' }
+          })
           .limit(6);
       }
       res.status(200).json({
@@ -118,7 +128,6 @@ export const AuctionController = {
         err.statusCode = 400;
         return next(err);
       }
-      console.log('--=-passss');
       if (amount <= auction.startPrice) {
         const err = new Error(responseErrorMessage.INVALID_BID);
         err.statusCode = 400;
@@ -126,6 +135,13 @@ export const AuctionController = {
       }
       if (auction.currentBid && auction.currentBid.amount >= amount) {
         const err = new Error(responseErrorMessage.INVALID_CURRENT_BID);
+        err.statusCode = 400;
+        return next(err);
+      }
+
+      const user = await User.findById(userId);
+      if (user.balance < amount) {
+        const err = new Error(responseErrorMessage.INSUFFICIENT_BALANCE);
         err.statusCode = 400;
         return next(err);
       }
@@ -138,12 +154,8 @@ export const AuctionController = {
           }
         });
       }
-
-      await User.findByIdAndUpdate(userId, {
-        $inc: {
-          balance: -amount
-        }
-      });
+      user.balance -= amount;
+      await user.save();
 
       const newBid = await Bid.create({
         amount,

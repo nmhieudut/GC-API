@@ -1,22 +1,28 @@
-// import { AdminController } from 'controllers/admin';
-// import express from 'express';
-// import { adminGuard } from 'middlewares';
-// import { auth } from 'middlewares/auth.middleware';
+import { AdminController } from 'controllers/admin';
+import express from 'express';
+import { adminGuard } from 'middlewares';
+import { auth } from 'middlewares/auth.middleware';
 
-// const router = express.Router();
+const router = express.Router();
 
-// // admin user
-// router.get('/user', auth, adminGuard, AdminController.getUsers);
-// router.get('/users/:userId', auth, adminGuard, AdminController.getUserById);
-// router.put('/users/:userId', auth, adminGuard, AdminController.updateUserById);
-// router.delete(
-//   '/users/:userId',
-//   auth,
-//   adminGuard,
-//   AdminController.deleteUserById
-// );
+// admin user
+router.get('/users', auth, adminGuard, AdminController.getUsers);
+router.get('/users/:userId', auth, adminGuard, AdminController.getUserById);
+router.put('/users/:userId', auth, adminGuard, AdminController.updateUserById);
+router.put(
+  '/users/:userId/active',
+  auth,
+  adminGuard,
+  AdminController.toggleUserStatus
+);
+router.delete(
+  '/users/:userId',
+  auth,
+  adminGuard,
+  AdminController.deleteUserById
+);
 
-// // admin campaign
+// admin campaign
 // router.get('/campaign', auth, adminGuard, AdminController.getCampaigns);
 // router.get(
 //   '/campaigns/:campaignId',
@@ -69,4 +75,4 @@
 //   AdminController.updateAuctionStatusById
 // );
 
-// export default router;
+export default router;

@@ -1,9 +1,10 @@
 export const requestErrorMessage = {
+  NOT_ACTIVATED: 'Tài khoản này đã bị khóa',
   EXISTED_EMAIL: 'Email này được đăng kí rồi. Vui lòng thử email khác',
   WRONG_EMAIL: 'Sai email rồi',
   WRONG_PASSWORD: 'Sai mật khẩu rồi',
   INVALID_PHONE: 'Số điện thoại không khả dụng',
-  DUPLICATED_PASSWORD: 'Mật khẩu mới trùng với mật khẩu cũ'
+  DUPLICATED_PASSWORD: 'Mật khẩu mới không trùng với mật khẩu cũ'
 };
 export const responseErrorMessage = {
   BAD_REQUEST: 'Bạn nhập sai gì đó rồi, hãy thử nhập lại.',

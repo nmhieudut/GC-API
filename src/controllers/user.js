@@ -53,7 +53,7 @@ export const userController = {
       }
       const user = await User.findById(userId);
       // compare old and new password
-      const isMatch = bcrypt.compare(currentPassword, user.password);
+      const isMatch = bcrypt.compareSync(currentPassword, user.password);
       if (isMatch) {
         // check newPassword duplicated with old password
         const isDuplicated = currentPassword === newPassword;
@@ -62,7 +62,8 @@ export const userController = {
           err.statusCode = 409;
           return next(err);
         }
-        user.password = newPassword;
+        const salt = await bcrypt.genSalt(10);
+        user.password = await bcrypt.hash(newPassword, salt);
         await user.save();
         return res.status(200).json({
           message: 'Đổi mật khẩu thành công'

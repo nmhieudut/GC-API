@@ -1,14 +1,5 @@
-import { getVNPayIpn, sendVNPayRequest, getVNPayReturnUrl } from 'libs/vnpay';
+import { getVNPayReturnUrl, sendVNPayRequest } from 'libs/vnpay';
 import { sendMoMoRequest } from '../libs/momo';
-import { stripeMethod } from '../libs/stripe';
-
-const payWithStripe = (req, res, next) => {
-  const { info, amount_money } = req.body;
-  stripeMethod(info, amount_money, id);
-  return res.status(200).json({
-    message: 'Payment with stripe'
-  });
-};
 const payWithMoMo = (req, res, next) => {
   const { amount_money } = req.body;
   sendMoMoRequest(req.user.userId, amount_money)
@@ -48,4 +39,4 @@ const returnVNPayUrl = (req, res, next) => {
       next(error);
     });
 };
-export { payWithMoMo, payWithStripe, createPaymentUrlVNPay, returnVNPayUrl };
+export { payWithMoMo, createPaymentUrlVNPay, returnVNPayUrl };

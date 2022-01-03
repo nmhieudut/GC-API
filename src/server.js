@@ -1,5 +1,5 @@
 import cors from 'cors';
-import 'cronjob/getNews';
+// import 'cronjob/getNews';
 import 'cronjob/updatedb';
 import express from 'express';
 import helmet from 'helmet';

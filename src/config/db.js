@@ -1,4 +1,5 @@
 import { Auction } from 'models/Auction';
+import { User } from 'models/User';
 import mongoose from 'mongoose';
 require('dotenv').config();
 const connectionParams = {
@@ -38,6 +39,22 @@ const connect = async ({ io }) => {
         type: change.operationType,
         auction
       });
+    });
+    const UserChangeStream = User.collection.watch({
+      fullDocument: 'updateLookup'
+    });
+    UserChangeStream.on('change', async change => {
+      console.log('user Change', change);
+      if (change.operationType !== 'delete') {
+        const user = await User.findById(change.fullDocument._id).select(
+          '-password'
+        );
+        user.id = user._id;
+        io.emit('user-change', {
+          type: change.operationType,
+          user
+        });
+      }
     });
   } catch (e) {
     console.log('Error happened when connect to DB: ', error);

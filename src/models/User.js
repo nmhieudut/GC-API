@@ -1,13 +1,14 @@
+import { requestErrorMessage } from 'constants/error';
 import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
 import { isVietnamesePhoneNumber } from 'utils/validate';
+import { Auction } from './Auction';
+import { Bid } from './Bid';
 import { Campaign } from './Campaign';
 import { Comment } from './Comment';
-import { bcryptService } from 'plugins/bcrypt';
-import { requestErrorMessage } from 'constants/error';
+import { Donation } from './Donation';
 import { History } from './History';
 
-export const userSchema = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
   {
     picture: {
       type: String,
@@ -47,6 +48,10 @@ export const userSchema = new mongoose.Schema(
     balance: {
       type: Number,
       default: 0
+    },
+    isActive: {
+      type: Boolean,
+      default: true
     }
   },
   { timestamps: true }
@@ -61,20 +66,18 @@ userSchema.pre('save', async function (next) {
       return next(err);
     }
   }
-
-  if (user.password) {
-    const salt = await bcrypt.genSalt(10);
-    user.password = await bcrypt.hash(user.password, salt);
-  }
   next();
 });
 
-userSchema.pre('deleteOne', async function (next) {
+userSchema.pre('remove', async function (next) {
   let user = this;
-  const userId = user._conditions._id;
+  const userId = user._id;
   await Comment.deleteMany({ author: userId });
   await Campaign.deleteMany({ author: userId });
   await History.deleteMany({ author: userId });
+  await Auction.deleteMany({ author: userId });
+  await Donation.deleteMany({ author: userId });
+  await Bid.deleteMany({ author: userId });
   next();
 });
 

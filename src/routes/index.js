@@ -49,11 +49,11 @@ const defaultRoutes = [
   {
     path: '/news',
     route: newsRoute
+  },
+  {
+    path: '/admin',
+    route: adminRoute
   }
-  // {
-  //   path: '/admin',
-  //   route: adminRoute
-  // }
 ];
 
 defaultRoutes.forEach(route => {
