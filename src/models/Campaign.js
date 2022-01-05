@@ -1,4 +1,7 @@
 import mongoose from 'mongoose';
+import { Auction } from './Auction';
+import { Comment } from './Comment';
+import { Donation } from './Donation';
 
 const campaignSchema = new mongoose.Schema(
   {
@@ -54,10 +57,12 @@ const campaignSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-campaignSchema.pre('deleteOne', async function (next) {
+campaignSchema.pre('remove', async function (next) {
   let campaign = this;
-  const campaignId = campaign._conditions._id;
+  const campaignId = campaign._id;
   await Comment.deleteMany({ campaignId });
+  await Donation.deleteMany({ campaignId });
+  await Auction.deleteMany({ campaign: campaignId });
   next();
 });
 

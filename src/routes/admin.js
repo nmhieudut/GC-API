@@ -23,31 +23,38 @@ router.delete(
 );
 
 // admin campaign
-// router.get('/campaign', auth, adminGuard, AdminController.getCampaigns);
-// router.get(
-//   '/campaigns/:campaignId',
-//   auth,
-//   adminGuard,
-//   AdminController.getCampaignById
-// );
-// router.put(
-//   '/campaigns/:campaignId',
-//   auth,
-//   adminGuard,
-//   AdminController.updateCampaignById
-// );
-// router.delete(
-//   '/campaigns/:campaignId',
-//   auth,
-//   adminGuard,
-//   AdminController.deleteCampaignById
-// );
-// router.put(
-//   '/campaigns/:campaignId/active',
-//   auth,
-//   adminGuard,
-//   AdminController.updateCampaignStatusById
-// );
+router.get('/campaigns', auth, adminGuard, AdminController.getCampaigns);
+router.get(
+  '/campaigns/:campaignId',
+  auth,
+  adminGuard,
+  AdminController.getCampaignById
+);
+router.put(
+  '/campaigns/:campaignId',
+  auth,
+  adminGuard,
+  AdminController.updateCampaignById
+);
+router.delete(
+  '/campaigns/:campaignId',
+  auth,
+  adminGuard,
+  AdminController.deleteCampaignById
+);
+router.put(
+  '/campaigns/:campaignId/active',
+  auth,
+  adminGuard,
+  AdminController.activeOne
+);
+router.put(
+  '/campaigns/:campaignId/end',
+  auth,
+  adminGuard,
+  AdminController.endOne
+);
+
 // // adminGuard auction
 // router.get('/auction', auth, adminGuard, AdminController.getAuctions);
 // router.get(

@@ -75,7 +75,10 @@ export const AdminController = {
   },
   getCampaigns: async (req, res, next) => {
     try {
-      const campaigns = await Campaign.find({});
+      const campaigns = await Campaign.find({}).populate(
+        'author',
+        'name picture'
+      );
       res.json({ campaigns });
     } catch (e) {
       next(e);
@@ -106,27 +109,41 @@ export const AdminController = {
   deleteCampaignById: async (req, res, next) => {
     const { campaignId } = req.params;
     try {
-      const campaign = await Campaign.findByIdAndDelete(campaignId);
-      res.json({ campaign });
+      const campaign = await Campaign.findById(campaignId);
+      await campaign.remove();
+      res.status(200).json({
+        message: 'Xóa chiến dịch thành công'
+      });
     } catch (e) {
       next(e);
     }
   },
   activeOne: async (req, res, next) => {
-    const { role } = req.user;
     const { campaignId } = req.params;
-    if (role !== 'admin') {
-      const err = new Error(responseErrorMessage.FORBIDDEN);
-      err.statusCode = 403;
-      return next(err);
-    }
     try {
-      const campaign = await Campaign.findByIdAndUpdate(
+      await Campaign.findByIdAndUpdate(
         campaignId,
         { status: 'active' },
         { new: true, runValidator: true }
       );
-      res.json({ campaign });
+      res.status(200).json({
+        message: 'Kích hoạt chiến dịch thành công'
+      });
+    } catch (e) {
+      next(e);
+    }
+  },
+  endOne: async (req, res, next) => {
+    const { campaignId } = req.params;
+    try {
+      await Campaign.findByIdAndUpdate(
+        campaignId,
+        { status: 'ended' },
+        { new: true, runValidator: true }
+      );
+      res.status(200).json({
+        message: 'Kết thúc chiến dịch thành công'
+      });
     } catch (e) {
       next(e);
     }
