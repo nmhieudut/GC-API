@@ -3,7 +3,7 @@ import { requestErrorMessage, responseErrorMessage } from 'constants/error';
 import bcrypt from 'bcrypt';
 import { Donation } from 'models/Donation';
 import { Campaign } from 'models/Campaign';
-import { History } from 'models/History';
+import { Transaction } from 'models/Transaction';
 
 export const userController = {
   getMany: async (req, res, next) => {
@@ -76,17 +76,6 @@ export const userController = {
       next(e);
     }
   },
-  remove: async (req, res, next) => {
-    try {
-      const { userId, isAdmin } = req.body;
-      await User.deleteOne({ _id: userId });
-      res.status(200).json({
-        message: 'OK'
-      });
-    } catch (e) {
-      next(e);
-    }
-  },
   getOwnDonations: async (req, res, next) => {
     console.log('Getting own donations');
     try {
@@ -127,7 +116,7 @@ export const userController = {
         err.statusCode = 403;
         return next(err);
       }
-      const histories = await History.find({ author: userId });
+      const histories = await Transaction.find({ author: userId });
       return res.status(200).json({
         histories
       });

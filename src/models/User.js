@@ -6,7 +6,7 @@ import { Bid } from './Bid';
 import { Campaign } from './Campaign';
 import { Comment } from './Comment';
 import { Donation } from './Donation';
-import { History } from './History';
+import { Transaction } from './Transaction';
 
 const userSchema = new mongoose.Schema(
   {
@@ -74,7 +74,7 @@ userSchema.pre('remove', async function (next) {
   const userId = user._id;
   await Comment.deleteMany({ author: userId });
   await Campaign.deleteMany({ author: userId });
-  await History.deleteMany({ author: userId });
+  await Transaction.deleteMany({ author: userId });
   await Auction.deleteMany({ author: userId });
   await Donation.deleteMany({ author: userId });
   await Bid.deleteMany({ author: userId });

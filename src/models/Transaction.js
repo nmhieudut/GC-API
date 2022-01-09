@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const historySchema = new mongoose.Schema(
+const transactionSchema = new mongoose.Schema(
   {
     author: {
       type: mongoose.Schema.Types.ObjectId,
@@ -22,6 +22,6 @@ const historySchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const History = mongoose.model('History', historySchema);
+const Transaction = mongoose.model('Transaction', transactionSchema);
 
-export { History };
+export { Transaction };

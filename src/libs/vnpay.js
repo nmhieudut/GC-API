@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 import { format } from 'date-fns';
-import { History } from 'models/History';
+import { Transaction } from 'models/Transaction';
 import { nanoid } from 'nanoid';
 import { resolve } from 'path';
 import querystring from 'qs';
@@ -81,7 +81,7 @@ export const getVNPayReturnUrl = async (req, res) => {
 
   if (secureHash === signed) {
     const orderId = vnp_Params['vnp_TxnRef'];
-    const checkingOrder = await History.findOne({ orderId });
+    const checkingOrder = await Transaction.findOne({ orderId });
     if (checkingOrder) {
       return { code: '97' };
     }

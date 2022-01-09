@@ -23,6 +23,26 @@ export const AdminController = {
       next(e);
     }
   },
+  createUser: async (req, res, next) => {
+    try {
+      const { email } = req.body;
+      const existedUser = await User.findOne({ email: email });
+      if (existedUser) {
+        const err = new Error(requestErrorMessage.EXISTED_EMAIL);
+        err.statusCode = 400;
+        return next(err);
+      }
+      const newUser = new User(req.body);
+      const salt = await bcrypt.genSalt(10);
+      newUser.password = await bcrypt.hash(newUser.password, salt);
+      const user = await newUser.save();
+      res.status(200).json({
+        message: 'Thành công'
+      });
+    } catch (e) {
+      next(e);
+    }
+  },
   updateUserById: async (req, res, next) => {
     const { userId } = req.params;
     try {
@@ -170,5 +190,35 @@ export const AdminController = {
       next(e);
     }
   },
-  getTransactions: async (req, res, next) => {}
+  getTransactions: async (req, res, next) => {
+    const transactions = await Transaction.find({}).populate(
+      'donator',
+      'name picture'
+    );
+    res.json({ transactions });
+  },
+  getTransactionsByUserId: async (req, res, next) => {
+    const { userId } = req.params;
+    try {
+      const transactions = await Transaction.find({ author: userId }).populate(
+        'donator',
+        'name picture'
+      );
+      res.json({ transactions });
+    } catch (e) {
+      next(e);
+    }
+  },
+  deleteTransactionById: async (req, res, next) => {
+    const { transactionId } = req.params;
+    try {
+      const transaction = await Transaction.findById(transactionId);
+      await transaction.remove();
+      res.status(200).json({
+        message: 'Xóa giao dịch thành công'
+      });
+    } catch (e) {
+      next(e);
+    }
+  }
 };

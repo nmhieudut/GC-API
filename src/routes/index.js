@@ -5,7 +5,6 @@ import campaignRoute from './campaign';
 import commentRoute from './comment';
 import checkoutRoute from './checkout';
 import balanceRoute from './balance';
-import historyRoute from './history';
 import newsRoute from './news';
 import auctionRoute from './auction';
 //admin
@@ -37,10 +36,6 @@ const defaultRoutes = [
   {
     path: '/balance',
     route: balanceRoute
-  },
-  {
-    path: '/history',
-    route: historyRoute
   },
   {
     path: '/auctions',

@@ -2,7 +2,7 @@ import { Campaign } from 'models/Campaign';
 import { Donation } from 'models/Donation';
 import { User } from 'models/User';
 import { responseErrorMessage } from 'constants/error';
-import { History } from 'models/History';
+import { Transaction } from 'models/Transaction';
 
 export const DonateController = {
   donate: async (req, res, next) => {
@@ -30,7 +30,7 @@ export const DonateController = {
         campaignId,
         donator: req.user.userId
       });
-      await History.create({
+      await Transaction.create({
         author: req.user.userId,
         amount,
         action: 'donate'
@@ -43,13 +43,7 @@ export const DonateController = {
       return next(error);
     }
   },
-  refund: async (req, res, next) => {
-    try {
-    } catch (error) {
-      return next(error);
-    }
-  },
-  getDonators: async (req, res, next) => {
+  getDonatorsByCampaignId: async (req, res, next) => {
     try {
       const { campaignId } = req.params;
       const donators = await Donation.find({ campaignId }).populate(
@@ -57,7 +51,6 @@ export const DonateController = {
         'name picture phoneNumber'
       );
       return res.status(200).json({
-        status: 'ok',
         donators
       });
     } catch (error) {

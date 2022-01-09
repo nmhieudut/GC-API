@@ -75,6 +75,16 @@ const login = async (req, res, next) => {
   }
 };
 
+const logout = async (req, res, next) => {
+  try {
+    res.status(200).json({
+      message: 'You are logged out'
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
 const getCurrentUser = async (req, res, next) => {
   try {
     let data = null;
@@ -157,4 +167,4 @@ const googleLogin = async (req, res, next) => {
   }
 };
 
-export { login, register, getCurrentUser, googleLogin };
+export { login, register, getCurrentUser, googleLogin, logout };

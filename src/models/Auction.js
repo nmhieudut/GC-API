@@ -54,6 +54,13 @@ const auctionSchema = new Schema(
   { timestamps: true }
 );
 
+auctionSchema.pre('remove', async function (next) {
+  let auction = this;
+  const auctionId = auction._id;
+  await Bid.deleteMany({ auction: auctionId });
+  next();
+});
+
 const Auction = mongoose.model('Auction', auctionSchema);
 
 export { Auction };

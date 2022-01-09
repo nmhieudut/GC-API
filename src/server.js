@@ -13,6 +13,8 @@ import { connect } from './config/db';
 // Error handler
 import { errorHandler } from './middlewares/errorHandler';
 import logger from './middlewares/logger';
+import swaggerUi from 'swagger-ui-express';
+import swaggerJSDoc from 'swagger-jsdoc';
 
 const app = express();
 const httpServer = http.Server(app);
@@ -35,6 +37,27 @@ app.get('/', (req, res) => {
 
 // Mounted the routes
 app.use('/api/v1', router);
+
+const options = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Green Charity APIs',
+      version: '1.0.0',
+      description: 'Green Charity APIs'
+    },
+    servers: [
+      {
+        url: 'http://localhost:8080/api/v1'
+      }
+    ]
+  },
+  apis: ['./src/routes/*.js']
+};
+
+const specs = swaggerJSDoc(options);
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 app.all('*', (req, res, next) => {
   const err = new Error('Invalid route');
   err.statusCode = 404;
@@ -45,6 +68,7 @@ if (app.get('env') === 'development') {
   app.use(morgan('tiny'));
   console.log('Development');
 }
+
 const PORT = process.env.PORT || 8080;
 // Main app
 httpServer.listen(PORT, () => {

@@ -80,13 +80,13 @@ export const campaignController = {
         campaigns = await Campaign.find({ name })
           .sort('-createdAt')
           .populate('author', 'name picture')
-          .skip(Number.parseInt(perPage) * (Number.parseInt(page) - 1))
+          .skip(Number.parseInt(perPage) * Number.parseInt(page))
           .limit(5);
       } else {
         campaigns = await Campaign.find({ $and: [{ status }, { name }] })
           .sort('-createdAt')
           .populate('author', 'name picture')
-          .skip(Number.parseInt(perPage) * (Number.parseInt(page) - 1))
+          .skip(Number.parseInt(perPage) * Number.parseInt(page))
           .limit(5);
       }
       res.status(200).json({

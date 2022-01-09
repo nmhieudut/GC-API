@@ -5,6 +5,38 @@ import express from 'express';
 import { auth } from 'middlewares/auth.middleware';
 const router = express.Router();
 
+/**
+ * @swagger
+ * tags:
+ *  name: Campaign
+ *  description: Campaign management
+ */
+
+/**
+ * @swagger
+ * /campaigns/search:
+ *  get:
+ *    description: Use to request all campaigns
+ *    tags: [Campaign]
+ *    parameters:
+ *     - in: query
+ *       name: q
+ *       schema:
+ *         type: string
+ *       required: false
+ *     - in: query
+ *       name: page
+ *       schema:
+ *        type: number
+ *     - in: query
+ *       name: limit
+ *       schema:
+ *        type: number
+ *    responses:
+ *      '200':
+ *        description: A successful response
+ */
+
 router.get('/search', campaignController.getByQuery);
 router.get('/owner/:userId', campaignController.getByAuthor);
 router.get('/status/:status', campaignController.getByStatus);

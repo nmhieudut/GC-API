@@ -1,4 +1,4 @@
-import { History } from 'models/History';
+import { Transaction } from 'models/Transaction';
 import { User } from 'models/User';
 import { convertToVND } from 'utils/currency';
 
@@ -17,7 +17,7 @@ export const BalanceController = {
       user.balance += convertedBalance / 100;
       const updatedUser = await user.save();
       if (updatedUser) {
-        await History.create({
+        await Transaction.create({
           author: userId,
           amount,
           orderId,

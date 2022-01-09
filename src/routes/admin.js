@@ -5,9 +5,26 @@ import { auth } from 'middlewares/auth.middleware';
 
 const router = express.Router();
 
-// admin user
+/**
+ * @swagger
+ * /admin/users:
+ *  get:
+ *    description: Use to request all users
+ *    parameters:
+ *      - in: header
+ *        name: Authorization
+ *        schema:
+ *          type: string
+ *          required: true
+ *    responses:
+ *      '200':
+ *        description: A successful response
+ */
+
+// user
 router.get('/users', auth, adminGuard, AdminController.getUsers);
 router.get('/users/:userId', auth, adminGuard, AdminController.getUserById);
+router.post('/users', auth, adminGuard, AdminController.createUser);
 router.put('/users/:userId', auth, adminGuard, AdminController.updateUserById);
 router.put(
   '/users/:userId/active',
@@ -22,7 +39,7 @@ router.delete(
   AdminController.deleteUserById
 );
 
-// admin campaign
+// campaign
 router.get('/campaigns', auth, adminGuard, AdminController.getCampaigns);
 router.get(
   '/campaigns/:campaignId',
@@ -55,14 +72,25 @@ router.put(
   AdminController.endOne
 );
 
-// // adminGuard auction
-// router.get('/auction', auth, adminGuard, AdminController.getAuctions);
-// router.get(
-//   '/auctions/:auctionId',
+// transaction
+router.get('/transactions', auth, adminGuard, AdminController.getTransactions);
+router.delete(
+  '/transactions/:transactionId',
+  auth,
+  adminGuard,
+  AdminController.deleteTransactionById
+);
+
+// donations
+router.get('/donations', auth, adminGuard, AdminController.getDonations);
+// router.delete(
+//   '/donations/:donationId',
 //   auth,
 //   adminGuard,
-//   AdminController.getAuctionById
+//   AdminController.deleteDonationById
 // );
+
+// auction
 // router.put(
 //   '/auctions/:auctionId',
 //   auth,
@@ -74,12 +102,6 @@ router.put(
 //   auth,
 //   adminGuard,
 //   AdminController.deleteAuctionById
-// );
-// router.put(
-//   '/auctions/:auctionId/active',
-//   auth,
-//   adminGuard,
-//   AdminController.updateAuctionStatusById
 // );
 
 export default router;
