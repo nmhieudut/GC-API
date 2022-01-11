@@ -20,5 +20,6 @@ export const responseErrorMessage = {
   DUPLICATED_BID: 'Bạn đã đấu giá rồi',
   INVALID_BID: 'Giá đấu phải lớn hơn giá đấu đầu tiên',
   INVALID_CURRENT_BID: 'Giá đấu phải lớn hơn giá đấu hiện tại',
-  FORBIDDEN_BID: 'Bạn không thể đấu giá cho chính mình'
+  FORBIDDEN_BID: 'Bạn không thể đấu giá cho chính mình',
+  INVALID_CAMPAIGN_STATUS: 'Chiến dịch chưa kết thúc'
 };

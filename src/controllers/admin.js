@@ -2,6 +2,7 @@ import { Campaign } from 'models/Campaign';
 import { Donation } from 'models/Donation';
 import { User } from 'models/User';
 import bcrypt from 'bcrypt';
+import { requestErrorMessage } from 'constants/error';
 
 export const AdminController = {
   getUsers: async (req, res, next) => {
@@ -134,6 +135,30 @@ export const AdminController = {
       res.status(200).json({
         message: 'Xóa chiến dịch thành công'
       });
+    } catch (e) {
+      next(e);
+    }
+  },
+  renewalCampaign: async (req, res, next) => {
+    const { campaignId } = req.params;
+    const { addedDays } = req.body;
+    try {
+      const campaign = await Campaign.findById(campaignId);
+      if (campaign.status === 'ended') {
+        const endedAt = new Date(campaign.finishedAt);
+        campaign.finishedAt = endedAt.setDate(
+          endedAt.getDate() + parseInt(addedDays)
+        );
+        campaign.status = 'active';
+        await campaign.save();
+        return res.status(200).json({
+          message: 'Gia hạn thành công'
+        });
+      } else {
+        const err = new Error(requestErrorMessage.INVALID_CAMPAIGN_STATUS);
+        err.statusCode = 400;
+        return next(err);
+      }
     } catch (e) {
       next(e);
     }

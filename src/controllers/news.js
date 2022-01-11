@@ -3,7 +3,11 @@ import { New } from 'models/New';
 export const newsController = {
   getAll: async (req, res, next) => {
     try {
-      const news = await New.find();
+      const { skip, page } = req.query;
+      const perPage = skip ? parseInt(skip) : 5;
+      const news = await New.find()
+        .skip(Number.parseInt(perPage) * Number.parseInt(page))
+        .limit(perPage);
       res.status(200).json({ news });
     } catch (e) {
       next(e);

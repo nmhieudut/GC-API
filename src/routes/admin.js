@@ -59,6 +59,13 @@ router.delete(
   adminGuard,
   AdminController.deleteCampaignById
 );
+// renewal campaign
+router.put(
+  '/campaigns/:campaignId/renewal',
+  auth,
+  adminGuard,
+  AdminController.renewalCampaign
+);
 router.put(
   '/campaigns/:campaignId/active',
   auth,

@@ -70,8 +70,8 @@ export const campaignController = {
   },
 
   getByQuery: async (req, res, next) => {
-    const { q, limit, page } = req.query;
-    const perPage = limit ? parseInt(limit) : 5;
+    const { q, skip, page } = req.query;
+    const perPage = skip ? parseInt(skip) : 5;
     const status = req.query.status ? req.query.status : 'all';
     const name = new RegExp(q, 'i');
     try {
@@ -81,13 +81,13 @@ export const campaignController = {
           .sort('-createdAt')
           .populate('author', 'name picture')
           .skip(Number.parseInt(perPage) * Number.parseInt(page))
-          .limit(5);
+          .limit(perPage);
       } else {
         campaigns = await Campaign.find({ $and: [{ status }, { name }] })
           .sort('-createdAt')
           .populate('author', 'name picture')
           .skip(Number.parseInt(perPage) * Number.parseInt(page))
-          .limit(5);
+          .limit(perPage);
       }
       res.status(200).json({
         campaigns
