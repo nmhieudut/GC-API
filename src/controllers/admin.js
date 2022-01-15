@@ -3,6 +3,7 @@ import { Donation } from 'models/Donation';
 import { User } from 'models/User';
 import bcrypt from 'bcrypt';
 import { requestErrorMessage } from 'constants/error';
+import { Transaction } from 'models/Transaction';
 
 export const AdminController = {
   getUsers: async (req, res, next) => {
@@ -183,7 +184,7 @@ export const AdminController = {
     try {
       await Campaign.findByIdAndUpdate(
         campaignId,
-        { status: 'ended' },
+        { status: 'ended', finishedAt: new Date() },
         { new: true, runValidator: true }
       );
       res.status(200).json({
@@ -194,7 +195,11 @@ export const AdminController = {
     }
   },
   getDonations: async (req, res, next) => {
-    const donations = await Donation.find({});
+    const donations = await Donation.find({}).populate(
+      'donator',
+      'name picture phoneNumber'
+    );
+
     res.json({ donations });
   },
   getDonationsByUserId: async (req, res, next) => {
@@ -217,8 +222,8 @@ export const AdminController = {
   },
   getTransactions: async (req, res, next) => {
     const transactions = await Transaction.find({}).populate(
-      'donator',
-      'name picture'
+      'author',
+      'name email picture'
     );
     res.json({ transactions });
   },
@@ -226,8 +231,8 @@ export const AdminController = {
     const { userId } = req.params;
     try {
       const transactions = await Transaction.find({ author: userId }).populate(
-        'donator',
-        'name picture'
+        'author',
+        'name email picture'
       );
       res.json({ transactions });
     } catch (e) {

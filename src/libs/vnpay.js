@@ -2,7 +2,6 @@ import crypto from 'crypto';
 import { format } from 'date-fns';
 import { Transaction } from 'models/Transaction';
 import { nanoid } from 'nanoid';
-import { resolve } from 'path';
 import querystring from 'qs';
 
 const tmnCode = 'M0T60KQH';
@@ -77,7 +76,6 @@ export const getVNPayReturnUrl = async (req, res) => {
 
   const hmac = crypto.createHmac('sha512', secretKey);
   const signed = hmac.update(new Buffer(signData, 'utf-8')).digest('hex');
-  console.log('jhase', secureHash === signed);
 
   if (secureHash === signed) {
     const orderId = vnp_Params['vnp_TxnRef'];

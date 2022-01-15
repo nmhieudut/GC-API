@@ -46,8 +46,6 @@ router.get('/:campaignId/comments', getCommentByCampaignId);
 router.get('/:campaignId/donations', campaignController.getDonations);
 router.post('/', auth, campaignController.createOne);
 router.post('/:campaignId/donate', auth, DonateController.donate);
-router.put('/:campaignId/active', auth, campaignController.activeOne);
-router.put('/:campaignId/end', auth, campaignController.endOne);
 router
   .route('/:campaignId')
   .put(auth, campaignController.updateOne)

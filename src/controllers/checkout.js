@@ -12,6 +12,18 @@ const payWithMoMo = (req, res, next) => {
     });
 };
 
+const returnMomoUrl = (req, res, next) => {
+  const { payment_info, amount_money, order_id } = req.body;
+  sendMoMoRequest(order_id, amount_money, payment_info)
+    .then(response => {
+      console.log(response);
+      res.status(200).json(response);
+    })
+    .catch(error => {
+      next(error);
+    });
+};
+
 const createPaymentUrlVNPay = (req, res, next) => {
   const { info, amount_money, bankCode } = req.body;
   const ipAddr =

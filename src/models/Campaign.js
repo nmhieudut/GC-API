@@ -49,9 +49,21 @@ const campaignSchema = new mongoose.Schema(
       required: true,
       default: 0
     },
-    category: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Category'
+    province: {
+      type: String,
+      required: true
+    },
+    district: {
+      type: String,
+      required: true
+    },
+    ward: {
+      type: String,
+      required: true
+    },
+    address: {
+      type: String,
+      required: true
     }
   },
   { timestamps: true }

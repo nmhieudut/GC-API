@@ -99,7 +99,6 @@ export const campaignController = {
 
   getByAuthor: async (req, res, next) => {
     const { userId } = req.params;
-
     try {
       const campaigns = await Campaign.find({ author: userId }).sort(
         '-createdAt'
@@ -213,28 +212,6 @@ export const campaignController = {
       );
       res.status(200).json({
         message: 'Đã phê duyệt hoạt động này'
-      });
-    } catch (e) {
-      next(e);
-    }
-  },
-  endOne: async (req, res, next) => {
-    try {
-      const { userId, role } = req.user;
-      const { campaignId } = req.params;
-      const campaign = await Campaign.findOne({ _id: campaignId });
-      if (role !== 'admin' && String(campaign.author) !== userId) {
-        const err = new Error(responseErrorMessage.FORBIDDEN);
-        err.statusCode = 403;
-        return next(err);
-      }
-      await Campaign.findByIdAndUpdate(
-        campaignId,
-        { status: 'ended' },
-        { new: true, runValidator: true }
-      );
-      res.status(200).json({
-        message: 'Kết thúc hoạt động thành công'
       });
     } catch (e) {
       next(e);

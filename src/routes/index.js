@@ -7,6 +7,7 @@ import checkoutRoute from './checkout';
 import balanceRoute from './balance';
 import newsRoute from './news';
 import auctionRoute from './auction';
+import provinceRoute from './province';
 //admin
 import adminRoute from './admin';
 
@@ -40,6 +41,10 @@ const defaultRoutes = [
   {
     path: '/auctions',
     route: auctionRoute
+  },
+  {
+    path: '/province',
+    route: provinceRoute
   },
   {
     path: '/news',
