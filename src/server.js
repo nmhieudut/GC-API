@@ -1,20 +1,18 @@
-import cors from 'cors';
 // import 'cronjob/getNews';
+import cors from 'cors';
 import 'cronjob/updatedb';
+import env from 'dotenv';
 import express from 'express';
 import helmet from 'helmet';
-import morgan from 'morgan';
-import env from 'dotenv';
-import socketIO from 'socket.io';
 import http from 'http';
-// Routes
+import morgan from 'morgan';
 import router from 'routes';
+import socketIO from 'socket.io';
+import swaggerJSDoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
 import { connect } from './config/db';
-// Error handler
 import { errorHandler } from './middlewares/errorHandler';
 import logger from './middlewares/logger';
-import swaggerUi from 'swagger-ui-express';
-import swaggerJSDoc from 'swagger-jsdoc';
 
 const app = express();
 const httpServer = http.Server(app);
@@ -26,6 +24,7 @@ connect({ io });
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
+app.use(express.static('public'));
 
 // Middleware
 app.use(logger);

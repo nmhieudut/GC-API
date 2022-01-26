@@ -56,7 +56,7 @@ const connect = async ({ io }) => {
         });
       }
     });
-  } catch (e) {
+  } catch (error) {
     console.log('Error happened when connect to DB: ', error);
     process.exit(1);
   }

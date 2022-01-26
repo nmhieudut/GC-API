@@ -50,5 +50,7 @@ router
   .route('/:campaignId')
   .put(auth, campaignController.updateOne)
   .delete(auth, campaignController.deleteOne);
+// export to csv
+router.get('/:campaignId/csv_export', campaignController.exportToCsv);
 
 export default router;

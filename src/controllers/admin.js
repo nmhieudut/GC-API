@@ -4,6 +4,7 @@ import { User } from 'models/User';
 import bcrypt from 'bcrypt';
 import { requestErrorMessage } from 'constants/error';
 import { Transaction } from 'models/Transaction';
+import { Auction } from 'models/Auction';
 
 export const AdminController = {
   getUsers: async (req, res, next) => {
@@ -194,6 +195,26 @@ export const AdminController = {
       next(e);
     }
   },
+  transferMoneyToCampaign: async (req, res, next) => {
+    const { campaignId } = req.params;
+    const { amount } = req.body;
+    try {
+      const campaign = await Campaign.findById(campaignId);
+      if (campaign.status === 'active') {
+        campaign.balance += parseFloat(amount);
+        await campaign.save();
+        res.status(200).json({
+          message: 'Nạp tiền thành công'
+        });
+      } else {
+        const err = new Error(requestErrorMessage.INVALID_CAMPAIGN_STATUS);
+        err.statusCode = 400;
+        return next(err);
+      }
+    } catch (e) {
+      next(e);
+    }
+  },
   getDonations: async (req, res, next) => {
     const donations = await Donation.find({}).populate(
       'donator',
@@ -246,6 +267,89 @@ export const AdminController = {
       await transaction.remove();
       res.status(200).json({
         message: 'Xóa giao dịch thành công'
+      });
+    } catch (e) {
+      next(e);
+    }
+  },
+  getDonationsByCampaignId: async (req, res, next) => {
+    const { campaignId } = req.params;
+    try {
+      const donations = await Donation.find({ campaignId }).populate(
+        'donator',
+        'name picture phoneNumber'
+      );
+      res.json({ donations });
+    } catch (e) {
+      next(e);
+    }
+  },
+  getAuctions: async (req, res, next) => {
+    const auctions = await Auction.find({})
+      .populate('author', 'name picture')
+      .populate('campaign', 'name slug')
+      .populate({
+        path: 'currentBid',
+        model: 'Bid',
+        populate: { path: 'author', model: 'User', select: 'name picture' }
+      })
+      .populate({
+        path: 'bids',
+        model: 'Bid',
+        populate: {
+          path: 'author',
+          model: 'User',
+          select: 'name picture'
+        }
+      });
+    res.json({ auctions });
+  },
+  createAuction: async (req, res, next) => {
+    try {
+      const newAuction = new Auction({
+        ...req.body,
+        author: req.user.userId
+      });
+      await newAuction.save();
+      res.status(201).json({
+        message: 'Phiên đấu giá được tạo thành công'
+      });
+    } catch (e) {
+      next(e);
+    }
+  },
+  getAuctionById: async (req, res, next) => {
+    const { auctionId } = req.params;
+    try {
+      const auction = await Auction.findById(auctionId).populate(
+        'author',
+        'name picture'
+      );
+      res.json({ auction });
+    } catch (e) {
+      next(e);
+    }
+  },
+  updateAuctionById: async (req, res, next) => {
+    const { auctionId } = req.params;
+    try {
+      const auction = await Auction.findByIdAndUpdate(
+        auctionId,
+        { ...req.body },
+        { new: true }
+      );
+      res.json({ auction });
+    } catch (e) {
+      next(e);
+    }
+  },
+  deleteAuctionById: async (req, res, next) => {
+    const { auctionId } = req.params;
+    try {
+      const auction = await Auction.findById(auctionId);
+      await auction.remove();
+      res.status(200).json({
+        message: 'Xóa phiên đấu giá thành công'
       });
     } catch (e) {
       next(e);

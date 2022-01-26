@@ -1,9 +1,13 @@
 import { responseErrorMessage } from 'constants/error';
+import { ExportFields } from 'constants/exportfields';
+import { Parser } from 'json2csv';
 import logger from 'middlewares/logger';
 import { Campaign } from 'models/Campaign';
 import { Donation } from 'models/Donation';
 import mongoose from 'mongoose';
 import slugify from 'slugify';
+import path from 'path';
+import fs from 'fs';
 
 export const campaignController = {
   getSummary: async (req, res, next) => {
@@ -195,24 +199,22 @@ export const campaignController = {
       next(e);
     }
   },
-
-  activeOne: async (req, res, next) => {
+  exportToCsv: async (req, res, next) => {
     try {
-      const { role } = req.user;
       const { campaignId } = req.params;
-      if (role !== 'admin') {
-        const err = new Error(responseErrorMessage.FORBIDDEN);
-        err.statusCode = 403;
-        return next(err);
-      }
-      await Campaign.findByIdAndUpdate(
-        campaignId,
-        { status: 'active' },
-        { new: true, runValidator: true }
+      const data = await Donation.find({ campaignId }).populate(
+        'donator',
+        'name picture phoneNumber'
       );
-      res.status(200).json({
-        message: 'Đã phê duyệt hoạt động này'
-      });
+      const x = new Parser({ fields: ExportFields.donations });
+      const csv = x.parse(data);
+      // public folder path
+      const filePath = path.join(
+        __dirname,
+        `../../public/csv/saoke-${campaignId}-report.csv`
+      );
+      fs.writeFileSync(filePath, '\uFEFF' + csv);
+      return res.sendFile(filePath);
     } catch (e) {
       next(e);
     }

@@ -88,27 +88,26 @@ router.delete(
   AdminController.deleteTransactionById
 );
 
-// donations
-router.get('/donations', auth, adminGuard, AdminController.getDonations);
-// router.delete(
-//   '/donations/:donationId',
-//   auth,
-//   adminGuard,
-//   AdminController.deleteDonationById
-// );
-
 // auction
-// router.put(
-//   '/auctions/:auctionId',
-//   auth,
-//   adminGuard,
-//   AdminController.updateAuctionById
-// );
-// router.delete(
-//   '/auctions/:auctionId',
-//   auth,
-//   adminGuard,
-//   AdminController.deleteAuctionById
-// );
+router.get('/auctions', auth, adminGuard, AdminController.getAuctions);
+router.get(
+  '/auctions/:auctionId',
+  auth,
+  adminGuard,
+  AdminController.getAuctionById
+);
+router.post('/auctions', auth, adminGuard, AdminController.createAuction);
+router.put(
+  '/auctions/:auctionId',
+  auth,
+  adminGuard,
+  AdminController.updateAuctionById
+);
+router.delete(
+  '/auctions/:auctionId',
+  auth,
+  adminGuard,
+  AdminController.deleteAuctionById
+);
 
 export default router;

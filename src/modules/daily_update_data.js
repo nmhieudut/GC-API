@@ -2,6 +2,7 @@ import { compareDesc } from 'date-fns';
 import { Campaign } from 'models/Campaign';
 import { Auction } from 'models/Auction';
 import { Donation } from 'models/Donation';
+import { Transaction } from 'models/Transaction';
 export const dailyUpdate = async () => {
   const now = new Date();
   const campaigns = await Campaign.find({});

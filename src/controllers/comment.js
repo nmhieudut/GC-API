@@ -7,8 +7,6 @@ async function getCommentByCampaignId(req, res, next) {
     const commentList = await Comment.find({ campaignId })
       .populate('author', 'name picture')
       .sort({ createdAt: -1 });
-    // .skip(Number.parseInt(skip))
-    // .limit(3);
     res.status(200).json({ comments: commentList });
   } catch (error) {
     next(error);
@@ -34,10 +32,10 @@ async function createOne(req, res, next) {
 }
 async function updateOne(req, res, next) {
   try {
-    const { userId } = req.user;
+    const { userId, role } = req.user;
     const { commentId } = req.params;
     const comment = await Comment.findOne({ _id: commentId });
-    if (userId !== String(comment.author)) {
+    if (userId !== String(comment.author) && role !== 'admin') {
       const err = new Error(responseErrorMessage.FORBIDDEN);
       err.statusCode = 403;
       return next(err);
@@ -56,10 +54,10 @@ async function updateOne(req, res, next) {
 }
 async function deleteOne(req, res, next) {
   try {
-    const { userId } = req.user;
+    const { userId, role } = req.user;
     const { commentId } = req.params;
     const comment = await Comment.findOne({ _id: commentId });
-    if (userId !== String(comment.author)) {
+    if (userId !== String(comment.author) && role !== 'admin') {
       const err = new Error(responseErrorMessage.FORBIDDEN);
       err.statusCode = 403;
       return next(err);

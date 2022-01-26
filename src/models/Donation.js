@@ -18,6 +18,10 @@ const donationSchema = new mongoose.Schema(
     donatedType: {
       type: String,
       default: 'donation'
+    },
+    lastBalance: {
+      type: Number,
+      required: true
     }
   },
   { timestamps: true }

@@ -17,6 +17,15 @@ export const AuctionController = {
             model: 'Bid',
             populate: { path: 'author', model: 'User', select: 'name picture' }
           })
+          .populate({
+            path: 'bids',
+            model: 'Bid',
+            populate: {
+              path: 'author',
+              model: 'User',
+              select: 'name picture'
+            }
+          })
           .limit(6);
       } else {
         auctions = await Auction.find({ status })
@@ -26,6 +35,15 @@ export const AuctionController = {
             path: 'currentBid',
             model: 'Bid',
             populate: { path: 'author', model: 'User', select: 'name picture' }
+          })
+          .populate({
+            path: 'bids',
+            model: 'Bid',
+            populate: {
+              path: 'author',
+              model: 'User',
+              select: 'name picture'
+            }
           })
           .limit(6);
       }

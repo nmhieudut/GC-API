@@ -28,7 +28,8 @@ export const DonateController = {
       await Donation.create({
         ...req.body,
         campaignId,
-        donator: req.user.userId
+        donator: req.user.userId,
+        lastBalance: donatedCampaign.donated_amount
       });
       await Transaction.create({
         author: req.user.userId,
