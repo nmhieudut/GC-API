@@ -5,22 +5,6 @@ import { auth } from 'middlewares/auth.middleware';
 
 const router = express.Router();
 
-/**
- * @swagger
- * /admin/users:
- *  get:
- *    description: Use to request all users
- *    parameters:
- *      - in: header
- *        name: Authorization
- *        schema:
- *          type: string
- *          required: true
- *    responses:
- *      '200':
- *        description: A successful response
- */
-
 // user
 router.get('/users', auth, adminGuard, AdminController.getUsers);
 router.get('/users/:userId', auth, adminGuard, AdminController.getUserById);
