@@ -196,24 +196,24 @@ export const AdminController = {
     }
   },
   transferMoneyToCampaign: async (req, res, next) => {
-    const { campaignId } = req.params;
-    const { amount } = req.body;
-    try {
-      const campaign = await Campaign.findById(campaignId);
-      if (campaign.status === 'active') {
-        campaign.balance += parseFloat(amount);
-        await campaign.save();
-        res.status(200).json({
-          message: 'Nạp tiền thành công'
-        });
-      } else {
-        const err = new Error(requestErrorMessage.INVALID_CAMPAIGN_STATUS);
-        err.statusCode = 400;
-        return next(err);
-      }
-    } catch (e) {
-      next(e);
-    }
+    // const { campaignId } = req.params;
+    // const { amount } = req.body;
+    // try {
+    //   const campaign = await Campaign.findById(campaignId);
+    //   if (campaign.status === 'active') {
+    //     campaign.balance += parseFloat(amount);
+    //     await campaign.save();
+    //     res.status(200).json({
+    //       message: 'Nạp tiền thành công'
+    //     });
+    //   } else {
+    //     const err = new Error(requestErrorMessage.INVALID_CAMPAIGN_STATUS);
+    //     err.statusCode = 400;
+    //     return next(err);
+    //   }
+    // } catch (e) {
+    //   next(e);
+    // }
   },
   getDonations: async (req, res, next) => {
     const donations = await Donation.find({}).populate(
