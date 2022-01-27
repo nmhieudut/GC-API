@@ -1,13 +1,13 @@
 import { responseErrorMessage } from 'constants/error';
 import { ExportFields } from 'constants/exportfields';
-import { Parser } from 'json2csv';
+import fs from 'fs';
+import json2csv from 'json2csv';
 import logger from 'middlewares/logger';
 import { Campaign } from 'models/Campaign';
 import { Donation } from 'models/Donation';
 import mongoose from 'mongoose';
-import slugify from 'slugify';
 import path from 'path';
-import fs from 'fs';
+import slugify from 'slugify';
 
 export const campaignController = {
   getSummary: async (req, res, next) => {
@@ -206,15 +206,18 @@ export const campaignController = {
         'donator',
         'name picture phoneNumber'
       );
-      const x = new Parser({ fields: ExportFields.donations });
-      const csv = x.parse(data);
-      // public folder path
       const filePath = path.join(
         __dirname,
         `../../public/csv/saoke-${campaignId}-report.csv`
       );
-      fs.writeFileSync(filePath, '\uFEFF' + csv);
-      return res.sendFile(filePath);
+      return json2csv
+        .parseAsync(data, { fields: ExportFields.donations })
+        .then(csv => {
+          fs.writeFile(filePath, '\uFEFF' + csv, err => {
+            if (err) throw err;
+            else res.sendFile(filePath);
+          });
+        });
     } catch (e) {
       next(e);
     }
