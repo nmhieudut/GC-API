@@ -55,17 +55,17 @@ export const sendMoMoRequest = async (userId, amount_money) => {
     console.log('--------------------SIGNATURE----------------');
     console.log(signature);
     const requestBody = JSON.stringify({
-      partnerCode: partnerCode,
-      accessKey: accessKey,
-      requestId: requestId,
-      amount: amount,
-      orderId: orderId,
-      orderInfo: orderInfo,
-      redirectUrl: redirectUrl,
-      ipnUrl: ipnUrl,
-      extraData: extraData,
-      requestType: requestType,
-      signature: signature
+      partnerCode,
+      accessKey,
+      requestId,
+      amount,
+      orderId,
+      orderInfo,
+      redirectUrl,
+      ipnUrl,
+      extraData,
+      requestType,
+      signature
     });
     const options = {
       hostname: 'test-payment.momo.vn',

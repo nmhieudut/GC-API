@@ -1,13 +1,14 @@
 import { responseErrorMessage } from 'constants/error';
 import { ExportFields } from 'constants/exportfields';
-import fs from 'fs';
 import json2csv from 'json2csv';
 import logger from 'middlewares/logger';
 import { Campaign } from 'models/Campaign';
 import { Donation } from 'models/Donation';
 import mongoose from 'mongoose';
-import path from 'path';
 import slugify from 'slugify';
+import path from 'path';
+import fs from 'fs';
+import { format } from 'date-fns';
 
 export const campaignController = {
   getSummary: async (req, res, next) => {
@@ -202,14 +203,22 @@ export const campaignController = {
   exportToCsv: async (req, res, next) => {
     try {
       const { campaignId } = req.params;
-      const data = await Donation.find({ campaignId }).populate(
+      const donations = await Donation.find({ campaignId }).populate(
         'donator',
         'name picture phoneNumber'
       );
       const filePath = path.join(
         __dirname,
-        `../../public/csv/saoke-${campaignId}-report.csv`
+        `../../src/assets/csv/saoke-${campaignId}-report.csv`
       );
+      const data = donations.map(item => {
+        return {
+          ...item._doc,
+          donatedType: item.donatedType === 'auction' ? 'Đấu giá' : 'Gây quỹ',
+          createdAt: format(new Date(item.createdAt), 'dd/MM/yyyy')
+        };
+      });
+      console.log('===', data);
       return json2csv
         .parseAsync(data, { fields: ExportFields.donations })
         .then(csv => {
