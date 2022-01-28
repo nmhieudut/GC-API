@@ -207,10 +207,7 @@ export const campaignController = {
         'donator',
         'name picture phoneNumber'
       );
-      const filePath = path.join(
-        __dirname,
-        `../../src/assets/csv/saoke-${campaignId}-report.csv`
-      );
+      const filePath = `src/assets/csv/${campaignId}.csv`;
       const data = donations.map(item => {
         return {
           ...item._doc,
@@ -218,13 +215,15 @@ export const campaignController = {
           createdAt: format(new Date(item.createdAt), 'dd/MM/yyyy')
         };
       });
-      console.log('===', data);
       return json2csv
         .parseAsync(data, { fields: ExportFields.donations })
         .then(csv => {
           fs.writeFile(filePath, '\uFEFF' + csv, err => {
             if (err) throw err;
-            else res.sendFile(filePath);
+            else {
+              res.attachment('thu-' + campaignId + '-report.csv');
+              res.sendFile(filePath, { root: '.' });
+            }
           });
         });
     } catch (e) {
