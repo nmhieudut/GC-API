@@ -113,6 +113,7 @@ const googleLogin = async (req, res, next) => {
   try {
     const { idToken } = req.body;
     const decodedToken = await admin.auth().verifyIdToken(idToken);
+    console.log(decodedToken);
     const { name, email, picture } = decodedToken;
     User.findOne({ email }).exec(async (err, user) => {
       if (err) {
@@ -153,7 +154,7 @@ const googleLogin = async (req, res, next) => {
               name,
               email,
               picture,
-              phoneNumber,
+              phoneNumber: createdUser.phoneNumber,
               dateOfBirth,
               role: createdUser.role,
               balance: createdUser.balance
