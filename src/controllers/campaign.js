@@ -207,7 +207,7 @@ export const campaignController = {
         'donator',
         'name picture phoneNumber'
       );
-      const filePath = `src/assets/csv/${campaignId}.csv`;
+      const filePath = `src/assets/csv/thu-${campaignId}-report.csv`;
       const data = donations.map(item => {
         return {
           ...item._doc,
