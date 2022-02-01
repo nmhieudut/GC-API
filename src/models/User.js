@@ -37,7 +37,7 @@ const userSchema = new mongoose.Schema(
     phoneNumber: {
       type: String,
       trim: true,
-      default: null,
+      default: '',
       minlength: [9, 'Số điện thoại không được ít hơn 9 chữ số'],
       maxlength: [11, 'Số điện thoại không được nhiềuv hơn 11 chữ số']
     },
