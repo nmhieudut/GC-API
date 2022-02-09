@@ -18,7 +18,7 @@ const connect = async ({ io }) => {
     });
     AuctionChangeStream.on('change', async change => {
       console.log('change', change);
-      const auction = await Auction.findById(change.fullDocument._id)
+      const auction = await Auction.findById(change.documentKey._id)
         .populate('author', 'name picture')
         .populate('campaign', 'name slug')
         .populate({

@@ -200,6 +200,32 @@ export const campaignController = {
       next(e);
     }
   },
+  addExpendituresToCampaign: async (req, res, next) => {
+    try {
+      const { campaignId } = req.params;
+      const { amount, message } = req.body;
+      const campaign = await Campaign.findById(campaignId);
+      if (role !== 'admin' && String(campaign.author) !== userId) {
+        const err = new Error(responseErrorMessage.FORBIDDEN);
+        err.statusCode = 403;
+        return next(err);
+      }
+      await Donation.create({
+        donator: req.user.userId,
+        campaignId,
+        amount,
+        message,
+        action: 'chi',
+        donateType: null,
+        lastBalance: campaign.balance - parseInt(amount)
+      });
+      return res.status(200).json({
+        message: 'Cập nhật chi phí thành công'
+      });
+    } catch (e) {
+      next(e);
+    }
+  },
   exportToCsv: async (req, res, next) => {
     try {
       const { campaignId } = req.params;

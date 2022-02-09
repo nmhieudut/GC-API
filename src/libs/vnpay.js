@@ -3,6 +3,7 @@ import { format } from 'date-fns';
 import { Transaction } from 'models/Transaction';
 import { nanoid } from 'nanoid';
 import querystring from 'qs';
+import { isDev } from 'utils/settings';
 
 const tmnCode = 'M0T60KQH';
 const secretKey = 'OLICNJHNSYSQBQKQLLDOGHWFQIURURAO'; //hash key
@@ -16,10 +17,9 @@ export const sendVNPayRequest = async (
 ) => {
   return new Promise((resolve, reject) => {
     let vnpUrl = 'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html';
-    const returnUrl =
-      process.env.NODE_ENV === 'development'
-        ? 'http://localhost:3000/checkout/return/vn-pay'
-        : 'https://green-charity.vercel.app/checkout/return/vn-pay';
+    const returnUrl = isDev
+      ? 'http://localhost:3000/checkout/return/vn-pay'
+      : 'https://green-charity.vercel.app/checkout/return/vn-pay';
 
     const date = new Date();
     const createDate = format(date, 'yyyyMMddHHmmss');
@@ -75,7 +75,7 @@ export const getVNPayReturnUrl = async (req, res) => {
   const signData = querystring.stringify(vnp_Params, { encode: false });
 
   const hmac = crypto.createHmac('sha512', secretKey);
-  const signed = hmac.update(new Buffer(signData, 'utf-8')).digest('hex');
+  const signed = hmac.update(Buffer.from(signData, 'utf-8')).digest('hex');
 
   if (secureHash === signed) {
     const orderId = vnp_Params['vnp_TxnRef'];

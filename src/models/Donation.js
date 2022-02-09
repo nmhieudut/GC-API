@@ -15,6 +15,10 @@ const donationSchema = new mongoose.Schema(
     message: {
       type: String
     },
+    action: {
+      type: String,
+      required: true
+    },
     donatedType: {
       type: String,
       default: 'donation'

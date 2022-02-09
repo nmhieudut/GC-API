@@ -1,28 +1,29 @@
-import { nanoid } from 'nanoid';
 import crypto from 'crypto';
 import https from 'https';
+import { nanoid } from 'nanoid';
+import QueryString from 'qs';
+import { isDev } from 'utils/settings';
+
+const secretKey = process.env.MOMO_SECRET_KEY;
+const accessKey = process.env.MOMO_ACCESS_KEY;
 
 export const sendMoMoRequest = async (userId, amount_money) => {
   return new Promise((resolve, reject) => {
     //parameters
     const partnerCode = process.env.MOMO_MERCHANT_ID;
-    const accessKey = process.env.MOMO_ACCESS_KEY;
-    const secretKey = process.env.MOMO_SECRET_KEY;
     const requestId = userId + '-' + nanoid(5);
     const orderId = requestId + nanoid(5);
     const orderInfo = 'Nạp tiền vào hệ thống';
-    const redirectUrl =
-      process.env.NODE_ENV === 'development'
-        ? 'http://localhost:3000/checkout/return/momo'
-        : 'https://green-charity.vercel.app/checkout/return/momo';
+    const redirectUrl = isDev
+      ? 'http://localhost:3000/checkout/return/momo'
+      : 'https://green-charity.vercel.app/checkout/return/momo';
     const ipnUrl = 'https://callback.url/notify';
     // const ipnUrl = redirectUrl = "https://webhook.site/454e7b77-f177-4ece-8236-ddf1c26ba7f8";
-    const amount = amount_money ? amount_money : '50000';
+    const amount = amount_money ? amount_money : 50000;
     const requestType = 'captureWallet';
     const extraData = ''; //pass empty value if your merchant does not have stores
 
     //before sign HMAC SHA256 with format
-    //accessKey=$accessKey&amount=$amount&extraData=$extraData&ipnUrl=$ipnUrl&orderId=$orderId&orderInfo=$orderInfo&partnerCode=$partnerCode&redirectUrl=$redirectUrl&requestId=$requestId&requestType=$requestType
     const rawSignature =
       'accessKey=' +
       accessKey +
@@ -107,4 +108,49 @@ export const sendMoMoRequest = async (userId, amount_money) => {
     req.end();
   });
 };
-//json object send to MoMo endpoint
+
+export const getMoMoReturnUrl = async (req, res) => {
+  const {
+    partnerCode,
+    requestId,
+    amount,
+    orderId,
+    orderInfo,
+    payType,
+    message,
+    extraData,
+    responseTime,
+    resultCode,
+    signature,
+    orderType,
+    transId
+  } = req.query;
+  console.log('===', accessKey);
+  const rawSignature = `accessKey=${accessKey}&amount=${amount}&extraData=
+  ${extraData}&message=${message}&orderId=${orderId}&orderInfo=
+  ${orderInfo}&orderType=${orderType}&partnerCode=${partnerCode}
+  &payType=${payType}&requestId=${requestId}&responseTime=
+  ${responseTime}&resultCode=${resultCode}&transId=${transId}`;
+  const signed = crypto
+    .createHmac('sha256', secretKey)
+    .update(rawSignature)
+    .digest('hex');
+  console.log('signed', signed, signature);
+  if (signed === signature) {
+    return console.log('okkkkkkkkk');
+  }
+  return console.log('huhuhuhu');
+};
+// partnerCode=MOMOK8K020211025
+// & orderId=617915dab4a3fe410c8603ac - ps3XBSRmDk
+//   & requestId=617915dab4a3fe410c8603ac - ps3XB
+//   & amount=1999999
+//   & orderInfo=Nạp + tiền + vào + hệ + thống
+//   & orderType=momo_wallet
+//   & transId=2643051328
+//   & resultCode=0
+//   & message=Successful.
+//     & payType=qr
+//   & responseTime=1644398480781
+//     & extraData=
+// & signature=e927324bb971cb2df9a27663fbca24bcc4f4187482f6f7389406dff7adc346bd

@@ -8,7 +8,7 @@ export const BalanceController = {
       const { amount, currency, method, orderId } = req.body;
       const { userId } = req.params;
       const user = await User.findOne({ _id: userId });
-      if (req.user.role !== 'admin' && userId !== req.user.userId) {
+      if (userId !== req.user.userId) {
         const err = new Error(responseErrorMessage.FORBIDDEN);
         err.statusCode = 403;
         return next(err);
