@@ -29,6 +29,7 @@ export const DonateController = {
         ...req.body,
         campaignId,
         donator: req.user.userId,
+        action: 'thu',
         lastBalance: donatedCampaign.donated_amount
       });
       await Transaction.create({

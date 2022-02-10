@@ -1,14 +1,9 @@
 import { responseErrorMessage } from 'constants/error';
-import { ExportFields } from 'constants/exportfields';
-import json2csv from 'json2csv';
 import logger from 'middlewares/logger';
 import { Campaign } from 'models/Campaign';
 import { Donation } from 'models/Donation';
 import mongoose from 'mongoose';
 import slugify from 'slugify';
-import path from 'path';
-import fs from 'fs';
-import { format } from 'date-fns';
 
 export const campaignController = {
   getSummary: async (req, res, next) => {
@@ -189,10 +184,9 @@ export const campaignController = {
   getDonations: async (req, res, next) => {
     try {
       const { campaignId } = req.params;
-      const donations = await Donation.find({ campaignId }).populate(
-        'donator',
-        'name picture phoneNumber'
-      );
+      const donations = await Donation.find({
+        $and: [{ campaignId }, { action: 'thu' }]
+      }).populate('donator', 'name picture phoneNumber');
       return res.status(200).json({
         donations
       });
@@ -200,8 +194,22 @@ export const campaignController = {
       next(e);
     }
   },
+  getRAEById: async (req, res, next) => {
+    try {
+      const { campaignId } = req.params;
+      const donation = await Donation.find({ campaignId })
+        .populate('donator', 'name picture phoneNumber')
+        .sort('createdAt');
+      return res.status(200).json({
+        disbursements: donation
+      });
+    } catch (e) {
+      next(e);
+    }
+  },
   addExpendituresToCampaign: async (req, res, next) => {
     try {
+      const { role, userId } = req.user;
       const { campaignId } = req.params;
       const { amount, message } = req.body;
       const campaign = await Campaign.findById(campaignId);
@@ -210,48 +218,20 @@ export const campaignController = {
         err.statusCode = 403;
         return next(err);
       }
+      campaign.donated_amount -= parseInt(amount);
+      await campaign.save();
       await Donation.create({
-        donator: req.user.userId,
+        donator: userId,
         campaignId,
         amount,
         message,
         action: 'chi',
         donateType: null,
-        lastBalance: campaign.balance - parseInt(amount)
+        lastBalance: parseInt(campaign.donated_amount)
       });
       return res.status(200).json({
         message: 'Cập nhật chi phí thành công'
       });
-    } catch (e) {
-      next(e);
-    }
-  },
-  exportToCsv: async (req, res, next) => {
-    try {
-      const { campaignId } = req.params;
-      const donations = await Donation.find({ campaignId }).populate(
-        'donator',
-        'name picture phoneNumber'
-      );
-      const filePath = `src/assets/csv/thu-${campaignId}-report.csv`;
-      const data = donations.map(item => {
-        return {
-          ...item._doc,
-          donatedType: item.donatedType === 'auction' ? 'Đấu giá' : 'Gây quỹ',
-          createdAt: format(new Date(item.createdAt), 'dd/MM/yyyy')
-        };
-      });
-      return json2csv
-        .parseAsync(data, { fields: ExportFields.donations })
-        .then(csv => {
-          fs.writeFile(filePath, '\uFEFF' + csv, err => {
-            if (err) throw err;
-            else {
-              res.attachment('thu-' + campaignId + '-report.csv');
-              res.sendFile(filePath, { root: '.' });
-            }
-          });
-        });
     } catch (e) {
       next(e);
     }

@@ -3,39 +3,8 @@ import { getCommentByCampaignId } from 'controllers/comment';
 import { DonateController } from 'controllers/donate';
 import express from 'express';
 import { auth } from 'middlewares/auth.middleware';
+
 const router = express.Router();
-
-/**
- * @swagger
- * tags:
- *  name: Campaign
- *  description: Campaign management
- */
-
-/**
- * @swagger
- * /campaigns/search:
- *  get:
- *    description: Use to request all campaigns
- *    tags: [Campaign]
- *    parameters:
- *     - in: query
- *       name: q
- *       schema:
- *         type: string
- *       required: false
- *     - in: query
- *       name: page
- *       schema:
- *        type: number
- *     - in: query
- *       name: limit
- *       schema:
- *        type: number
- *    responses:
- *      '200':
- *        description: A successful response
- */
 
 router.get('/search', campaignController.getByQuery);
 router.get('/owner/:userId', campaignController.getByAuthor);
@@ -50,7 +19,11 @@ router
   .route('/:campaignId')
   .put(auth, campaignController.updateOne)
   .delete(auth, campaignController.deleteOne);
-// export to csv
-router.get('/:campaignId/csv_export', campaignController.exportToCsv);
+router.get('/:campaignId/receipts_expenditures', campaignController.getRAEById);
+router.post(
+  '/:campaignId/receipts_expenditures',
+  auth,
+  campaignController.addExpendituresToCampaign
+);
 
 export default router;

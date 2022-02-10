@@ -25,6 +25,7 @@ const donationSchema = new mongoose.Schema(
     },
     lastBalance: {
       type: Number,
+      default: 0,
       required: true
     }
   },

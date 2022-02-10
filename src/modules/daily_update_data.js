@@ -1,8 +1,7 @@
 import { compareDesc } from 'date-fns';
-import { Campaign } from 'models/Campaign';
 import { Auction } from 'models/Auction';
+import { Campaign } from 'models/Campaign';
 import { Donation } from 'models/Donation';
-import { Transaction } from 'models/Transaction';
 export const dailyUpdate = async () => {
   const now = new Date();
   const campaigns = await Campaign.find({});
@@ -53,7 +52,8 @@ export const updateAuction = async () => {
           donator: auction.author._id,
           campaignId: auction.campaign._id,
           message: 'Đấu giá thành công',
-          donatedType: 'auction'
+          donatedType: 'auction',
+          action: 'thu'
         });
       }
     } catch (e) {
