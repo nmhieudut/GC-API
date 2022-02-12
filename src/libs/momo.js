@@ -1,5 +1,6 @@
 import crypto from 'crypto';
 import https from 'https';
+import { Transaction } from 'models/Transaction';
 import { nanoid } from 'nanoid';
 import QueryString from 'qs';
 import { isDev } from 'utils/settings';
@@ -123,23 +124,34 @@ export const getMoMoReturnUrl = async (req, res) => {
     resultCode,
     signature,
     orderType,
+    localMessage,
     transId
   } = req.query;
-  console.log('===', accessKey);
-  const rawSignature = `accessKey=${accessKey}&amount=${amount}&extraData=
-  ${extraData}&message=${message}&orderId=${orderId}&orderInfo=
-  ${orderInfo}&orderType=${orderType}&partnerCode=${partnerCode}
-  &payType=${payType}&requestId=${requestId}&responseTime=
-  ${responseTime}&resultCode=${resultCode}&transId=${transId}`;
-  const signed = crypto
-    .createHmac('sha256', secretKey)
-    .update(rawSignature)
-    .digest('hex');
-  console.log('signed', signed, signature);
-  if (signed === signature) {
-    return console.log('okkkkkkkkk');
+  // const rawSignature = `partnerCode=${partnerCode}&accessKey=${accessKey}&requestId=${requestId}&amount=${amount}&orderId=${orderId}&orderInfo=
+  // ${orderInfo}&orderType=${orderType}&transId=${transId}&message=${message}&responseTime=${responseTime}&resultCode=${resultCode}
+  // &payType=${payType}&extraData=${extraData}`;
+  // const signed = crypto
+  //   .createHmac('sha256', secretKey)
+  //   .update(rawSignature)
+  //   .digest('hex');
+  // console.log('signed', signed, signature);
+  // if (signed === signature) {
+  //   return console.log('okkkkkkkkk');
+  // }
+  // return console.log('huhuhuhu');
+  if (resultCode === '0') {
+    const checkingOrder = await Transaction.findOne({ orderId });
+    if (checkingOrder) {
+      return { code: '97' };
+    }
+    return {
+      code: '00',
+      orderId,
+      userId: req.user.userId,
+      amount: parseInt(amount)
+    };
   }
-  return console.log('huhuhuhu');
+  return { code: '97' };
 };
 // partnerCode=MOMOK8K020211025
 // & orderId=617915dab4a3fe410c8603ac - ps3XBSRmDk

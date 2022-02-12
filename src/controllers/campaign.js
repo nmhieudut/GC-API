@@ -14,7 +14,6 @@ export const campaignController = {
         (acc, curr) => acc + curr.amount,
         0
       );
-      console.log(campaigns.length, totalDonations, donations.length);
       res.status(200).json({
         total_campaigns: campaigns.length,
         total_amount_donations: totalDonations,
@@ -216,6 +215,11 @@ export const campaignController = {
       if (role !== 'admin' && String(campaign.author) !== userId) {
         const err = new Error(responseErrorMessage.FORBIDDEN);
         err.statusCode = 403;
+        return next(err);
+      }
+      if (campaign.donated_amount - parseInt(amount) < 0) {
+        const err = new Error(responseErrorMessage.INSUFFICIENT_AMOUNT);
+        err.statusCode = 400;
         return next(err);
       }
       campaign.donated_amount -= parseInt(amount);

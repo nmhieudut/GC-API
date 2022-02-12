@@ -14,6 +14,7 @@ export const responseErrorMessage = {
   CONFLICT: 'Dữ liệu không đúng, có khi nó đã có rồi.',
   INTERNAL_SERVER_ERROR: 'Lỗi server.',
   INSUFFICIENT_BALANCE: 'Số dư không đủ vui lòng nạp thêm tiền.',
+  INSUFFICIENT_AMOUNT: 'Số tiền không đủ.',
   INVALID_CAMPAIGN:
     'Chiến dịch đã kết thúc hoặc đang trong thời gian kiểm duyệt. Hãy để dành kinh phí cho các chiến dịch khác.',
   AUCTION_EXPIRED: 'Phiên đấu giá đã kết thúc',
