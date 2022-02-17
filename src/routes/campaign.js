@@ -1,5 +1,5 @@
 import { campaignController } from 'controllers/campaign';
-import { getCommentByCampaignId } from 'controllers/comment';
+import { commentController } from 'controllers/comment';
 import { DonateController } from 'controllers/donate';
 import express from 'express';
 import { auth } from 'middlewares/auth.middleware';
@@ -11,7 +11,7 @@ router.get('/owner/:userId', campaignController.getByAuthor);
 router.get('/status/:status', campaignController.getByStatus);
 router.get('/:slug', campaignController.getBySlug);
 router.get('/info/summary', campaignController.getSummary);
-router.get('/:campaignId/comments', getCommentByCampaignId);
+router.get('/:campaignId/comments', commentController.getByCampaignId);
 router.get('/:campaignId/donations', campaignController.getDonations);
 router.post('/', auth, campaignController.createOne);
 router.post('/:campaignId/donate', auth, DonateController.donate);

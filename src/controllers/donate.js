@@ -35,7 +35,7 @@ export const DonateController = {
       await Transaction.create({
         author: req.user.userId,
         amount,
-        action: 'Quyên góp'
+        action: 'donate'
       });
       return res.status(200).json({
         status: 'ok',

@@ -22,7 +22,7 @@ export const BalanceController = {
           amount,
           orderId,
           method,
-          action: 'Nạp tiền'
+          action: 'charge'
         });
       }
       return res.status(201).json({
