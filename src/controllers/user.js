@@ -12,7 +12,7 @@ export const userController = {
       next(e);
     }
   },
-  update: async (req, res, next) => {
+  updateProfile: async (req, res, next) => {
     try {
       const { userId, role } = req.user;
       const { userId: updatedUserId } = req.params;

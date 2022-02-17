@@ -7,7 +7,7 @@ import checkoutRoute from './checkout';
 import balanceRoute from './balance';
 import newsRoute from './news';
 import auctionRoute from './auction';
-import provinceRoute from './province';
+import locationRoute from './location';
 //admin
 import adminRoute from './admin';
 
@@ -44,7 +44,7 @@ const defaultRoutes = [
   },
   {
     path: '/province',
-    route: provinceRoute
+    route: locationRoute
   },
   {
     path: '/news',

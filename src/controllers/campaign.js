@@ -184,7 +184,7 @@ export const campaignController = {
     try {
       const { campaignId } = req.params;
       const donations = await Donation.find({
-        $and: [{ campaignId }, { action: 'thu' }]
+        $and: [{ campaignId }, { action: 'receipts' }]
       }).populate('donator', 'name picture phoneNumber');
       return res.status(200).json({
         donations
@@ -229,7 +229,7 @@ export const campaignController = {
         campaignId,
         amount,
         message,
-        action: 'chi',
+        action: 'expenditures',
         donateType: null,
         lastBalance: parseInt(campaign.donated_amount)
       });

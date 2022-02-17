@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const ProvinceController = {
+export const LocationController = {
   getAll: async (req, res, next) => {
     try {
       const response = await axios.get(`${process.env.PROVINCE_URL}/province`);

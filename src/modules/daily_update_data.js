@@ -53,7 +53,7 @@ export const updateAuction = async () => {
           campaignId: auction.campaign._id,
           message: 'Đấu giá thành công',
           donatedType: 'auction',
-          action: 'thu'
+          action: 'receipts'
         });
       }
     } catch (e) {

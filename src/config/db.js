@@ -40,22 +40,6 @@ const connect = async ({ io }) => {
         auction
       });
     });
-    const UserChangeStream = User.collection.watch({
-      fullDocument: 'updateLookup'
-    });
-    UserChangeStream.on('change', async change => {
-      console.log('user Change', change);
-      if (change.operationType !== 'delete') {
-        const user = await User.findById(change.fullDocument._id).select(
-          '-password'
-        );
-        user.id = user._id;
-        io.emit('user-change', {
-          type: change.operationType,
-          user
-        });
-      }
-    });
   } catch (error) {
     console.log('Error happened when connect to DB: ', error);
     process.exit(1);

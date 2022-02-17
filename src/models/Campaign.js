@@ -50,20 +50,19 @@ const campaignSchema = new mongoose.Schema(
       default: 0
     },
     province: {
-      type: String,
+      type: Object,
       required: true
     },
     district: {
-      type: String,
+      type: Object,
       required: true
     },
     ward: {
-      type: String,
+      type: Object,
       required: true
     },
-    address: {
-      type: String,
-      required: true
+    moreInfo: {
+      type: String
     }
   },
   { timestamps: true }
