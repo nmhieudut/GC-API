@@ -217,6 +217,11 @@ export const campaignController = {
         err.statusCode = 403;
         return next(err);
       }
+      if (campaign.status !== 'active') {
+        const err = new Error(responseErrorMessage.FORBIDDEN);
+        err.statusCode = 403;
+        return next(err);
+      }
       if (campaign.donated_amount - parseInt(amount) < 0) {
         const err = new Error(responseErrorMessage.INSUFFICIENT_AMOUNT);
         err.statusCode = 400;

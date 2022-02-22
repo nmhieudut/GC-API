@@ -43,7 +43,6 @@ router.delete(
   adminGuard,
   AdminController.deleteCampaignById
 );
-// renewal campaign
 router.put(
   '/campaigns/:campaignId/renewal',
   auth,
@@ -62,6 +61,21 @@ router.put(
   adminGuard,
   AdminController.endOne
 );
+router.get(
+  '/campaigns/:campaignId/donations',
+  auth,
+  adminGuard,
+  AdminController.getREByCampaignId
+);
+
+//donation
+router.get(
+  '/donations/:userId',
+  auth,
+  adminGuard,
+  AdminController.getDonationsByAuthor
+);
+router.get('/donations', auth, adminGuard, AdminController.getDonations);
 
 // transaction
 router.get('/transactions', auth, adminGuard, AdminController.getTransactions);

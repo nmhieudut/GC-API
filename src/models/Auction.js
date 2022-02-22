@@ -28,6 +28,11 @@ const auctionSchema = new Schema(
       default: 0,
       required: true
     },
+    quantity: {
+      type: Number,
+      default: 1,
+      required: true
+    },
     status: {
       type: String,
       default: 'active'

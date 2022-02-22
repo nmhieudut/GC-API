@@ -12,7 +12,7 @@ export const AdminController = {
       const users = await User.find({ role: { $ne: 'admin' } }).select(
         '-password'
       );
-      res.json({ users });
+      return res.json({ users });
     } catch (e) {
       next(e);
     }
@@ -21,7 +21,7 @@ export const AdminController = {
     const { userId } = req.params;
     try {
       const user = await User.findById(userId).select('-password');
-      res.json({ user });
+      return res.json({ user });
     } catch (e) {
       next(e);
     }
@@ -39,7 +39,7 @@ export const AdminController = {
       const salt = await bcrypt.genSalt(10);
       newUser.password = await bcrypt.hash(newUser.password, salt);
       const user = await newUser.save();
-      res.status(200).json({
+      return res.status(200).json({
         message: 'Thành công'
       });
     } catch (e) {
@@ -62,7 +62,7 @@ export const AdminController = {
           runValidator: true
         }
       );
-      res.status(200).json({
+      return res.status(200).json({
         message: 'Cập nhật thành công'
       });
     } catch (e) {
@@ -75,7 +75,7 @@ export const AdminController = {
       const user = await User.findById(userId);
       user.isActive = !user.isActive;
       await user.save();
-      res.status(200).json({
+      return res.status(200).json({
         message: user.active
           ? 'Kích hoạt thành công'
           : 'Khóa tài khoản thành công'
@@ -89,7 +89,7 @@ export const AdminController = {
     try {
       const user = await User.findById(userId);
       await user.remove();
-      res.status(200).json({
+      return res.status(200).json({
         message: 'Xóa tài khoản thành công'
       });
     } catch (e) {
@@ -102,7 +102,7 @@ export const AdminController = {
         'author',
         'name picture'
       );
-      res.json({ campaigns });
+      return res.json({ campaigns });
     } catch (e) {
       next(e);
     }
@@ -111,7 +111,7 @@ export const AdminController = {
     const { campaignId } = req.params;
     try {
       const campaign = await Campaign.findById(campaignId);
-      res.json({ campaign });
+      return res.json({ campaign });
     } catch (e) {
       next(e);
     }
@@ -124,7 +124,7 @@ export const AdminController = {
         ...req.body,
         { new: true }
       );
-      res.json({ campaign });
+      return res.json({ campaign });
     } catch (e) {
       next(e);
     }
@@ -134,7 +134,7 @@ export const AdminController = {
     try {
       const campaign = await Campaign.findById(campaignId);
       await campaign.remove();
-      res.status(200).json({
+      return res.status(200).json({
         message: 'Xóa chiến dịch thành công'
       });
     } catch (e) {
@@ -173,7 +173,7 @@ export const AdminController = {
         { status: 'active' },
         { new: true, runValidator: true }
       );
-      res.status(200).json({
+      return res.status(200).json({
         message: 'Kích hoạt chiến dịch thành công'
       });
     } catch (e) {
@@ -188,11 +188,32 @@ export const AdminController = {
         { status: 'ended', finishedAt: new Date() },
         { new: true, runValidator: true }
       );
-      res.status(200).json({
+      return res.status(200).json({
         message: 'Kết thúc chiến dịch thành công'
       });
     } catch (e) {
       next(e);
+    }
+  },
+  getREByCampaignId: async (req, res, next) => {
+    const { campaignId } = req.params;
+    const { month, year } = req.query;
+    try {
+      if (month === 'all' && year === 'all') {
+        const donations = await Donation.find({ campaignId });
+        return res.status(200).json({ donations });
+      }
+      const donations = await Donation.find({
+        campaignId,
+        createdAt: {
+          $gte: new Date(`${year}-${month}-01`),
+          $lte: new Date(`${year}-${month}-31`)
+        }
+      });
+      return res.status(200).json({ donations });
+    } catch (e) {
+      console.log('---', e);
+      return next(e);
     }
   },
   transferMoneyToCampaign: async (req, res, next) => {
@@ -221,22 +242,13 @@ export const AdminController = {
       'name picture phoneNumber'
     );
 
-    res.json({ donations });
+    return res.json({ donations });
   },
   getDonationsByUserId: async (req, res, next) => {
     const { userId } = req.params;
     try {
       const donations = await Donation.find({ donator: userId });
-      res.json({ donations });
-    } catch (e) {
-      next(e);
-    }
-  },
-  getDonationsByCampaignId: async (req, res, next) => {
-    const { campaignId } = req.params;
-    try {
-      const donations = await Donation.find({ campaignId });
-      res.json({ donations });
+      return res.json({ donations });
     } catch (e) {
       next(e);
     }
@@ -280,6 +292,26 @@ export const AdminController = {
         'name picture phoneNumber'
       );
       res.json({ donations });
+    } catch (e) {
+      next(e);
+    }
+  },
+  getDonationsByAuthor: async (req, res, next) => {
+    const { userId } = req.params;
+    const { month, year } = req.query;
+    try {
+      // find donations in a specific month and year
+      const donations = await Donation.find({
+        donator: userId,
+        createdAt: {
+          $gte: new Date(`${year}-${month}-01`),
+          $lte: new Date(`${year}-${month}-31`)
+        }
+      })
+        .populate('donator', 'name email picture')
+        .sort('createdAt');
+
+      res.status(200).json({ results: donations });
     } catch (e) {
       next(e);
     }
