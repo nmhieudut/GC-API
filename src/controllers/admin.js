@@ -100,7 +100,7 @@ export const AdminController = {
     try {
       const campaigns = await Campaign.find({}).populate(
         'author',
-        'name picture'
+        'name picture phoneNumber'
       );
       return res.json({ campaigns });
     } catch (e) {
@@ -212,7 +212,6 @@ export const AdminController = {
       });
       return res.status(200).json({ donations });
     } catch (e) {
-      console.log('---', e);
       return next(e);
     }
   },
