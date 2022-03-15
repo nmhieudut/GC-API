@@ -14,7 +14,7 @@ export const BalanceController = {
         return next(err);
       }
       const convertedBalance = convertToVND(currency, amount);
-      user.balance += convertedBalance / 100;
+      user.balance += convertedBalance;
       const updatedUser = await user.save();
       if (updatedUser) {
         await Transaction.create({

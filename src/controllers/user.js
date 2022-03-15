@@ -30,7 +30,6 @@ export const userController = {
         user: {
           id: user._id,
           phoneNumber: user.phoneNumber,
-          dateOfBirth: user.dateOfBirth,
           email: user.email,
           name: user.name,
           picture: user.picture,

@@ -23,7 +23,6 @@ const register = async (req, res, next) => {
       user: {
         id: user._id,
         phoneNumber: user.phoneNumber,
-        dateOfBirth: user.dateOfBirth,
         email: user.email,
         name: user.name,
         picture: user.picture,
@@ -57,7 +56,6 @@ const login = async (req, res, next) => {
         user: {
           id: user._id,
           phoneNumber: user.phoneNumber,
-          dateOfBirth: user.dateOfBirth,
           email: user.email,
           name: user.name,
           picture: user.picture,
@@ -93,7 +91,6 @@ const getCurrentUser = async (req, res, next) => {
       data = {
         id: user._id,
         phoneNumber: user.phoneNumber,
-        dateOfBirth: user.dateOfBirth,
         email: user.email,
         name: user.name,
         picture: user.picture,
@@ -113,8 +110,8 @@ const googleLogin = async (req, res, next) => {
   try {
     const { idToken } = req.body;
     const decodedToken = await admin.auth().verifyIdToken(idToken);
-    console.log(decodedToken);
     const { name, email, picture } = decodedToken;
+    console.log('---', decodedToken);
     User.findOne({ email }).exec(async (err, user) => {
       if (err) {
         let error = new Error(responseErrorMessage.INTERNAL_SERVER_ERROR);
@@ -155,7 +152,6 @@ const googleLogin = async (req, res, next) => {
               email,
               picture,
               phoneNumber: createdUser.phoneNumber,
-              dateOfBirth,
               role: createdUser.role,
               balance: createdUser.balance
             }

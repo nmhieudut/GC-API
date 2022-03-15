@@ -21,12 +21,8 @@ const userSchema = new mongoose.Schema(
     },
     email: {
       type: String,
-      unique: true,
       trim: true,
       required: [true, 'Vui lòng nhập email']
-    },
-    dateOfBirth: {
-      type: Date
     },
     password: {
       type: String,
